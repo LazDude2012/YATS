@@ -1,0 +1,21 @@
+LAZDUDE PUBLIC LICENSE 2.0
+
+This Software is Open Source. You, the User, have the guaranteed rights in perpetuity, as long as
+the conditions of this License are met, to:
+  -Use this Software, both in binary and source form, for any purpose.
+  -Distribute this Software, both in binary and source code form.
+  -Modify this Software, both in binary and source code form.
+  -Distribute modified versions of the Software, in binary and source code form, provided
+that you release them under this License or another license fundamentally compatible with
+this License.
+
+The Conditions of this License are as follows:
+  -You, the User, must have obtained all prerequisite software legitimately.
+  -You, the User, must not have contacted the Author to obtain permission to use, distribute,
+modify, or distribute modified versions of this Software. Once a User contacts the Author to
+obtain permission to exercise any of the rights granted them by this License, those rights are
+revoked, in perpetuity, for that User.
+
+By using this Software in any form, binary or source, by exercising any of the other rights
+detailed in this License, or by reading this License, you agree to be bound by the terms of
+this License.
