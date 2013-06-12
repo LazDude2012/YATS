@@ -1,5 +1,6 @@
 package YATS.block;
 
+import YATS.render.IconProvider;
 import YATS.tile.TileTube;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
@@ -21,5 +22,10 @@ public class BlockTube extends Block implements ITileEntityProvider
 	public TileEntity createNewTileEntity(World world)
 	{
 		return new TileTube();
+	}
+
+	public void registerIcons(IconRegister register)
+	{
+		IconProvider.Init(register);
 	}
 }
