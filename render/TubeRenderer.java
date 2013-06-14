@@ -15,6 +15,12 @@ public class TubeRenderer extends TileEntitySpecialRenderer implements ISimpleBl
 {
 	public final float PIPE_MIN_SIZE = 0.25f;
 	public final float PIPE_MAX_SIZE = 0.75f;
+	int renderID;
+
+	public TubeRenderer(int renderID)
+	{
+		this.renderID=renderID;
+	}
 
 	@Override
 	public void renderInventoryBlock(Block block, int metadata, int modelID, RenderBlocks renderer)
@@ -39,7 +45,7 @@ public class TubeRenderer extends TileEntitySpecialRenderer implements ISimpleBl
 	private void RenderTube(RenderBlocks renderer, IBlockAccess world, Block block, TileTube tube, int x, int y, int z)
 	{
 		GL11.glPushMatrix();
-		Minecraft.getMinecraft().renderEngine.bindTexture("/yats/resources/yats-tubecore.png");
+		Minecraft.getMinecraft().renderEngine.bindTexture("/mods/YATS/textures/models/yats-tubecore.png");
 		GL11.glTranslatef(x,y,z);
 		GL11.glBegin(GL11.GL_QUADS);
 
@@ -396,13 +402,14 @@ public class TubeRenderer extends TileEntitySpecialRenderer implements ISimpleBl
 	@Override
 	public int getRenderId()
 	{
-		return 4242;
+		return renderID;
 	}
 
 	@Override
 	public void renderTileEntityAt(TileEntity tileentity, double d0, double d1, double d2, float f)
 	{
 		TileTube tube = (TileTube)tileentity;
+		if(tube.contents == null) return;
 		tube.contents.GetRenderer().RenderCapsule(tube);
 	}
 }

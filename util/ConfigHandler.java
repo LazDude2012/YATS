@@ -12,6 +12,7 @@ public class ConfigHandler
 	public static int blockAdvExtractorID;
 	public static int blockRoutingMachineID;
 	public static int blockBufferID;
+	public static int blockRemoteExtractorID;
 
 	public static void Load(FMLPreInitializationEvent e)
 	{
@@ -38,5 +39,10 @@ public class ConfigHandler
 
 		Property bufferblockproperty = config.getBlock("block","BufferID",2205,"The Block ID for the Item Buffer.");
 		blockBufferID = bufferblockproperty.getInt();
+
+		Property remoteextractorproperty = config.getBlock("block","RemoteExtractorID",2206,"The Block ID for the Remote Extractor");
+		blockRemoteExtractorID = remoteextractorproperty.getInt();
+
+		config.save();
 	}
 }

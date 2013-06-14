@@ -29,7 +29,7 @@ public class XYZCoords
 		return world.getBlockTileEntity(x,y,z);
 	}
 
-	public void Next(ForgeDirection direction)
+	public XYZCoords Next(ForgeDirection direction)
 	{
 		switch(direction)
 		{
@@ -52,5 +52,6 @@ public class XYZCoords
 				y--;
 				break;
 		}
+		return this;
 	}
 }

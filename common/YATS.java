@@ -20,18 +20,23 @@ public class YATS
 	@SidedProxy(clientSide = "YATS.client.ClientProxy",serverSide="YATS.common.CommonProxy")
 	public static CommonProxy proxy;
 
-	public Block blockRemoteExtractor;
-	public Block blockRoutingMarshaller;
-	public Block blockExtractor;
-	public Block blockAdvExtractor;
-	public Block blockTube;
-	public Block blockItemBuffer;
+	public static Block blockRemoteExtractor;
+	public static Block blockRoutingMarshaller;
+	public static Block blockExtractor;
+	public static Block blockAdvExtractor;
+	public static Block blockTube;
+	public static Block blockItemBuffer;
 
 	@Mod.PreInit
 	public void PreInitialise(FMLPreInitializationEvent e)
 	{
 		ConfigHandler.Load(e);
-
+		blockTube = new BlockTube(ConfigHandler.blockTubeID);
+		blockExtractor=new BlockExtractor(ConfigHandler.blockExtractorID);
+		blockRoutingMarshaller=new BlockRoutingMarshaller(ConfigHandler.blockRoutingMachineID);
+		blockAdvExtractor=new BlockAdvExtractor(ConfigHandler.blockAdvExtractorID);
+		blockRemoteExtractor=new BlockRemoteExtractor(ConfigHandler.blockRemoteExtractorID);
+		blockItemBuffer = new BlockItemBuffer(ConfigHandler.blockBufferID);
 	}
 
 	@Mod.Init
@@ -40,6 +45,7 @@ public class YATS
 		RegisterBlocksAndTiles();
 		RegisterRecipes();
 		RegisterItems();
+		proxy.RegisterRenderInformation();
 	}
 
 	private void RegisterItems()
@@ -71,7 +77,7 @@ public class YATS
 		LanguageRegistry.addName(blockItemBuffer,"Item Buffer");
 
 		GameRegistry.registerBlock(blockTube,"YATSBlockTube");
-		GameRegistry.registerTileEntity(TileTube.class, "YATSTileItemBuffer");
+		GameRegistry.registerTileEntity(TileTube.class, "YATSTileTube");
 		LanguageRegistry.addName(blockTube, "Transport Tube");
 
 		GameRegistry.registerBlock(blockRemoteExtractor, "YATSBlockRemoteExtractor");
