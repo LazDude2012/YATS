@@ -11,6 +11,8 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.common.ForgeDirection;
 import org.lwjgl.opengl.GL11;
 
+import static org.lwjgl.opengl.GL11.*;
+
 public class TubeRenderer extends TileEntitySpecialRenderer implements ISimpleBlockRenderingHandler
 {
 	public final float PIPE_MIN_SIZE = 0.25f;
@@ -31,77 +33,79 @@ public class TubeRenderer extends TileEntitySpecialRenderer implements ISimpleBl
 	@Override
 	public boolean renderWorldBlock(IBlockAccess world, int x, int y, int z, Block block, int modelId, RenderBlocks renderer)
 	{
-		TileEntity tile = world.getBlockTileEntity(x,y,z);
-		if(tile instanceof TileTube)
-		{
-			TileTube tube = (TileTube)tile;
-			RenderTube(renderer, world, block, tube, x,y,z);
-			return true;
-		}
-		return false;
+		return true;
 	}
 
 	// TPW_RULES is the boss, he showed me what's up with OpenGL.
-	private void RenderTube(RenderBlocks renderer, IBlockAccess world, Block block, TileTube tube, int x, int y, int z)
+	private void RenderTube(IBlockAccess world, TileTube tube, double x, double y, double z)
 	{
-		GL11.glPushMatrix();
-		Minecraft.getMinecraft().renderEngine.bindTexture("/mods/YATS/textures/models/yats-tubecore.png");
-		GL11.glTranslatef(x,y,z);
-		GL11.glBegin(GL11.GL_QUADS);
+		this.bindTextureByName("/mods/YATS/textures/blocks/yats-tubecore.png");
+		glPushMatrix();
+		glTranslated(x,y,z);
 
 		if(tube.IsConnectedOnSide(ForgeDirection.NORTH))
 		{
 			//region NORTH ARM
 			//NORTH ARM FACE 1: WEST
-			GL11.glTexCoord2f(0.0f,0.25f);
-			GL11.glVertex3f(0.25f,0.75f,0.0f);
-			GL11.glTexCoord2f(0.25f,0.25f);
-			GL11.glVertex3f(0.25f,0.75f,0.25f);
-			GL11.glTexCoord2f(0.0f,0.75f);
-			GL11.glVertex3f(0.25f,0.25f,0.0f);
-			GL11.glTexCoord2f(0.25f,0.75f);
-			GL11.glVertex3f(0.25f,0.25f,0.25f);
+			glBegin(GL_QUADS);
+			glTexCoord2f(0.0f,0.25f);
+			glVertex3f(0.25f,0.75f,0.0f);
+			glTexCoord2f(0.25f,0.25f);
+			glVertex3f(0.25f,0.75f,0.25f);
+			glTexCoord2f(0.0f,0.75f);
+			glVertex3f(0.25f,0.25f,0.0f);
+			glTexCoord2f(0.25f,0.75f);
+			glVertex3f(0.25f,0.25f,0.25f);
+			glEnd();
 
 			//NORTH ARM FACE 2: EAST
-			GL11.glTexCoord2f(0.0f,0.25f);
-			GL11.glVertex3f(0.75f,0.75f,0.0f);
-			GL11.glTexCoord2f(0.25f,0.25f);
-			GL11.glVertex3f(0.75f,0.75f,0.25f);
-			GL11.glTexCoord2f(0.0f,0.75f);
-			GL11.glVertex3f(0.75f,0.25f,0.0f);
-			GL11.glTexCoord2f(0.25f,0.75f);
-			GL11.glVertex3f(0.75f,0.25f,0.25f);
+			glBegin(GL_QUADS);
+			glTexCoord2f(0.0f,0.25f);
+			glVertex3f(0.75f,0.75f,0.0f);
+			glTexCoord2f(0.25f,0.25f);
+			glVertex3f(0.75f,0.75f,0.25f);
+			glTexCoord2f(0.0f,0.75f);
+			glVertex3f(0.75f,0.25f,0.0f);
+			glTexCoord2f(0.25f,0.75f);
+			glVertex3f(0.75f,0.25f,0.25f);
+			glEnd();
 
 			//NORTH ARM FACE 3: TOP
-			GL11.glTexCoord2f(0.25f,0.0f);
-			GL11.glVertex3f(0.25f,0.75f,0.0f);
-			GL11.glTexCoord2f(0.75f,0.0f);
-			GL11.glVertex3f(0.75f,0.75f,0.0f);
-			GL11.glTexCoord2f(0.25f,0.25f);
-			GL11.glVertex3f(0.25f,0.75f,0.25f);
-			GL11.glTexCoord2f(0.75f,0.25f);
-			GL11.glVertex3f(0.75f,0.75f,0.25f);
+			glBegin(GL_QUADS);
+			glTexCoord2f(0.25f,0.0f);
+			glVertex3f(0.25f,0.75f,0.0f);
+			glTexCoord2f(0.75f,0.0f);
+			glVertex3f(0.75f,0.75f,0.0f);
+			glTexCoord2f(0.25f,0.25f);
+			glVertex3f(0.25f,0.75f,0.25f);
+			glTexCoord2f(0.75f,0.25f);
+			glVertex3f(0.75f,0.75f,0.25f);
+			glEnd();
 
 			//NORTH ARM FACE 4: BOTTOM
-			GL11.glTexCoord2f(0.25f,0.0f);
-			GL11.glVertex3f(0.25f,0.25f,0.0f);
-			GL11.glTexCoord2f(0.75f,0.0f);
-			GL11.glVertex3f(0.75f,0.25f,0.0f);
-			GL11.glTexCoord2f(0.25f,0.25f);
-			GL11.glVertex3f(0.25f,0.25f,0.25f);
-			GL11.glTexCoord2f(0.75f,0.25f);
-			GL11.glVertex3f(0.75f,0.25f,0.25f);
+			glBegin(GL_QUADS);
+			glTexCoord2f(0.25f,0.0f);
+			glVertex3f(0.25f,0.25f,0.0f);
+			glTexCoord2f(0.75f,0.0f);
+			glVertex3f(0.75f,0.25f,0.0f);
+			glTexCoord2f(0.25f,0.25f);
+			glVertex3f(0.25f,0.25f,0.25f);
+			glTexCoord2f(0.75f,0.25f);
+			glVertex3f(0.75f,0.25f,0.25f);
+			glEnd();
 			//endregion NORTH ARM
 		} else {
 			//region CORE FACE 1 : NORTH
-			GL11.glTexCoord2f(0.25f,0.25f);
-			GL11.glVertex3f(0.25f,0.75f,0.25f);
-			GL11.glTexCoord2f(0.75f,0.25f);
-			GL11.glVertex3f(0.75f,0.75f,0.25f);
-			GL11.glTexCoord2f(0.25f,0.75f);
-			GL11.glVertex3f(0.25f,0.25f,0.25f);
-			GL11.glTexCoord2f(0.75f,0.75f);
-			GL11.glVertex3f(0.75f,0.25f,0.25f);
+			glBegin(GL_QUADS);
+			glTexCoord2f(0.25f,0.25f);
+			glVertex3f(0.25f,0.75f,0.25f);
+			glTexCoord2f(0.75f,0.25f);
+			glVertex3f(0.75f,0.75f,0.25f);
+			glTexCoord2f(0.25f,0.75f);
+			glVertex3f(0.25f,0.25f,0.25f);
+			glTexCoord2f(0.75f,0.75f);
+			glVertex3f(0.75f,0.25f,0.25f);
+			glEnd();
 			//endregion FACE 1
 		}
 		if(tube.IsConnectedOnSide(ForgeDirection.SOUTH))
@@ -109,56 +113,66 @@ public class TubeRenderer extends TileEntitySpecialRenderer implements ISimpleBl
 			//region SOUTH ARM
 
 			//SOUTH ARM FACE 1: WEST
-			GL11.glTexCoord2f(1.0f,0.25f);
-			GL11.glVertex3f(0.25f,0.75f,1.0f);
-			GL11.glTexCoord2f(0.75f,0.25f);
-			GL11.glVertex3f(0.25f,0.75f,0.75f);
-			GL11.glTexCoord2f(1.0f,0.75f);
-			GL11.glVertex3f(0.25f,0.25f,1.0f);
-			GL11.glTexCoord2f(0.75f,0.75f);
-			GL11.glVertex3f(0.25f,0.25f,0.75f);
+			glBegin(GL_QUADS);
+			glTexCoord2f(1.0f,0.25f);
+			glVertex3f(0.25f,0.75f,1.0f);
+			glTexCoord2f(0.75f,0.25f);
+			glVertex3f(0.25f,0.75f,0.75f);
+			glTexCoord2f(1.0f,0.75f);
+			glVertex3f(0.25f,0.25f,1.0f);
+			glTexCoord2f(0.75f,0.75f);
+			glVertex3f(0.25f,0.25f,0.75f);
+			glEnd();
 
 			//SOUTH ARM FACE 2: EAST
-			GL11.glTexCoord2f(1.0f,0.25f);
-			GL11.glVertex3f(0.75f,0.75f,1.0f);
-			GL11.glTexCoord2f(0.75f,0.25f);
-			GL11.glVertex3f(0.75f,0.75f,0.75f);
-			GL11.glTexCoord2f(1.0f,0.75f);
-			GL11.glVertex3f(0.75f,0.25f,1.0f);
-			GL11.glTexCoord2f(0.75f,0.75f);
-			GL11.glVertex3f(0.75f,0.25f,0.75f);
+			glBegin(GL_QUADS);
+			glTexCoord2f(1.0f,0.25f);
+			glVertex3f(0.75f,0.75f,1.0f);
+			glTexCoord2f(0.75f,0.25f);
+			glVertex3f(0.75f,0.75f,0.75f);
+			glTexCoord2f(1.0f,0.75f);
+			glVertex3f(0.75f,0.25f,1.0f);
+			glTexCoord2f(0.75f,0.75f);
+			glVertex3f(0.75f,0.25f,0.75f);
+			glEnd();
 
 			//SOUTH ARM FACE 3: TOP
-			GL11.glTexCoord2f(0.25f,1.0f);
-			GL11.glVertex3f(0.25f,0.75f,1.0f);
-			GL11.glTexCoord2f(0.75f,1.0f);
-			GL11.glVertex3f(0.75f,0.75f,1.0f);
-			GL11.glTexCoord2f(0.25f,0.75f);
-			GL11.glVertex3f(0.25f,0.75f,0.75f);
-			GL11.glTexCoord2f(0.75f,0.75f);
-			GL11.glVertex3f(0.75f,0.75f,0.75f);
+			glBegin(GL_QUADS);
+			glTexCoord2f(0.25f,1.0f);
+			glVertex3f(0.25f,0.75f,1.0f);
+			glTexCoord2f(0.75f,1.0f);
+			glVertex3f(0.75f,0.75f,1.0f);
+			glTexCoord2f(0.25f,0.75f);
+			glVertex3f(0.25f,0.75f,0.75f);
+			glTexCoord2f(0.75f,0.75f);
+			glVertex3f(0.75f,0.75f,0.75f);
+			glEnd();
 
 			//SOUTH ARM FACE 4: BOTTOM
-			GL11.glTexCoord2f(0.25f,1.0f);
-			GL11.glVertex3f(0.25f,0.25f,1.0f);
-			GL11.glTexCoord2f(0.75f,1.0f);
-			GL11.glVertex3f(0.75f,0.25f,1.0f);
-			GL11.glTexCoord2f(0.25f,0.75f);
-			GL11.glVertex3f(0.25f,0.25f,0.75f);
-			GL11.glTexCoord2f(0.75f,0.75f);
-			GL11.glVertex3f(0.75f,0.25f,0.75f);
+			glBegin(GL_QUADS);
+			glTexCoord2f(0.25f,1.0f);
+			glVertex3f(0.25f,0.25f,1.0f);
+			glTexCoord2f(0.75f,1.0f);
+			glVertex3f(0.75f,0.25f,1.0f);
+			glTexCoord2f(0.25f,0.75f);
+			glVertex3f(0.25f,0.25f,0.75f);
+			glTexCoord2f(0.75f,0.75f);
+			glVertex3f(0.75f,0.25f,0.75f);
+			glEnd();
 
 			//endregion SOUTH ARM
 		} else {
 			//region CORE FACE 2 : SOUTH
-			GL11.glTexCoord2f(0.25f,0.25f);
-			GL11.glVertex3f(0.25f,0.75f,0.75f);
-			GL11.glTexCoord2f(0.75f,0.25f);
-			GL11.glVertex3f(0.75f,0.75f,0.75f);
-			GL11.glTexCoord2f(0.25f,0.75f);
-			GL11.glVertex3f(0.25f,0.25f,0.75f);
-			GL11.glTexCoord2f(0.75f,0.75f);
-			GL11.glVertex3f(0.75f,0.25f,0.75f);
+			glBegin(GL_QUADS);
+			glTexCoord2f(0.25f,0.25f);
+			glVertex3f(0.25f,0.75f,0.75f);
+			glTexCoord2f(0.75f,0.25f);
+			glVertex3f(0.75f,0.75f,0.75f);
+			glTexCoord2f(0.25f,0.75f);
+			glVertex3f(0.25f,0.25f,0.75f);
+			glTexCoord2f(0.75f,0.75f);
+			glVertex3f(0.75f,0.25f,0.75f);
+			glEnd();
 			//endregion FACE 2
 		}
 		if(tube.IsConnectedOnSide(ForgeDirection.WEST))
@@ -166,56 +180,66 @@ public class TubeRenderer extends TileEntitySpecialRenderer implements ISimpleBl
 			//region WEST ARM
 
 			//WEST ARM FACE 1: SOUTH
-			GL11.glTexCoord2f(0.0f,0.25f);
-			GL11.glVertex3f(0.0f,0.75f,0.75f);
-			GL11.glTexCoord2f(0.25f,0.25f);
-			GL11.glVertex3f(0.25f,0.75f,0.75f);
-			GL11.glTexCoord2f(0.0f,0.75f);
-			GL11.glVertex3f(0.0f,0.25f,0.75f);
-			GL11.glTexCoord2f(0.25f,0.75f);
-			GL11.glVertex3f(0.25f,0.25f,0.75f);
+			glBegin(GL_QUADS);
+			glTexCoord2f(0.0f,0.25f);
+			glVertex3f(0.0f,0.75f,0.75f);
+			glTexCoord2f(0.25f,0.25f);
+			glVertex3f(0.25f,0.75f,0.75f);
+			glTexCoord2f(0.0f,0.75f);
+			glVertex3f(0.0f,0.25f,0.75f);
+			glTexCoord2f(0.25f,0.75f);
+			glVertex3f(0.25f,0.25f,0.75f);
+			glEnd();
 
 			//WEST ARM FACE 2: NORTH
-			GL11.glTexCoord2f(0.0f,0.25f);
-			GL11.glVertex3f(0.0f,0.75f,0.25f);
-			GL11.glTexCoord2f(0.25f,0.25f);
-			GL11.glVertex3f(0.25f,0.75f,0.25f);
-			GL11.glTexCoord2f(0.0f,0.75f);
-			GL11.glVertex3f(0.0f,0.25f,0.25f);
-			GL11.glTexCoord2f(0.25f,0.75f);
-			GL11.glVertex3f(0.25f,0.25f,0.25f);
+			glBegin(GL_QUADS);
+			glTexCoord2f(0.0f,0.25f);
+			glVertex3f(0.0f,0.75f,0.25f);
+			glTexCoord2f(0.25f,0.25f);
+			glVertex3f(0.25f,0.75f,0.25f);
+			glTexCoord2f(0.0f,0.75f);
+			glVertex3f(0.0f,0.25f,0.25f);
+			glTexCoord2f(0.25f,0.75f);
+			glVertex3f(0.25f,0.25f,0.25f);
+			glEnd();
 
 			//WEST ARM FACE 3: TOP
-			GL11.glTexCoord2f(0.25f,0.0f);
-			GL11.glVertex3f(0.0f,0.75f,0.25f);
-			GL11.glTexCoord2f(0.75f,0.0f);
-			GL11.glVertex3f(0.0f,0.75f,0.75f);
-			GL11.glTexCoord2f(0.25f,0.25f);
-			GL11.glVertex3f(0.25f,0.75f,0.25f);
-			GL11.glTexCoord2f(0.75f,0.25f);
-			GL11.glVertex3f(0.25f,0.75f,0.75f);
+			glBegin(GL_QUADS);
+			glTexCoord2f(0.25f,0.0f);
+			glVertex3f(0.0f,0.75f,0.25f);
+			glTexCoord2f(0.75f,0.0f);
+			glVertex3f(0.0f,0.75f,0.75f);
+			glTexCoord2f(0.25f,0.25f);
+			glVertex3f(0.25f,0.75f,0.25f);
+			glTexCoord2f(0.75f,0.25f);
+			glVertex3f(0.25f,0.75f,0.75f);
+			glEnd();
 
 			//WEST ARM FACE 4: BOTTOM
-			GL11.glTexCoord2f(0.25f,0.0f);
-			GL11.glVertex3f(0.0f,0.25f,0.25f);
-			GL11.glTexCoord2f(0.75f,0.0f);
-			GL11.glVertex3f(0.0f,0.25f,0.75f);
-			GL11.glTexCoord2f(0.25f,0.25f);
-			GL11.glVertex3f(0.25f,0.25f,0.25f);
-			GL11.glTexCoord2f(0.75f,0.25f);
-			GL11.glVertex3f(0.25f,0.25f,0.75f);
+			glBegin(GL_QUADS);
+			glTexCoord2f(0.25f,0.0f);
+			glVertex3f(0.0f,0.25f,0.25f);
+			glTexCoord2f(0.75f,0.0f);
+			glVertex3f(0.0f,0.25f,0.75f);
+			glTexCoord2f(0.25f,0.25f);
+			glVertex3f(0.25f,0.25f,0.25f);
+			glTexCoord2f(0.75f,0.25f);
+			glVertex3f(0.25f,0.25f,0.75f);
+			glEnd();
 
 			//endregion
 		} else {
 			//region CORE FACE 3 : WEST
-			GL11.glTexCoord2f(0.25f,0.25f);
-			GL11.glVertex3f(0.25f,0.75f,0.25f);
-			GL11.glTexCoord2f(0.75f,0.25f);
-			GL11.glVertex3f(0.25f,0.75f,0.75f);
-			GL11.glTexCoord2f(0.25f,0.75f);
-			GL11.glVertex3f(0.25f,0.25f,0.25f);
-			GL11.glTexCoord2f(0.75f,0.75f);
-			GL11.glVertex3f(0.25f,0.25f,0.75f);
+			glBegin(GL_QUADS);
+			glTexCoord2f(0.25f,0.25f);
+			glVertex3f(0.25f,0.75f,0.25f);
+			glTexCoord2f(0.75f,0.25f);
+			glVertex3f(0.25f,0.75f,0.75f);
+			glTexCoord2f(0.25f,0.75f);
+			glVertex3f(0.25f,0.25f,0.25f);
+			glTexCoord2f(0.75f,0.75f);
+			glVertex3f(0.25f,0.25f,0.75f);
+			glEnd();
 			//endregion FACE 3
 		}
 		if(tube.IsConnectedOnSide(ForgeDirection.EAST))
@@ -223,56 +247,66 @@ public class TubeRenderer extends TileEntitySpecialRenderer implements ISimpleBl
 			//region EAST ARM
 
 			//EAST ARM FACE 1: SOUTH
-			GL11.glTexCoord2f(1.0f,0.25f);
-			GL11.glVertex3f(1.0f,0.75f,0.75f);
-			GL11.glTexCoord2f(0.75f,0.25f);
-			GL11.glVertex3f(0.75f,0.75f,0.75f);
-			GL11.glTexCoord2f(1.0f,0.75f);
-			GL11.glVertex3f(1.0f,0.25f,0.75f);
-			GL11.glTexCoord2f(0.75f,0.75f);
-			GL11.glVertex3f(0.75f,0.25f,0.75f);
+			glBegin(GL_QUADS);
+			glTexCoord2f(1.0f,0.25f);
+			glVertex3f(1.0f,0.75f,0.75f);
+			glTexCoord2f(0.75f,0.25f);
+			glVertex3f(0.75f,0.75f,0.75f);
+			glTexCoord2f(1.0f,0.75f);
+			glVertex3f(1.0f,0.25f,0.75f);
+			glTexCoord2f(0.75f,0.75f);
+			glVertex3f(0.75f,0.25f,0.75f);
+			glEnd();
 
 			//EAST ARM FACE 2: NORTH
-			GL11.glTexCoord2f(1.0f,0.25f);
-			GL11.glVertex3f(1.0f,0.75f,0.25f);
-			GL11.glTexCoord2f(0.75f,0.25f);
-			GL11.glVertex3f(0.75f,0.75f,0.25f);
-			GL11.glTexCoord2f(1.0f,0.75f);
-			GL11.glVertex3f(1.0f,0.25f,0.25f);
-			GL11.glTexCoord2f(0.75f,0.75f);
-			GL11.glVertex3f(0.75f,0.25f,0.25f);
+			glBegin(GL_QUADS);
+			glTexCoord2f(1.0f,0.25f);
+			glVertex3f(1.0f,0.75f,0.25f);
+			glTexCoord2f(0.75f,0.25f);
+			glVertex3f(0.75f,0.75f,0.25f);
+			glTexCoord2f(1.0f,0.75f);
+			glVertex3f(1.0f,0.25f,0.25f);
+			glTexCoord2f(0.75f,0.75f);
+			glVertex3f(0.75f,0.25f,0.25f);
+			glEnd();
 
 			//EAST ARM FACE 3: TOP
-			GL11.glTexCoord2f(1.0f,0.25f);
-			GL11.glVertex3f(1.0f,0.75f,0.25f);
-			GL11.glTexCoord2f(0.75f,0.25f);
-			GL11.glVertex3f(0.75f,0.75f,0.25f);
-			GL11.glTexCoord2f(1.0f,0.75f);
-			GL11.glVertex3f(1.0f,0.75f,0.75f);
-			GL11.glTexCoord2f(0.75f,0.75f);
-			GL11.glVertex3f(0.75f,0.75f,0.75f);
+			glBegin(GL_QUADS);
+			glTexCoord2f(1.0f,0.25f);
+			glVertex3f(1.0f,0.75f,0.25f);
+			glTexCoord2f(0.75f,0.25f);
+			glVertex3f(0.75f,0.75f,0.25f);
+			glTexCoord2f(1.0f,0.75f);
+			glVertex3f(1.0f,0.75f,0.75f);
+			glTexCoord2f(0.75f,0.75f);
+			glVertex3f(0.75f,0.75f,0.75f);
+			glEnd();
 
 			//EAST ARM FACE 4: BOTTOM
-			GL11.glTexCoord2f(1.0f,0.25f);
-			GL11.glVertex3f(1.0f,0.25f,0.25f);
-			GL11.glTexCoord2f(0.75f,0.25f);
-			GL11.glVertex3f(0.75f,0.25f,0.25f);
-			GL11.glTexCoord2f(1.0f,0.75f);
-			GL11.glVertex3f(1.0f,0.25f,0.75f);
-			GL11.glTexCoord2f(0.75f,0.75f);
-			GL11.glVertex3f(0.75f,0.25f,0.75f);
+			glBegin(GL_QUADS);
+			glTexCoord2f(1.0f,0.25f);
+			glVertex3f(1.0f,0.25f,0.25f);
+			glTexCoord2f(0.75f,0.25f);
+			glVertex3f(0.75f,0.25f,0.25f);
+			glTexCoord2f(1.0f,0.75f);
+			glVertex3f(1.0f,0.25f,0.75f);
+			glTexCoord2f(0.75f,0.75f);
+			glVertex3f(0.75f,0.25f,0.75f);
+			glEnd();
 
 			//endregion
 		} else {
 			//region CORE FACE 4: EAST
-			GL11.glTexCoord2f(0.25f,0.25f);
-			GL11.glVertex3f(0.75f,0.75f,0.25f);
-			GL11.glTexCoord2f(0.75f,0.25f);
-			GL11.glVertex3f(0.75f,0.75f,0.75f);
-			GL11.glTexCoord2f(0.25f,0.75f);
-			GL11.glVertex3f(0.75f,0.25f,0.25f);
-			GL11.glTexCoord2f(0.75f,0.75f);
-			GL11.glVertex3f(0.75f,0.25f,0.75f);
+			glBegin(GL_QUADS);
+			glTexCoord2f(0.25f,0.25f);
+			glVertex3f(0.75f,0.75f,0.25f);
+			glTexCoord2f(0.75f,0.25f);
+			glVertex3f(0.75f,0.75f,0.75f);
+			glTexCoord2f(0.25f,0.75f);
+			glVertex3f(0.75f,0.25f,0.25f);
+			glTexCoord2f(0.75f,0.75f);
+			glVertex3f(0.75f,0.25f,0.75f);
+			glEnd();
 			//endregion
 		}
 		if(tube.IsConnectedOnSide(ForgeDirection.UP))
@@ -280,56 +314,66 @@ public class TubeRenderer extends TileEntitySpecialRenderer implements ISimpleBl
 			//region TOP ARM
 
 			//TOP ARM FACE 1: NORTH
-			GL11.glTexCoord2f(0.25f,0.0f);
-			GL11.glVertex3f(0.25f,1.0f,0.25f);
-			GL11.glTexCoord2f(0.75f,0.0f);
-			GL11.glVertex3f(0.75f,1.0f,0.25f);
-			GL11.glTexCoord2f(0.25f,0.25f);
-			GL11.glVertex3f(0.25f,0.75f,0.25f);
-			GL11.glTexCoord2f(0.75f,0.25f);
-			GL11.glVertex3f(0.75f,0.75f,0.25f);
+			glBegin(GL_QUADS);
+			glTexCoord2f(0.25f,0.0f);
+			glVertex3f(0.25f,1.0f,0.25f);
+			glTexCoord2f(0.75f,0.0f);
+			glVertex3f(0.75f,1.0f,0.25f);
+			glTexCoord2f(0.25f,0.25f);
+			glVertex3f(0.25f,0.75f,0.25f);
+			glTexCoord2f(0.75f,0.25f);
+			glVertex3f(0.75f,0.75f,0.25f);
+			glEnd();
 
 			//TOP ARM FACE 2: SOUTH
-			GL11.glTexCoord2f(0.25f,0.0f);
-			GL11.glVertex3f(0.25f,1.0f,0.75f);
-			GL11.glTexCoord2f(0.75f,0.0f);
-			GL11.glVertex3f(0.75f,1.0f,0.75f);
-			GL11.glTexCoord2f(0.25f,0.25f);
-			GL11.glVertex3f(0.25f,0.75f,0.75f);
-			GL11.glTexCoord2f(0.75f,0.25f);
-			GL11.glVertex3f(0.75f,0.75f,0.75f);
+			glBegin(GL_QUADS);
+			glTexCoord2f(0.25f,0.0f);
+			glVertex3f(0.25f,1.0f,0.75f);
+			glTexCoord2f(0.75f,0.0f);
+			glVertex3f(0.75f,1.0f,0.75f);
+			glTexCoord2f(0.25f,0.25f);
+			glVertex3f(0.25f,0.75f,0.75f);
+			glTexCoord2f(0.75f,0.25f);
+			glVertex3f(0.75f,0.75f,0.75f);
+			glEnd();
 
 			//TOP ARM FACE 3: WEST
-			GL11.glTexCoord2f(0.25f,0.0f);
-			GL11.glVertex3f(0.25f,1.0f,0.25f);
-			GL11.glTexCoord2f(0.75f,0.0f);
-			GL11.glVertex3f(0.25f,1.0f,0.75f);
-			GL11.glTexCoord2f(0.25f,0.25f);
-			GL11.glVertex3f(0.25f,0.75f,0.25f);
-			GL11.glTexCoord2f(0.75f,0.25f);
-			GL11.glVertex3f(0.25f,0.75f,0.75f);
+			glBegin(GL_QUADS);
+			glTexCoord2f(0.25f,0.0f);
+			glVertex3f(0.25f,1.0f,0.25f);
+			glTexCoord2f(0.75f,0.0f);
+			glVertex3f(0.25f,1.0f,0.75f);
+			glTexCoord2f(0.25f,0.25f);
+			glVertex3f(0.25f,0.75f,0.25f);
+			glTexCoord2f(0.75f,0.25f);
+			glVertex3f(0.25f,0.75f,0.75f);
+			glEnd();
 
 			//TOP ARM FACE 4: EAST
-			GL11.glTexCoord2f(0.25f,0.0f);
-			GL11.glVertex3f(0.75f,1.0f,0.25f);
-			GL11.glTexCoord2f(0.75f,0.0f);
-			GL11.glVertex3f(0.75f,1.0f,0.75f);
-			GL11.glTexCoord2f(0.25f,0.25f);
-			GL11.glVertex3f(0.75f,0.75f,0.25f);
-			GL11.glTexCoord2f(0.75f,0.25f);
-			GL11.glVertex3f(0.75f,0.75f,0.75f);
+			glBegin(GL_QUADS);
+			glTexCoord2f(0.25f,0.0f);
+			glVertex3f(0.75f,1.0f,0.25f);
+			glTexCoord2f(0.75f,0.0f);
+			glVertex3f(0.75f,1.0f,0.75f);
+			glTexCoord2f(0.25f,0.25f);
+			glVertex3f(0.75f,0.75f,0.25f);
+			glTexCoord2f(0.75f,0.25f);
+			glVertex3f(0.75f,0.75f,0.75f);
+			glEnd();
 
 			//endregion
 		} else {
 			//region CORE FACE 5: TOP
-			GL11.glTexCoord2f(0.25f,0.25f);
-			GL11.glVertex3f(0.25f,0.75f,0.25f);
-			GL11.glTexCoord2f(0.75f,0.25f);
-			GL11.glVertex3f(0.75f,0.75f,0.25f);
-			GL11.glTexCoord2f(0.25f,0.75f);
-			GL11.glVertex3f(0.25f,0.75f,0.75f);
-			GL11.glTexCoord2f(0.75f,0.75f);
-			GL11.glVertex3f(0.75f,0.75f,0.75f);
+			glBegin(GL_QUADS);
+			glTexCoord2f(0.25f,0.25f);
+			glVertex3f(0.25f,0.75f,0.25f);
+			glTexCoord2f(0.75f,0.25f);
+			glVertex3f(0.75f,0.75f,0.25f);
+			glTexCoord2f(0.25f,0.75f);
+			glVertex3f(0.25f,0.75f,0.75f);
+			glTexCoord2f(0.75f,0.75f);
+			glVertex3f(0.75f,0.75f,0.75f);
+			glEnd();
 			//endregion FACE 5
 		}
 		if(tube.IsConnectedOnSide(ForgeDirection.DOWN))
@@ -337,60 +381,69 @@ public class TubeRenderer extends TileEntitySpecialRenderer implements ISimpleBl
 			//region BOTTOM ARM
 
 			//BOTTOM ARM FACE 1: NORTH
-			GL11.glTexCoord2f(0.25f,1.0f);
-			GL11.glVertex3f(0.25f,0.0f,0.25f);
-			GL11.glTexCoord2f(0.75f,1.0f);
-			GL11.glVertex3f(0.75f,0.0f,0.25f);
-			GL11.glTexCoord2f(0.25f,0.75f);
-			GL11.glVertex3f(0.25f,0.25f,0.25f);
-			GL11.glTexCoord2f(0.75f,0.75f);
-			GL11.glVertex3f(0.75f,0.25f,0.25f);
+			glBegin(GL_QUADS);
+			glTexCoord2f(0.25f,1.0f);
+			glVertex3f(0.25f,0.0f,0.25f);
+			glTexCoord2f(0.75f,1.0f);
+			glVertex3f(0.75f,0.0f,0.25f);
+			glTexCoord2f(0.25f,0.75f);
+			glVertex3f(0.25f,0.25f,0.25f);
+			glTexCoord2f(0.75f,0.75f);
+			glVertex3f(0.75f,0.25f,0.25f);
+			glEnd();
 
 			//BOTTOM ARM FACE 2: SOUTH
-			GL11.glTexCoord2f(0.25f,1.0f);
-			GL11.glVertex3f(0.25f,0.0f,0.75f);
-			GL11.glTexCoord2f(0.75f,1.0f);
-			GL11.glVertex3f(0.75f,0.0f,0.75f);
-			GL11.glTexCoord2f(0.25f,0.75f);
-			GL11.glVertex3f(0.25f,0.25f,0.75f);
-			GL11.glTexCoord2f(0.75f,0.75f);
-			GL11.glVertex3f(0.75f,0.25f,0.75f);
+			glBegin(GL_QUADS);
+			glTexCoord2f(0.25f,1.0f);
+			glVertex3f(0.25f,0.0f,0.75f);
+			glTexCoord2f(0.75f,1.0f);
+			glVertex3f(0.75f,0.0f,0.75f);
+			glTexCoord2f(0.25f,0.75f);
+			glVertex3f(0.25f,0.25f,0.75f);
+			glTexCoord2f(0.75f,0.75f);
+			glVertex3f(0.75f,0.25f,0.75f);
+			glEnd();
 
 			//BOTTOM ARM FACE 3: WEST
-			GL11.glTexCoord2f(0.25f,1.0f);
-			GL11.glVertex3f(0.25f,0.0f,0.25f);
-			GL11.glTexCoord2f(0.75f,1.0f);
-			GL11.glVertex3f(0.25f,0.0f,0.75f);
-			GL11.glTexCoord2f(0.25f,0.75f);
-			GL11.glVertex3f(0.25f,0.25f,0.25f);
-			GL11.glTexCoord2f(0.75f,0.75f);
-			GL11.glVertex3f(0.25f,0.25f,0.75f);
+			glBegin(GL_QUADS);
+			glTexCoord2f(0.25f,1.0f);
+			glVertex3f(0.25f,0.0f,0.25f);
+			glTexCoord2f(0.75f,1.0f);
+			glVertex3f(0.25f,0.0f,0.75f);
+			glTexCoord2f(0.25f,0.75f);
+			glVertex3f(0.25f,0.25f,0.25f);
+			glTexCoord2f(0.75f,0.75f);
+			glVertex3f(0.25f,0.25f,0.75f);
+			glEnd();
 
 			//BOTTOM ARM FACE 4: EAST
-			GL11.glTexCoord2f(0.25f,1.0f);
-			GL11.glVertex3f(0.75f,0.0f,0.25f);
-			GL11.glTexCoord2f(0.75f,1.0f);
-			GL11.glVertex3f(0.75f,0.0f,0.75f);
-			GL11.glTexCoord2f(0.25f,0.75f);
-			GL11.glVertex3f(0.75f,0.25f,0.25f);
-			GL11.glTexCoord2f(0.75f,0.75f);
-			GL11.glVertex3f(0.75f,0.25f,0.75f);
+			glBegin(GL_QUADS);
+			glTexCoord2f(0.25f,1.0f);
+			glVertex3f(0.75f,0.0f,0.25f);
+			glTexCoord2f(0.75f,1.0f);
+			glVertex3f(0.75f,0.0f,0.75f);
+			glTexCoord2f(0.25f,0.75f);
+			glVertex3f(0.75f,0.25f,0.25f);
+			glTexCoord2f(0.75f,0.75f);
+			glVertex3f(0.75f,0.25f,0.75f);
+			glEnd();
 
 			//endregion
 		} else {
 			// region CORE FACE 6: BOTTOM
-			GL11.glTexCoord2f(0.25f,0.25f);
-			GL11.glVertex3f(0.25f,0.25f,0.25f);
-			GL11.glTexCoord2f(0.75f,0.25f);
-			GL11.glVertex3f(0.75f,0.25f,0.25f);
-			GL11.glTexCoord2f(0.25f,0.75f);
-			GL11.glVertex3f(0.25f,0.25f,0.75f);
-			GL11.glTexCoord2f(0.75f,0.75f);
-			GL11.glVertex3f(0.75f,0.25f,0.75f);
+			glBegin(GL_QUADS);
+			glTexCoord2f(0.25f,0.25f);
+			glVertex3f(0.25f,0.25f,0.25f);
+			glTexCoord2f(0.75f,0.25f);
+			glVertex3f(0.75f,0.25f,0.25f);
+			glTexCoord2f(0.25f,0.75f);
+			glVertex3f(0.25f,0.25f,0.75f);
+			glTexCoord2f(0.75f,0.75f);
+			glVertex3f(0.75f,0.25f,0.75f);
+			glEnd();
 			//endregion
 		}
-		GL11.glEnd();
-		GL11.glPopMatrix();
+		glPopMatrix();
 	}
 
 	@Override
@@ -409,6 +462,7 @@ public class TubeRenderer extends TileEntitySpecialRenderer implements ISimpleBl
 	public void renderTileEntityAt(TileEntity tileentity, double d0, double d1, double d2, float f)
 	{
 		TileTube tube = (TileTube)tileentity;
+		RenderTube(tube.worldObj, tube, d0,d1,d2);
 		if(tube.contents == null) return;
 		tube.contents.GetRenderer().RenderCapsule(tube);
 	}

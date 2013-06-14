@@ -23,7 +23,7 @@ public class TileTube extends TileEntity implements ITubeConnectible
 	public ForgeDirection direction;
 	public boolean isConnectableOnSide[] = new boolean[6];
 	public boolean isConnectedOnSide[] = new boolean[6];
-	public Colours colour;
+	public Colours colour = Colours.NONE;
 	public double capsuleX,capsuleY,capsuleZ;
 
 	@Override
@@ -85,6 +85,18 @@ public class TileTube extends TileEntity implements ITubeConnectible
 	{
 		this.contents = capsule;
 		this.progressThroughTube = 0;
+	}
+
+	@Override
+	public void SetConnectionOnSide(ForgeDirection side, boolean connected)
+	{
+		isConnectedOnSide[side.ordinal()] = connected;
+	}
+
+	@Override
+	public boolean IsConnectableOnSide(ForgeDirection side)
+	{
+		return isConnectableOnSide[side.ordinal()];
 	}
 
 	@Override

@@ -1,5 +1,6 @@
 package YATS.block;
 
+import YATS.api.ITubeConnectible;
 import YATS.tile.TileTube;
 import YATS.util.XYZCoords;
 import net.minecraft.block.Block;
@@ -29,6 +30,12 @@ public class BlockTube extends Block implements ITileEntityProvider
 	}
 
 	@Override
+	public boolean renderAsNormalBlock() { return false; }
+
+	@Override
+	public boolean isOpaqueCube() { return false; }
+
+	@Override
 	public void onNeighborBlockChange(World world, int x, int y, int z, int neighborID)
 	{
 		CheckTubeConnections(world,x,y,z);
@@ -40,18 +47,18 @@ public class BlockTube extends Block implements ITileEntityProvider
 		for(ForgeDirection side : ForgeDirection.VALID_DIRECTIONS)
 		{
 			TileEntity tile = XYZCoords.FromTile(originator).Next(side).ToTile();
-			if(tile instanceof TileTube)
+			if(tile instanceof ITubeConnectible)
 			{
-				TileTube tube = (TileTube) tile;
-				if(tube.isConnectableOnSide[side.getOpposite().ordinal()])
+				ITubeConnectible tube = (ITubeConnectible) tile;
+				if(tube.IsConnectableOnSide(side.getOpposite()))
 				{
-					tube.isConnectedOnSide[side.getOpposite().ordinal()]=true;
-					originator.isConnectedOnSide[side.ordinal()]=true;
+					tube.SetConnectionOnSide(side.getOpposite(),true);
+					originator.SetConnectionOnSide(side,true);
 				}
 				else
 				{
-					tube.isConnectedOnSide[side.getOpposite().ordinal()] = false;
-					originator.isConnectedOnSide[side.ordinal()] = false;
+					tube.SetConnectionOnSide(side.getOpposite(),true);
+					originator.SetConnectionOnSide(side,true);
 				}
 			}
 		}

@@ -1,7 +1,9 @@
 package YATS.util;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.chunk.Chunk;
 import net.minecraftforge.common.ForgeDirection;
 
 public class XYZCoords

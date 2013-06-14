@@ -15,4 +15,6 @@ public interface ITubeConnectible
 	public void SetColour(Colours colour);
 	public int GetAdditionalPriority();
 	public void AcceptCapsule(ICapsule capsule);
+	public void SetConnectionOnSide(ForgeDirection side, boolean connected);
+	public boolean IsConnectableOnSide(ForgeDirection side);
 }

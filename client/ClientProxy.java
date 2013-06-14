@@ -13,6 +13,7 @@ public class ClientProxy extends CommonProxy
 	@Override
 	public void RegisterRenderInformation()
 	{
+
 		int tubeRenderID = RenderingRegistry.getNextAvailableRenderId();
 		TubeRenderer tubeRenderer = new TubeRenderer(tubeRenderID);
 		((BlockTube)YATS.blockTube).renderID = tubeRenderID;

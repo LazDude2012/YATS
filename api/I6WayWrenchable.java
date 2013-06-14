@@ -1,4 +1,4 @@
-package YATS.util;
+package YATS.api;
 
 import net.minecraftforge.common.ForgeDirection;
 
