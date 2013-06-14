@@ -1,11 +1,10 @@
 package YATS.block;
 
-import YATS.render.IconProvider;
 import YATS.tile.TileTube;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
@@ -16,16 +15,11 @@ public class BlockTube extends Block implements ITileEntityProvider
 	public BlockTube(int id)
 	{
 		super(id, Material.rock);
-		setUnlocalizedName("YATSTubeBlock");
+		setCreativeTab(CreativeTabs.tabMisc);
 	}
 
 	public TileEntity createNewTileEntity(World world)
 	{
 		return new TileTube();
-	}
-
-	public void registerIcons(IconRegister register)
-	{
-		IconProvider.Init(register);
 	}
 }

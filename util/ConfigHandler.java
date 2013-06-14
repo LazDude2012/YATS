@@ -13,8 +13,6 @@ public class ConfigHandler
 	public static int blockRoutingMachineID;
 	public static int blockBufferID;
 
-	public static int ControllerPower;
-
 	public static void Load(FMLPreInitializationEvent e)
 	{
 		Configuration config = new Configuration(e.getSuggestedConfigurationFile());
@@ -40,10 +38,5 @@ public class ConfigHandler
 
 		Property bufferblockproperty = config.getBlock("block","BufferID",2205,"The Block ID for the Item Buffer.");
 		blockBufferID = bufferblockproperty.getInt();
-
-		config.addCustomCategoryComment("settings","These settings affect the operation of the mod, but won't break existing worlds if changed.");
-
-		Property powerproperty = config.get("settings","ControllerPower",0,"This is the number of Buildcraft MJs per tick required to power 1 network controller. Set to 0 to disable power requirements.");
-		ControllerPower = powerproperty.getInt();
 	}
 }

@@ -1,11 +1,23 @@
 package YATS.block;
 
-/**
- * Created with IntelliJ IDEA.
- * User: Alex
- * Date: 5/10/13
- * Time: 1:21 PM
- * To change this template use File | Settings | File Templates.
- */
-public class BlockAdvExtractor {
+import YATS.tile.TileAdvExtractor;
+import net.minecraft.block.Block;
+import net.minecraft.block.ITileEntityProvider;
+import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
+
+public class BlockAdvExtractor extends Block implements ITileEntityProvider
+{
+	public BlockAdvExtractor(int id)
+	{
+		super(id, Material.rock);
+		setCreativeTab(CreativeTabs.tabMisc);
+	}
+	@Override
+	public TileEntity createNewTileEntity(World world)
+	{
+		return new TileAdvExtractor();
+	}
 }

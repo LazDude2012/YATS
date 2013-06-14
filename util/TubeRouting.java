@@ -1,8 +1,9 @@
 package YATS.util;
 
+import YATS.api.ICapsule;
 import YATS.api.ITubeConnectible;
-import YATS.common.Capsule;
 import net.minecraft.inventory.IInventory;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
 
@@ -15,12 +16,11 @@ public class TubeRouting
 	PriorityQueue<TubeRoute> queue = new PriorityQueue<TubeRoute>();
 	HashSet explored = new HashSet();
 	World world;
-	ForgeDirection initial;
 	public TubeRoute result;
 
 	public TubeRouting(World world){ this.world = world; }
 
-	public void ScanBlock(XYZCoords coords, ForgeDirection side, ForgeDirection direction, int priority, Capsule capsule)
+	public void ScanBlock(XYZCoords coords, ForgeDirection side, ForgeDirection direction, int priority, ICapsule capsule)
 	{
 		if(world.blockHasTileEntity(coords.x,coords.y,coords.z))
 		{
@@ -45,7 +45,7 @@ public class TubeRouting
 				else if (world.getBlockTileEntity(coords.x,coords.y,coords.z) instanceof IInventory)
 				{
 					IInventory inv = (IInventory)world.getBlockTileEntity(coords.x,coords.y,coords.z);
-					if(InventoryCore.CanAddToInventory(coords, capsule.contents))
+					if(capsule.GetContents() instanceof ItemStack && InventoryCore.CanAddToInventory(coords, (ItemStack)capsule.GetContents()))
 					{
 						TubeRoute route = new TubeRoute(coords,side,direction,priority);
 						route.isComplete=true;
@@ -56,7 +56,7 @@ public class TubeRouting
 			}
 		}
 	}
-	public ForgeDirection FindRoute(XYZCoords coords, ForgeDirection initial, List<ForgeDirection> sides, Capsule capsule)
+	public ForgeDirection FindRoute(XYZCoords coords, ForgeDirection initial, List<ForgeDirection> sides, ICapsule capsule)
 	{
 		for(ForgeDirection side : ForgeDirection.VALID_DIRECTIONS)
 		{

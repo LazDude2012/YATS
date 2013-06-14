@@ -1,12 +1,13 @@
 package YATS.tile;
 
+import YATS.api.ICapsule;
 import YATS.api.ITubeConnectible;
-import YATS.common.Capsule;
 import YATS.util.Colours;
 import YATS.util.InventoryCore;
 import YATS.util.TubeRouting;
 import YATS.util.XYZCoords;
 import net.minecraft.inventory.IInventory;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.ForgeDirection;
 
@@ -17,8 +18,8 @@ import java.util.List;
 public class TileTube extends TileEntity implements ITubeConnectible
 {
 	public int pressure = 1;
-	public Capsule contents;
-	public int progressThroughTube;
+	public ICapsule contents;
+	public float progressThroughTube;
 	public ForgeDirection direction;
 	public boolean isConnectableOnSide[] = new boolean[6];
 	public boolean isConnectedOnSide[] = new boolean[6];
@@ -38,9 +39,9 @@ public class TileTube extends TileEntity implements ITubeConnectible
 	}
 
 	@Override
-	public boolean CanAccept(Capsule capsule)
+	public boolean CanAccept(ICapsule capsule)
 	{
-		return (capsule.colourTag == this.colour || capsule.colourTag == Colours.NONE || this.colour == Colours.NONE);
+		return (capsule.GetColour() == this.colour || capsule.GetColour() == Colours.NONE || this.colour == Colours.NONE);
 	}
 
 	@Override
@@ -80,7 +81,7 @@ public class TileTube extends TileEntity implements ITubeConnectible
 	}
 
 	@Override
-	public void AcceptCapsule(Capsule capsule)
+	public void AcceptCapsule(ICapsule capsule)
 	{
 		this.contents = capsule;
 		this.progressThroughTube = 0;
@@ -90,16 +91,17 @@ public class TileTube extends TileEntity implements ITubeConnectible
 	public void updateEntity()
 	{
 		if(contents == null) return;
-		contents.heading = new TubeRouting(worldObj).FindRoute(XYZCoords.FromTile(this), contents.heading, GetConnectedSides(),contents);
+		contents.SetHeading(new TubeRouting(worldObj).FindRoute(XYZCoords.FromTile(this), contents.GetHeading(), GetConnectedSides(), contents));
 		progressThroughTube += (pressure / 10);
 		if(progressThroughTube >= 1)
 		{
 			XYZCoords coords = XYZCoords.FromTile(this);
-			coords.Next(contents.heading);
+			coords.Next(contents.GetHeading());
 			TileEntity tile = coords.ToTile();
-			if(tile instanceof IInventory && InventoryCore.CanAddToInventory(coords,contents.contents))
+			if(tile instanceof IInventory && contents.GetContents() instanceof ItemStack &&
+					InventoryCore.CanAddToInventory(coords,(ItemStack)contents.GetContents()))
 			{
-				InventoryCore.AddToInventory((IInventory)tile,contents.contents);
+				InventoryCore.AddToInventory((IInventory)tile,(ItemStack)contents.GetContents());
 				contents = null;
 				progressThroughTube=0;
 			}

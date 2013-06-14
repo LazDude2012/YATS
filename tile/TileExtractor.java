@@ -1,5 +1,7 @@
 package YATS.tile;
 
+import net.minecraft.tileentity.TileEntity;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Alex
@@ -7,5 +9,5 @@ package YATS.tile;
  * Time: 1:22 PM
  * To change this template use File | Settings | File Templates.
  */
-public class TileExtractor {
+public class TileExtractor extends TileEntity{
 }
