@@ -18,4 +18,7 @@ public interface ICapsule
 	public ForgeDirection GetHeading();
 	public void SetHeading(ForgeDirection heading);
 	public ICapsuleRenderer GetRenderer();
+	public float getProgress();
+	public void addProgress(float progress);
+	public void resetProgress();
 }

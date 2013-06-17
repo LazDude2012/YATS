@@ -1,5 +1,6 @@
 package YATS.common;
 
+import YATS.item.ItemSpanner;
 import YATS.tile.*;
 import YATS.util.ConfigHandler;
 import cpw.mods.fml.common.Mod;
@@ -10,6 +11,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import YATS.block.*;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 
 @Mod(modid="YATS",name="Yet Another Tube System",version="1.0")
 public class YATS
@@ -27,6 +29,8 @@ public class YATS
 	public static Block blockTube;
 	public static Block blockItemBuffer;
 
+	public static Item itemSpanner;
+
 	@Mod.PreInit
 	public void PreInitialise(FMLPreInitializationEvent e)
 	{
@@ -37,6 +41,7 @@ public class YATS
 		blockAdvExtractor=new BlockAdvExtractor(ConfigHandler.blockAdvExtractorID);
 		blockRemoteExtractor=new BlockRemoteExtractor(ConfigHandler.blockRemoteExtractorID);
 		blockItemBuffer = new BlockItemBuffer(ConfigHandler.blockBufferID);
+		itemSpanner = new ItemSpanner(ConfigHandler.itemSpannerID);
 	}
 
 	@Mod.Init
@@ -50,7 +55,8 @@ public class YATS
 
 	private void RegisterItems()
 	{
-
+		GameRegistry.registerItem(itemSpanner,"YATSItemSpanner");
+		LanguageRegistry.addName(itemSpanner,"Spanner");
 	}
 
 	private void RegisterRecipes()

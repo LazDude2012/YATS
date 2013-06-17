@@ -2,29 +2,33 @@ package YATS.tile;
 
 import YATS.api.ICapsule;
 import YATS.api.ITubeConnectible;
-import YATS.util.Colours;
-import YATS.util.InventoryCore;
-import YATS.util.TubeRouting;
-import YATS.util.XYZCoords;
+import YATS.block.BlockTube;
+import YATS.util.*;
+import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.FMLLog;
+import cpw.mods.fml.relauncher.Side;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.ForgeDirection;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class TileTube extends TileEntity implements ITubeConnectible
 {
 	public int pressure = 1;
-	public ICapsule contents;
-	public float progressThroughTube;
+	public ArrayList<ICapsule> contents;
 	public ForgeDirection direction;
-	public boolean isConnectableOnSide[] = new boolean[6];
+	public boolean isConnectableOnSide[] = {true,true,true,true,true,true};
 	public boolean isConnectedOnSide[] = new boolean[6];
 	public Colours colour = Colours.NONE;
 	public double capsuleX,capsuleY,capsuleZ;
+
+	public TileTube()
+	{
+		super();
+		contents = new ArrayList<ICapsule>();
+	}
 
 	@Override
 	public boolean AcceptsItemsOnSide(ForgeDirection side)
@@ -83,8 +87,9 @@ public class TileTube extends TileEntity implements ITubeConnectible
 	@Override
 	public void AcceptCapsule(ICapsule capsule)
 	{
-		this.contents = capsule;
-		this.progressThroughTube = 0;
+		capsule.resetProgress();
+		this.contents.add(capsule);
+		FMLLog.info("Tolerance! Accepting capsule at "+xCoord+","+yCoord+","+zCoord+"! Contents: "+contents.toString());
 	}
 
 	@Override
@@ -100,28 +105,35 @@ public class TileTube extends TileEntity implements ITubeConnectible
 	}
 
 	@Override
+	public boolean canUpdate() { return true; }
+
+	@Override
 	public void updateEntity()
 	{
-		if(contents == null) return;
-		contents.SetHeading(new TubeRouting(worldObj).FindRoute(XYZCoords.FromTile(this), contents.GetHeading(), GetConnectedSides(), contents));
-		progressThroughTube += (pressure / 10);
-		if(progressThroughTube >= 1)
+		BlockTube.CheckTubeConnections(worldObj,xCoord,yCoord,zCoord);
+		for (ICapsule capsule : contents)
 		{
-			XYZCoords coords = XYZCoords.FromTile(this);
-			coords.Next(contents.GetHeading());
-			TileEntity tile = coords.ToTile();
-			if(tile instanceof IInventory && contents.GetContents() instanceof ItemStack &&
-					InventoryCore.CanAddToInventory(coords,(ItemStack)contents.GetContents()))
+			FMLLog.info("Discovery! We have a capsule, updating. %s, %s, %s", xCoord,yCoord,zCoord);
+			capsule.SetHeading(new TubeRouting(worldObj).FindRoute(LazUtils.XYZCoords.FromTile(this), capsule.GetHeading(), GetConnectedSides(), capsule));
+			FMLLog.info("Guidance! Capsule routing updated: %s, %s, %s",xCoord,yCoord,zCoord);
+			capsule.addProgress((float) pressure / 100);
+			FMLLog.info("Ambition! Capsule moved forward successfully, capsule progress %s, pressure %s. %s, %s, %s",capsule.getProgress(),pressure,xCoord,yCoord,zCoord);
+			if(capsule.getProgress() >= 1)
 			{
-				InventoryCore.AddToInventory((IInventory)tile,(ItemStack)contents.GetContents());
-				contents = null;
-				progressThroughTube=0;
-			}
-			else if(tile instanceof ITubeConnectible && ((ITubeConnectible)tile).CanAccept(contents))
-			{
-				((ITubeConnectible)tile).AcceptCapsule(contents);
-				contents = null;
-				progressThroughTube=0;
+				LazUtils.XYZCoords coords = LazUtils.XYZCoords.FromTile(this);
+				coords.Next(capsule.GetHeading());
+				TileEntity tile = coords.ToTile();
+				if(tile instanceof IInventory && capsule.GetContents() instanceof ItemStack &&
+						LazUtils.InventoryCore.CanAddToInventory(coords, (ItemStack) capsule.GetContents()))
+				{
+					contents.remove(capsule);
+					LazUtils.InventoryCore.AddToInventory((IInventory) tile, (ItemStack) capsule.GetContents());
+				}
+				else if(tile instanceof ITubeConnectible && ((ITubeConnectible)tile).CanAccept(capsule))
+				{
+					contents.remove(capsule);
+					((ITubeConnectible)tile).AcceptCapsule(capsule);
+				}
 			}
 		}
 	}
@@ -135,5 +147,4 @@ public class TileTube extends TileEntity implements ITubeConnectible
 		}
 		return result;
 	}
-
 }

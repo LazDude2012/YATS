@@ -4,5 +4,5 @@ import YATS.tile.TileTube;
 
 public interface ICapsuleRenderer
 {
-	public void RenderCapsule(TileTube tube);
+	public void RenderCapsule(TileTube tube, ICapsule capsule);
 }

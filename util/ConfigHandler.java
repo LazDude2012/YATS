@@ -13,6 +13,7 @@ public class ConfigHandler
 	public static int blockRoutingMachineID;
 	public static int blockBufferID;
 	public static int blockRemoteExtractorID;
+	public static int itemSpannerID;
 
 	public static void Load(FMLPreInitializationEvent e)
 	{
@@ -42,6 +43,9 @@ public class ConfigHandler
 
 		Property remoteextractorproperty = config.getBlock("block","RemoteExtractorID",2206,"The Block ID for the Remote Extractor");
 		blockRemoteExtractorID = remoteextractorproperty.getInt();
+
+		Property spannerproperty = config.getItem("item","SpannerID",4242,"The ID for the Spanner.");
+		itemSpannerID = spannerproperty.getInt();
 
 		config.save();
 	}

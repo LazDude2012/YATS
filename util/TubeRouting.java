@@ -20,7 +20,7 @@ public class TubeRouting
 
 	public TubeRouting(World world){ this.world = world; }
 
-	public void ScanBlock(XYZCoords coords, ForgeDirection side, ForgeDirection direction, int priority, ICapsule capsule)
+	public void ScanBlock(LazUtils.XYZCoords coords, ForgeDirection side, ForgeDirection direction, int priority, ICapsule capsule)
 	{
 		if(world.blockHasTileEntity(coords.x,coords.y,coords.z))
 		{
@@ -45,7 +45,7 @@ public class TubeRouting
 				else if (world.getBlockTileEntity(coords.x,coords.y,coords.z) instanceof IInventory)
 				{
 					IInventory inv = (IInventory)world.getBlockTileEntity(coords.x,coords.y,coords.z);
-					if(capsule.GetContents() instanceof ItemStack && InventoryCore.CanAddToInventory(coords, (ItemStack)capsule.GetContents()))
+					if(capsule.GetContents() instanceof ItemStack && LazUtils.InventoryCore.CanAddToInventory(coords, (ItemStack) capsule.GetContents()))
 					{
 						TubeRoute route = new TubeRoute(coords,side,direction,priority);
 						route.isComplete=true;
@@ -56,13 +56,13 @@ public class TubeRouting
 			}
 		}
 	}
-	public ForgeDirection FindRoute(XYZCoords coords, ForgeDirection initial, List<ForgeDirection> sides, ICapsule capsule)
+	public ForgeDirection FindRoute(LazUtils.XYZCoords coords, ForgeDirection initial, List<ForgeDirection> sides, ICapsule capsule)
 	{
 		for(ForgeDirection side : ForgeDirection.VALID_DIRECTIONS)
 		{
 			if(sides.contains(side))
 			{
-				XYZCoords newcoords = coords.Copy();
+				LazUtils.XYZCoords newcoords = coords.Copy();
 				newcoords.Next(side);
 				ScanBlock(newcoords,side,side,(side == initial ? 0 : 1),capsule);
 			}
@@ -81,7 +81,7 @@ public class TubeRouting
 			{
 				if(side != route.destside && ((ITubeConnectible)route.destblock.ToTile()).IsConnectedOnSide(side))
 				{
-					XYZCoords newcoords = route.destblock.Copy();
+					LazUtils.XYZCoords newcoords = route.destblock.Copy();
 					newcoords.Next(side);
 					ScanBlock(newcoords, route.direction, side, route.priority + 1, capsule);
 				}
@@ -92,13 +92,13 @@ public class TubeRouting
 
 	class TubeRoute implements Comparable<TubeRoute>
 	{
-		public XYZCoords destblock;
+		public LazUtils.XYZCoords destblock;
 		public ForgeDirection destside;
 		public ForgeDirection direction;
 		public int priority;
 		public boolean isComplete;
 
-		public TubeRoute(XYZCoords coords, ForgeDirection side, ForgeDirection dir, int weight)
+		public TubeRoute(LazUtils.XYZCoords coords, ForgeDirection side, ForgeDirection dir, int weight)
 		{
 			this.destblock=coords;
 			this.destside=side;
