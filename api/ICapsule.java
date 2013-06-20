@@ -1,6 +1,7 @@
 package YATS.api;
 
 import YATS.util.Colours;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.common.ForgeDirection;
 
 /**
@@ -21,4 +22,6 @@ public interface ICapsule
 	public float getProgress();
 	public void addProgress(float progress);
 	public void resetProgress();
+	public NBTTagCompound getNBT();
+	public void loadFromNBT(NBTTagCompound nbt);
 }

@@ -1,5 +1,6 @@
 package YATS.common;
 
+import YATS.api.YATSRegistry;
 import YATS.item.ItemSpanner;
 import YATS.tile.*;
 import YATS.util.ConfigHandler;
@@ -21,6 +22,8 @@ public class YATS
 
 	@SidedProxy(clientSide = "YATS.client.ClientProxy",serverSide="YATS.common.CommonProxy")
 	public static CommonProxy proxy;
+
+	public static boolean IS_DEBUG = true;
 
 	public static Block blockRemoteExtractor;
 	public static Block blockRoutingMarshaller;
@@ -50,7 +53,13 @@ public class YATS
 		RegisterBlocksAndTiles();
 		RegisterRecipes();
 		RegisterItems();
+		RegisterYATSCapsules();
 		proxy.RegisterRenderInformation();
+	}
+
+	private void RegisterYATSCapsules()
+	{
+		YATSRegistry.registerCapsule(ItemCapsule.class);
 	}
 
 	private void RegisterItems()

@@ -6,6 +6,7 @@ import YATS.render.ItemCapsuleRenderer;
 import YATS.util.Colours;
 import cpw.mods.fml.common.FMLLog;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.common.ForgeDirection;
 
 public class ItemCapsule implements ICapsule
@@ -67,14 +68,30 @@ public class ItemCapsule implements ICapsule
 	@Override
 	public void addProgress(float progress)
 	{
-		FMLLog.info("Ponderance! Progress: %s",this.progress);
 		this.progress += progress;
-		FMLLog.info("Adventure! Progress: %s",this.progress);
 	}
 
 	@Override
 	public void resetProgress()
 	{
 		this.progress = 0;
+	}
+
+	public NBTTagCompound getNBT()
+	{
+		NBTTagCompound nbt = new NBTTagCompound();
+		nbt.setInteger("direction",heading.ordinal());
+		nbt.setInteger("colour",colourTag.ordinal());
+		nbt.setFloat("progress",progress);
+		contents.writeToNBT(nbt);
+		return nbt;
+	}
+
+	public void loadFromNBT(NBTTagCompound nbt)
+	{
+		contents.readFromNBT(nbt);
+		heading = ForgeDirection.getOrientation(nbt.getInteger("direction"));
+		colourTag = Colours.values()[nbt.getInteger("colour")];
+		progress = nbt.getFloat("progress");
 	}
 }

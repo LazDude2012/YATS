@@ -3,10 +3,16 @@ package YATS.render;
 import YATS.api.ICapsule;
 import YATS.tile.TileTube;
 import YATS.util.Colours;
+import YATS.util.LazUtils;
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
+import cpw.mods.fml.common.FMLLog;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.RenderBlocks;
+import net.minecraft.client.renderer.entity.RenderItem;
+import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -17,6 +23,7 @@ import static org.lwjgl.opengl.GL11.*;
 public class TubeRenderer extends TileEntitySpecialRenderer implements ISimpleBlockRenderingHandler
 {
 	int renderID;
+	protected RenderItem renderitem;
 
 	public TubeRenderer(int renderID)
 	{
@@ -460,14 +467,21 @@ public class TubeRenderer extends TileEntitySpecialRenderer implements ISimpleBl
 	}
 
 	@Override
-	public void renderTileEntityAt(TileEntity tileentity, double d0, double d1, double d2, float f)
+	public void renderTileEntityAt(TileEntity tileentity, double x, double y, double z, float f)
 	{
+		glPushMatrix();
+		glDisable(GL_LIGHTING);
 		TileTube tube = (TileTube)tileentity;
-		RenderTube(tube.worldObj, tube, d0,d1,d2);
-		if(tube.GetColour() != Colours.NONE) RenderPaint(tube.worldObj,tube,d0,d1,d2);
-		if(tube.contents == null) return;
+		RenderTube(tube.worldObj, tube, x,y,z);
+		if(tube.GetColour() != Colours.NONE) RenderPaint(tube.worldObj,tube,x,y,z);
+		LazUtils.logNormal("Curiosity! Tube contents size: %s",tube.contents.size());
 		for(ICapsule capsule : tube.contents)
-			capsule.GetRenderer().RenderCapsule(tube, capsule);
+		{
+			FMLLog.info("Sensuality! Rendering capsule at %s, %s, %s!");
+			capsule.GetRenderer().RenderCapsule(tube,capsule,x,y,z);
+		}
+		glEnable(GL_LIGHTING);
+		glPopMatrix();
 	}
 
 	private void RenderPaint(World world, TileTube tube, double x, double y, double z)

@@ -2,13 +2,18 @@ package YATS.tile;
 
 import YATS.api.ICapsule;
 import YATS.api.ITubeConnectible;
+import YATS.api.YATSRegistry;
 import YATS.block.BlockTube;
+import YATS.common.YATS;
 import YATS.util.*;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.relauncher.Side;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTBase;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.ForgeDirection;
 
@@ -18,11 +23,9 @@ public class TileTube extends TileEntity implements ITubeConnectible
 {
 	public int pressure = 1;
 	public ArrayList<ICapsule> contents;
-	public ForgeDirection direction;
 	public boolean isConnectableOnSide[] = {true,true,true,true,true,true};
 	public boolean isConnectedOnSide[] = new boolean[6];
 	public Colours colour = Colours.NONE;
-	public double capsuleX,capsuleY,capsuleZ;
 
 	public TileTube()
 	{
@@ -89,7 +92,8 @@ public class TileTube extends TileEntity implements ITubeConnectible
 	{
 		capsule.resetProgress();
 		this.contents.add(capsule);
-		FMLLog.info("Tolerance! Accepting capsule at "+xCoord+","+yCoord+","+zCoord+"! Contents: "+contents.toString());
+		if(YATS.IS_DEBUG)
+		LazUtils.logNormal("Tolerance! Accepting capsule type %s at %s,%s,%s. Contents: %s", YATSRegistry.getIDFromCapsule(capsule),xCoord,yCoord,zCoord,contents.toString());
 	}
 
 	@Override
@@ -110,14 +114,18 @@ public class TileTube extends TileEntity implements ITubeConnectible
 	@Override
 	public void updateEntity()
 	{
+		ArrayList<ICapsule> capsulesToRemove = new ArrayList<ICapsule>();
 		BlockTube.CheckTubeConnections(worldObj,xCoord,yCoord,zCoord);
 		for (ICapsule capsule : contents)
 		{
-			FMLLog.info("Discovery! We have a capsule, updating. %s, %s, %s", xCoord,yCoord,zCoord);
+			if(YATS.IS_DEBUG)
+			LazUtils.logNormal("Discovery! We have a capsule, updating. %s, %s, %s", xCoord,yCoord,zCoord);
 			capsule.SetHeading(new TubeRouting(worldObj).FindRoute(LazUtils.XYZCoords.FromTile(this), capsule.GetHeading(), GetConnectedSides(), capsule));
-			FMLLog.info("Guidance! Capsule routing updated: %s, %s, %s",xCoord,yCoord,zCoord);
+			if(YATS.IS_DEBUG)
+			LazUtils.logNormal("Guidance! Capsule routing updated: %s, %s, %s", xCoord, yCoord, zCoord);
 			capsule.addProgress((float) pressure / 100);
-			FMLLog.info("Ambition! Capsule moved forward successfully, capsule progress %s, pressure %s. %s, %s, %s",capsule.getProgress(),pressure,xCoord,yCoord,zCoord);
+			if(YATS.IS_DEBUG)
+			LazUtils.logNormal("Ambition! Capsule moved forward successfully, capsule progress %s, pressure %s. %s, %s, %s",capsule.getProgress(),pressure,xCoord,yCoord,zCoord);
 			if(capsule.getProgress() >= 1)
 			{
 				LazUtils.XYZCoords coords = LazUtils.XYZCoords.FromTile(this);
@@ -126,15 +134,44 @@ public class TileTube extends TileEntity implements ITubeConnectible
 				if(tile instanceof IInventory && capsule.GetContents() instanceof ItemStack &&
 						LazUtils.InventoryCore.CanAddToInventory(coords, (ItemStack) capsule.GetContents()))
 				{
-					contents.remove(capsule);
+					capsulesToRemove.add(capsule);
 					LazUtils.InventoryCore.AddToInventory((IInventory) tile, (ItemStack) capsule.GetContents());
 				}
 				else if(tile instanceof ITubeConnectible && ((ITubeConnectible)tile).CanAccept(capsule))
 				{
-					contents.remove(capsule);
+					capsulesToRemove.add(capsule);
 					((ITubeConnectible)tile).AcceptCapsule(capsule);
 				}
 			}
+		}
+		for(ICapsule capsule : capsulesToRemove)
+		{
+			contents.remove(capsule);
+		}
+	}
+
+	public void writeToNBT(NBTTagCompound nbt)
+	{
+		super.writeToNBT(nbt);
+		nbt.setInteger("colour",colour.ordinal());
+		nbt.setInteger("pressure",pressure);
+		NBTTagList taglist = new NBTTagList();
+		for(ICapsule capsule : contents)
+		{
+			taglist.appendTag(YATSRegistry.getCapsuleNBT(capsule));
+		}
+		nbt.setTag("contents",taglist);
+	}
+
+	public void readFromNBT(NBTTagCompound nbt)
+	{
+		super.readFromNBT(nbt);
+		colour = Colours.values()[nbt.getInteger("colour")];
+		pressure = nbt.getInteger("pressure");
+		NBTTagList list = nbt.getTagList("contents");
+		for(int i = 0; i < list.tagCount();i++)
+		{
+			contents.add(YATSRegistry.handleCapsuleNBT((NBTTagCompound)list.tagAt(i)));
 		}
 	}
 

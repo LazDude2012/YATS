@@ -4,6 +4,7 @@ import YATS.api.I6WayWrenchable;
 import YATS.api.ICapsule;
 import YATS.api.ITubeConnectible;
 import YATS.common.ItemCapsule;
+import YATS.common.YATS;
 import YATS.util.Colours;
 import YATS.util.LazUtils;
 import cpw.mods.fml.common.FMLLog;
@@ -49,7 +50,8 @@ public class TileExtractor extends TileEntity implements I6WayWrenchable,ITubeCo
 			if(LazUtils.InventoryCore.ExtractOneFromInventory((IInventory) tile, false) != null)
 			{
 				ItemStack stack = LazUtils.InventoryCore.ExtractOneFromInventory((IInventory) tile, true);
-				FMLLog.info("Heartbreak! Extracting item at " + xCoord + ","+yCoord+","+zCoord+ ": ("+stack.toString()+")");
+				if(YATS.IS_DEBUG)
+				LazUtils.logNormal("Heartbreak! Extracting item at " + xCoord + ","+yCoord+","+zCoord+ ": ("+stack.toString()+")");
 				TileEntity tile2 = LazUtils.XYZCoords.FromTile(this).Next(currentfacing.getOpposite()).ToTile();
 				if(tile2 instanceof ITubeConnectible && ((ITubeConnectible) tile2).IsConnectedOnSide(currentfacing))
 					((ITubeConnectible) tile2).AcceptCapsule(new ItemCapsule(stack,Colours.NONE,currentfacing.getOpposite()));

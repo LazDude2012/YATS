@@ -5,6 +5,7 @@ import YATS.api.ICapsuleRenderer;
 import YATS.common.ItemCapsule;
 import YATS.tile.TileTube;
 import YATS.util.Colours;
+import cpw.mods.fml.common.FMLLog;
 import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.item.EntityItem;
@@ -13,19 +14,17 @@ import net.minecraftforge.common.ForgeDirection;
 
 import static org.lwjgl.opengl.GL11.*;
 
-import javax.swing.plaf.ColorUIResource;
-
 public class ItemCapsuleRenderer implements ICapsuleRenderer
 {
 	public RenderItem renderitem;
 	@Override
-	public void RenderCapsule(TileTube tube, ICapsule capsule)
+	public void RenderCapsule(TileTube tube, ICapsule capsule, double x, double y, double z)
 	{
+		FMLLog.info("Desperation! I'm getting called to render a capsule!");
 		ItemStack stack = (ItemStack)capsule.GetContents();
 		Colours colour = capsule.GetColour();
 		ForgeDirection heading = capsule.GetHeading();
 		float progress = capsule.getProgress();
-		float x = tube.xCoord, y = tube.yCoord, z = tube.zCoord;
 
 		EntityItem dummy = new EntityItem(tube.worldObj);
 		dummy.setEntityItemStack(stack);
@@ -72,7 +71,7 @@ public class ItemCapsuleRenderer implements ICapsuleRenderer
 
 		float renderScale = 0.7f;
 		glPushMatrix();
-		glTranslatef(x, y, z);
+		glTranslated(x, y, z);
 		glTranslatef(0, 0.25F, 0);
 		glScalef(renderScale, renderScale, renderScale);
 		renderitem.doRenderItem(dummy, 0, 0, 0, 0, 0);
