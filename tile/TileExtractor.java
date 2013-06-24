@@ -3,11 +3,10 @@ package YATS.tile;
 import YATS.api.I6WayWrenchable;
 import YATS.api.ICapsule;
 import YATS.api.ITubeConnectible;
-import YATS.common.ItemCapsule;
+import YATS.capsule.ItemCapsule;
 import YATS.common.YATS;
 import YATS.util.Colours;
 import YATS.util.LazUtils;
-import cpw.mods.fml.common.FMLLog;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
@@ -24,8 +23,10 @@ public class TileExtractor extends TileEntity implements I6WayWrenchable,ITubeCo
 	public boolean isBusy;
 	private ArrayList<ICapsule> contents;
 	private boolean[] connections = new boolean[6];
+	private boolean deferUpdate = false;
 	public void updateEntity()
 	{
+		if(deferUpdate) worldObj.markBlockForUpdate(xCoord,yCoord,zCoord);
 		if(worldObj.isBlockIndirectlyGettingPowered(xCoord,yCoord,zCoord))
 		{
 			if(!isContinuedSignal)
@@ -91,7 +92,7 @@ public class TileExtractor extends TileEntity implements I6WayWrenchable,ITubeCo
 		super.readFromNBT(nbt);
 		currentfacing = ForgeDirection.getOrientation(nbt.getInteger("facing"));
 		isBusy=nbt.getBoolean("busy");
-		worldObj.markBlockForUpdate(xCoord,yCoord,zCoord);
+		deferUpdate = true;
 	}
 
 	@Override

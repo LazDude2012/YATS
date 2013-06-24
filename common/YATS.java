@@ -1,6 +1,7 @@
 package YATS.common;
 
 import YATS.api.YATSRegistry;
+import YATS.capsule.ItemCapsule;
 import YATS.item.ItemSpanner;
 import YATS.tile.*;
 import YATS.util.ConfigHandler;

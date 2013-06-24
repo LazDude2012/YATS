@@ -8,12 +8,16 @@ import YATS.common.YATS;
 import YATS.util.*;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.FMLLog;
+import cpw.mods.fml.common.network.FMLNetworkHandler;
+import cpw.mods.fml.common.network.PacketDispatcher;
 import cpw.mods.fml.relauncher.Side;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
+import net.minecraft.network.packet.Packet;
+import net.minecraft.network.packet.Packet132TileEntityData;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.ForgeDirection;
 
@@ -21,7 +25,7 @@ import java.util.ArrayList;
 
 public class TileTube extends TileEntity implements ITubeConnectible
 {
-	public int pressure = 1;
+	public int pressure = 5;
 	public ArrayList<ICapsule> contents;
 	public boolean isConnectableOnSide[] = {true,true,true,true,true,true};
 	public boolean isConnectedOnSide[] = new boolean[6];
@@ -31,6 +35,14 @@ public class TileTube extends TileEntity implements ITubeConnectible
 	{
 		super();
 		contents = new ArrayList<ICapsule>();
+	}
+
+	@Override
+	public Packet getDescriptionPacket()
+	{
+		NBTTagCompound nbttagcompound = new NBTTagCompound();
+		this.writeToNBT(nbttagcompound);
+		return new Packet132TileEntityData(this.xCoord, this.yCoord, this.zCoord, 3, nbttagcompound);
 	}
 
 	@Override
@@ -148,6 +160,7 @@ public class TileTube extends TileEntity implements ITubeConnectible
 		{
 			contents.remove(capsule);
 		}
+		PacketDispatcher.sendPacketToAllAround(xCoord,yCoord,zCoord,20,worldObj.getWorldInfo().getDimension(),getDescriptionPacket());
 	}
 
 	public void writeToNBT(NBTTagCompound nbt)
@@ -161,6 +174,8 @@ public class TileTube extends TileEntity implements ITubeConnectible
 			taglist.appendTag(YATSRegistry.getCapsuleNBT(capsule));
 		}
 		nbt.setTag("contents",taglist);
+		if(YATS.IS_DEBUG)
+			LazUtils.logNormal("Transparency! Contents of tube at %s,%s,%s are: %s",xCoord,yCoord,zCoord,contents.toString());
 	}
 
 	public void readFromNBT(NBTTagCompound nbt)
@@ -168,11 +183,13 @@ public class TileTube extends TileEntity implements ITubeConnectible
 		super.readFromNBT(nbt);
 		colour = Colours.values()[nbt.getInteger("colour")];
 		pressure = nbt.getInteger("pressure");
-		NBTTagList list = nbt.getTagList("contents");
+		NBTTagList list = (NBTTagList)nbt.getTag("contents");
 		for(int i = 0; i < list.tagCount();i++)
 		{
 			contents.add(YATSRegistry.handleCapsuleNBT((NBTTagCompound)list.tagAt(i)));
 		}
+		if(YATS.IS_DEBUG)
+			LazUtils.logNormal("Literacy! Read tag list %s into tube at %s, %s, %s",list.toString(),xCoord,yCoord,zCoord);
 	}
 
 	public ArrayList<ForgeDirection> GetConnectedSides()

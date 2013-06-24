@@ -1,6 +1,7 @@
 package YATS.render;
 
 import YATS.api.ICapsule;
+import YATS.common.YATS;
 import YATS.tile.TileTube;
 import YATS.util.Colours;
 import YATS.util.LazUtils;
@@ -474,10 +475,12 @@ public class TubeRenderer extends TileEntitySpecialRenderer implements ISimpleBl
 		TileTube tube = (TileTube)tileentity;
 		RenderTube(tube.worldObj, tube, x,y,z);
 		if(tube.GetColour() != Colours.NONE) RenderPaint(tube.worldObj,tube,x,y,z);
+		if(tube.contents.size() != 0 && YATS.IS_DEBUG)
 		LazUtils.logNormal("Curiosity! Tube contents size: %s",tube.contents.size());
 		for(ICapsule capsule : tube.contents)
 		{
-			FMLLog.info("Sensuality! Rendering capsule at %s, %s, %s!");
+			if(YATS.IS_DEBUG)
+				FMLLog.info("Sensuality! Rendering capsule at %s, %s, %s!");
 			capsule.GetRenderer().RenderCapsule(tube,capsule,x,y,z);
 		}
 		glEnable(GL_LIGHTING);

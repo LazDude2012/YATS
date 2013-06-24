@@ -1,7 +1,8 @@
-package YATS.common;
+package YATS.capsule;
 
 import YATS.api.ICapsule;
 import YATS.api.ICapsuleRenderer;
+import YATS.common.YATS;
 import YATS.render.ItemCapsuleRenderer;
 import YATS.util.Colours;
 import cpw.mods.fml.common.FMLLog;
@@ -15,6 +16,10 @@ public class ItemCapsule implements ICapsule
 	private Colours colourTag;
 	private ForgeDirection heading;
 	private float progress;
+
+	//USE AT YOUR OWN PERIL... SERIOUSLY, THIS IS A HACKY METHOD, AND A KLUDGE. USING IT MAKES YOU A TERRIBLE PERSON.
+	//HITLER WOULD HAVE CALLED THIS CONSTRUCTOR.
+	public ItemCapsule() { this(null, Colours.NONE,ForgeDirection.UNKNOWN); }
 
 	public ItemCapsule(ItemStack stack, Colours tag, ForgeDirection heading)
 	{
@@ -83,13 +88,16 @@ public class ItemCapsule implements ICapsule
 		nbt.setInteger("direction",heading.ordinal());
 		nbt.setInteger("colour",colourTag.ordinal());
 		nbt.setFloat("progress",progress);
-		contents.writeToNBT(nbt);
+		nbt.setBoolean("hasContents",(contents != null));
+		if(contents != null)
+			contents.writeToNBT(nbt);
 		return nbt;
 	}
 
 	public void loadFromNBT(NBTTagCompound nbt)
 	{
-		contents.readFromNBT(nbt);
+		if(nbt.getBoolean("hasContents"))
+			contents.readFromNBT(nbt);
 		heading = ForgeDirection.getOrientation(nbt.getInteger("direction"));
 		colourTag = Colours.values()[nbt.getInteger("colour")];
 		progress = nbt.getFloat("progress");

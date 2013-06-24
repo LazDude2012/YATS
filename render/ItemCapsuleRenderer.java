@@ -2,7 +2,6 @@ package YATS.render;
 
 import YATS.api.ICapsule;
 import YATS.api.ICapsuleRenderer;
-import YATS.common.ItemCapsule;
 import YATS.tile.TileTube;
 import YATS.util.Colours;
 import cpw.mods.fml.common.FMLLog;
