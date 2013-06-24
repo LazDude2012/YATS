@@ -83,6 +83,32 @@ public class LazUtils
 			return world.getBlockTileEntity(x,y,z);
 		}
 
+		@Override
+		public boolean equals(Object o)
+		{
+			if (this == o) return true;
+			if (o == null || getClass() != o.getClass()) return false;
+
+			XYZCoords xyzCoords = (XYZCoords) o;
+
+			if (x != xyzCoords.x) return false;
+			if (y != xyzCoords.y) return false;
+			if (z != xyzCoords.z) return false;
+			if (!world.equals(xyzCoords.world)) return false;
+
+			return true;
+		}
+
+		@Override
+		public int hashCode()
+		{
+			int result = x;
+			result = 31 * result + y;
+			result = 31 * result + z;
+			result = 31 * result + world.hashCode();
+			return result;
+		}
+
 		public XYZCoords Next(ForgeDirection direction)
 		{
 			switch(direction)
@@ -117,7 +143,8 @@ public class LazUtils
 
 	public static void LogException(String string, Throwable ex, Object... format)
 	{
-		FMLLog.log("YATS",Level.SEVERE,ex,string,format);
+		FMLLog.log("YATS",Level.SEVERE,string + " || "+ ex.toString(),format);
+		ex.printStackTrace();
 	}
 
 	public static class InventoryCore

@@ -109,6 +109,34 @@ public class TubeRouting
 		{
 			return this.priority - route.priority;
 		}
+
+		@Override
+		public boolean equals(Object o)
+		{
+			if (this == o) return true;
+			if (o == null || getClass() != o.getClass()) return false;
+
+			TubeRoute tubeRoute = (TubeRoute) o;
+
+			if (isComplete != tubeRoute.isComplete) return false;
+			if (priority != tubeRoute.priority) return false;
+			if (!destblock.equals(tubeRoute.destblock)) return false;
+			if (destside != tubeRoute.destside) return false;
+			if (direction != tubeRoute.direction) return false;
+
+			return true;
+		}
+
+		@Override
+		public int hashCode()
+		{
+			int result = destblock.hashCode();
+			result = 31 * result + destside.ordinal();
+			result = 31 * result + direction.ordinal();
+			result = 31 * result + priority;
+			result = 31 * result + (isComplete ? 1 : 0);
+			return result;
+		}
 	}
 }
 

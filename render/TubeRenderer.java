@@ -480,7 +480,7 @@ public class TubeRenderer extends TileEntitySpecialRenderer implements ISimpleBl
 		for(ICapsule capsule : tube.contents)
 		{
 			if(YATS.IS_DEBUG)
-				FMLLog.info("Sensuality! Rendering capsule at %s, %s, %s!");
+				FMLLog.info("Sensuality! Rendering capsule at %s, %s, %s!",x,y,z);
 			capsule.GetRenderer().RenderCapsule(tube,capsule,x,y,z);
 		}
 		glEnable(GL_LIGHTING);

@@ -6,6 +6,7 @@ import YATS.common.YATS;
 import YATS.render.ItemCapsuleRenderer;
 import YATS.util.Colours;
 import cpw.mods.fml.common.FMLLog;
+import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.common.ForgeDirection;
@@ -13,9 +14,9 @@ import net.minecraftforge.common.ForgeDirection;
 public class ItemCapsule implements ICapsule
 {
 	private ItemStack contents;
-	private Colours colourTag;
-	private ForgeDirection heading;
-	private float progress;
+	private Colours colourTag = Colours.NONE;
+	private ForgeDirection heading = ForgeDirection.UNKNOWN;
+	private float progress = 0.0f;
 
 	//USE AT YOUR OWN PERIL... SERIOUSLY, THIS IS A HACKY METHOD, AND A KLUDGE. USING IT MAKES YOU A TERRIBLE PERSON.
 	//HITLER WOULD HAVE CALLED THIS CONSTRUCTOR.
@@ -97,7 +98,10 @@ public class ItemCapsule implements ICapsule
 	public void loadFromNBT(NBTTagCompound nbt)
 	{
 		if(nbt.getBoolean("hasContents"))
+		{
+			contents = new ItemStack(Block.cobblestone,1);
 			contents.readFromNBT(nbt);
+		}
 		heading = ForgeDirection.getOrientation(nbt.getInteger("direction"));
 		colourTag = Colours.values()[nbt.getInteger("colour")];
 		progress = nbt.getFloat("progress");

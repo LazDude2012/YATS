@@ -16,6 +16,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
+import net.minecraft.network.INetworkManager;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.Packet132TileEntityData;
 import net.minecraft.tileentity.TileEntity;
@@ -42,7 +43,9 @@ public class TileTube extends TileEntity implements ITubeConnectible
 	{
 		NBTTagCompound nbttagcompound = new NBTTagCompound();
 		this.writeToNBT(nbttagcompound);
-		return new Packet132TileEntityData(this.xCoord, this.yCoord, this.zCoord, 3, nbttagcompound);
+		Packet132TileEntityData packet = new Packet132TileEntityData(this.xCoord, this.yCoord, this.zCoord, 3, nbttagcompound);
+		packet.isChunkDataPacket=true;
+		return packet;
 	}
 
 	@Override
@@ -121,6 +124,12 @@ public class TileTube extends TileEntity implements ITubeConnectible
 	}
 
 	@Override
+	public void onDataPacket(INetworkManager manager, Packet132TileEntityData packet)
+	{
+		readFromNBT(packet.customParam1);
+	}
+
+	@Override
 	public boolean canUpdate() { return true; }
 
 	@Override
@@ -160,6 +169,7 @@ public class TileTube extends TileEntity implements ITubeConnectible
 		{
 			contents.remove(capsule);
 		}
+		worldObj.markBlockForUpdate(xCoord,yCoord,zCoord);
 		PacketDispatcher.sendPacketToAllAround(xCoord,yCoord,zCoord,20,worldObj.getWorldInfo().getDimension(),getDescriptionPacket());
 	}
 
