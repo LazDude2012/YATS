@@ -1,19 +1,14 @@
 package YATS.tile;
 
 import YATS.api.ICapsule;
-import YATS.api.ITubeConnectible;
+import YATS.api.ITubeConnectable;
 import YATS.api.YATSRegistry;
 import YATS.block.BlockTube;
 import YATS.common.YATS;
 import YATS.util.*;
-import cpw.mods.fml.common.FMLCommonHandler;
-import cpw.mods.fml.common.FMLLog;
-import cpw.mods.fml.common.network.FMLNetworkHandler;
 import cpw.mods.fml.common.network.PacketDispatcher;
-import cpw.mods.fml.relauncher.Side;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.network.INetworkManager;
@@ -24,7 +19,7 @@ import net.minecraftforge.common.ForgeDirection;
 
 import java.util.ArrayList;
 
-public class TileTube extends TileEntity implements ITubeConnectible
+public class TileTube extends TileEntity implements ITubeConnectable
 {
 	public int pressure = 5;
 	public ArrayList<ICapsule> contents;
@@ -158,10 +153,10 @@ public class TileTube extends TileEntity implements ITubeConnectible
 					capsulesToRemove.add(capsule);
 					LazUtils.InventoryCore.AddToInventory((IInventory) tile, (ItemStack) capsule.GetContents());
 				}
-				else if(tile instanceof ITubeConnectible && ((ITubeConnectible)tile).CanAccept(capsule))
+				else if(tile instanceof ITubeConnectable && ((ITubeConnectable)tile).CanAccept(capsule))
 				{
 					capsulesToRemove.add(capsule);
-					((ITubeConnectible)tile).AcceptCapsule(capsule);
+					((ITubeConnectable)tile).AcceptCapsule(capsule);
 				}
 			}
 		}
@@ -194,6 +189,7 @@ public class TileTube extends TileEntity implements ITubeConnectible
 		colour = Colours.values()[nbt.getInteger("colour")];
 		pressure = nbt.getInteger("pressure");
 		NBTTagList list = (NBTTagList)nbt.getTag("contents");
+		contents = new ArrayList<ICapsule>();
 		for(int i = 0; i < list.tagCount();i++)
 		{
 			contents.add(YATSRegistry.handleCapsuleNBT((NBTTagCompound)list.tagAt(i)));

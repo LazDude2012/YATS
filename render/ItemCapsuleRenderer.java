@@ -5,6 +5,7 @@ import YATS.api.ICapsuleRenderer;
 import YATS.tile.TileTube;
 import YATS.util.Colours;
 import cpw.mods.fml.common.FMLLog;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.item.EntityItem;
@@ -68,13 +69,68 @@ public class ItemCapsuleRenderer implements ICapsuleRenderer
 				break;
 		}
 
-		float renderScale = 0.7f;
+		float renderScale = 0.8f;
 		glPushMatrix();
 		glTranslated(x, y, z);
-		glTranslatef(0, 0.25F, 0);
+		glTranslatef(0,0.10F,0);
 		glScalef(renderScale, renderScale, renderScale);
 		renderitem.doRenderItem(dummy, 0, 0, 0, 0, 0);
-		glPopMatrix();
+		if (colour != Colours.NONE)
+		{
+			byte[] rgb = Colours.toRGB(colour);
+			Minecraft.getMinecraft().renderEngine.bindTexture("/mods/YATS/textures/blocks/yats-paintring.png");
+			glPushMatrix();
+			glDisable(GL_CULL_FACE);
+			glColor3ub(rgb[0],rgb[1],rgb[2]);
+			glTranslated(-0.5,-0.5,-0.5);
+			//region PAINT RING: OUTSIDE FACES
+
+			//COORDS: LOW 0.26 HIGH 0.74
+			//bottom, top, bottom, top
+			glBegin(GL_QUAD_STRIP);
+			glTexCoord2f(0f,1f);
+			glVertex3d(0.26,0.26,0.26);
+			glTexCoord2f(0f,0f);
+			glVertex3d(0.26,0.74,0.26);
+			glTexCoord2f(1f,1f);
+			glVertex3d(0.74,0.26,0.26);
+			glTexCoord2f(1f,0f);
+			glVertex3d(0.74,0.74,0.26);
+			glTexCoord2f(0f,1f);
+			glVertex3d(0.74,0.26,0.74);
+			glTexCoord2f(0f,0f);
+			glVertex3d(0.74,0.74,0.74);
+			glTexCoord2f(1f,1f);
+			glVertex3d(0.26,0.26,0.74);
+			glTexCoord2f(1,0);
+			glVertex3d(0.26,0.74,0.74);
+			glTexCoord2f(0f,1f);
+			glVertex3d(0.26,0.26,0.26);
+			glTexCoord2f(0f,0f);
+			glVertex3d(0.26,0.74,0.26);
+			glEnd();
+			glBegin(GL_QUADS);
+			glTexCoord2f(0f,0f);
+			glVertex3d(0.26,0.74,0.26);
+			glTexCoord2f(0f,1f);
+			glVertex3d(0.26,0.74,0.74);
+			glTexCoord2f(1f,1f);
+			glVertex3d(0.74,0.74,0.74);
+			glTexCoord2f(1f,0f);
+			glVertex3d(0.74,0.74,0.26);
+			glTexCoord2f(0f,0f);
+			glVertex3d(0.26,0.26,0.26);
+			glTexCoord2f(0f,1f);
+			glVertex3d(0.26,0.26,0.74);
+			glTexCoord2f(1f,1f);
+			glVertex3d(0.74,0.26,0.74);
+			glTexCoord2f(1f,0f);
+			glVertex3d(0.74,0.26,0.26);
+			glEnd();
+			glPopMatrix();
+			glEnable(GL_CULL_FACE);
+			glPopMatrix();
+		}
 
 	}
 

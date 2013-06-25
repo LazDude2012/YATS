@@ -3,7 +3,7 @@ package YATS.api;
 import YATS.util.Colours;
 import net.minecraftforge.common.ForgeDirection;
 
-public interface ITubeConnectible
+public interface ITubeConnectable
 {
 	public boolean AcceptsItemsOnSide(ForgeDirection side);
 	public boolean IsConnectedOnSide(ForgeDirection side);

@@ -217,7 +217,7 @@ public class LazUtils
 					if(invstack.stackSize >= stack.stackSize)
 					{
 						if(commit)
-						inv.setInventorySlotContents(i,inv.decrStackSize(i,stack.stackSize));
+						inv.decrStackSize(i,stack.stackSize);
 						return true;
 					}
 				}
@@ -232,7 +232,7 @@ public class LazUtils
 				if(stack != null)
 				{
 					ItemStack retstack = new ItemStack(stack.getItem(),1);
-					if(commit) inv.setInventorySlotContents(i,inv.decrStackSize(i,1));
+					if(commit) retstack = inv.decrStackSize(i,1);
 					return retstack;
 				}
 			}

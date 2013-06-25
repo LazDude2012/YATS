@@ -2,7 +2,7 @@ package YATS.tile;
 
 import YATS.api.I6WayWrenchable;
 import YATS.api.ICapsule;
-import YATS.api.ITubeConnectible;
+import YATS.api.ITubeConnectable;
 import YATS.capsule.ItemCapsule;
 import YATS.common.YATS;
 import YATS.util.Colours;
@@ -16,7 +16,7 @@ import net.minecraftforge.common.ForgeDirection;
 
 import java.util.ArrayList;
 
-public class TileExtractor extends TileEntity implements I6WayWrenchable,ITubeConnectible
+public class TileExtractor extends TileEntity implements I6WayWrenchable,ITubeConnectable
 {
 	private ForgeDirection currentfacing = ForgeDirection.WEST;
 	private boolean isContinuedSignal;
@@ -54,8 +54,8 @@ public class TileExtractor extends TileEntity implements I6WayWrenchable,ITubeCo
 				if(YATS.IS_DEBUG)
 				LazUtils.logNormal("Heartbreak! Extracting item at " + xCoord + ","+yCoord+","+zCoord+ ": ("+stack.toString()+")");
 				TileEntity tile2 = LazUtils.XYZCoords.FromTile(this).Next(currentfacing.getOpposite()).ToTile();
-				if(tile2 instanceof ITubeConnectible && ((ITubeConnectible) tile2).IsConnectedOnSide(currentfacing))
-					((ITubeConnectible) tile2).AcceptCapsule(new ItemCapsule(stack,Colours.NONE,currentfacing.getOpposite()));
+				if(tile2 instanceof ITubeConnectable && ((ITubeConnectable) tile2).IsConnectedOnSide(currentfacing))
+					((ITubeConnectable) tile2).AcceptCapsule(new ItemCapsule(stack,Colours.ORANGE,currentfacing.getOpposite()));
 				else if (tile2 instanceof IInventory && LazUtils.InventoryCore.CanAddToInventory((IInventory) tile2, stack))
 					LazUtils.InventoryCore.AddToInventory((IInventory) tile2, stack);
 				else

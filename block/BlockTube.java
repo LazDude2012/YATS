@@ -1,6 +1,6 @@
 package YATS.block;
 
-import YATS.api.ITubeConnectible;
+import YATS.api.ITubeConnectable;
 import YATS.tile.TileTube;
 import YATS.util.Colours;
 import YATS.util.LazUtils;
@@ -48,9 +48,9 @@ public class BlockTube extends Block implements ITileEntityProvider
 		for(ForgeDirection side : ForgeDirection.VALID_DIRECTIONS)
 		{
 			TileEntity tile = LazUtils.XYZCoords.FromTile(originator).Next(side).ToTile();
-			if(tile instanceof ITubeConnectible)
+			if(tile instanceof ITubeConnectable)
 			{
-				ITubeConnectible tube = (ITubeConnectible) tile;
+				ITubeConnectable tube = (ITubeConnectable) tile;
 				if(tube.IsConnectableOnSide(side.getOpposite()) && (tube.GetColour() == originator.GetColour() || tube.GetColour() == Colours.NONE
 				|| originator.GetColour() == Colours.NONE))
 				{
