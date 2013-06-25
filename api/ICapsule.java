@@ -7,7 +7,7 @@
  *
  * Documentation: Timmietimtim
  *
- * Documentation Updated: Mon 6/24/2013 19:58
+ * Documentation Updated: Mon 6/25/2013 14:30
  */
 package YATS.api;
 
@@ -25,6 +25,9 @@ import net.minecraftforge.common.ForgeDirection;
  * Tubes will only accept capsules of the same colour or no colour.
  *
  * A capsule's progress is a float determining how often it advances through a tube from segment to segment.
+ *
+ * All capsules must be stored in Minecraft's Named Binary Tag (NBT) format, to be sent to the client and saved
+ * between sessions, so this API provides some templates for that as well.
  */
 public interface ICapsule
 {
@@ -67,7 +70,7 @@ public interface ICapsule
 
     /**
      * This is the get accessor for a capsule's progress through a segment of tube.
-     * @return A float number expressing how much progress the capsule has made through a tube segment.
+     * @return A float expressing how much progress the capsule has made through a tube segment.
      */
 	public float getProgress();
 
@@ -78,19 +81,19 @@ public interface ICapsule
 	public void addProgress(float progress);
 
     /**
-     * When overridden, this method reduces the capsule's progress to 0, usually when it passes into a new tube segment.
+     * This method reduces the capsule's progress to 0, usually when it passes into a new tube segment.
      */
 	public void resetProgress();
 
     /**
-     * TODO I can has documentation?
-     * @return Who knows what?
+     * Sets several data values to store a capsule in NBT.
+     * @return An NBTTagCompound which may be written to NBT.
      */
 	public NBTTagCompound getNBT();
 
     /**
-     * TODO Document this, apparently.
-     * @param nbt
+     * Provides a routine to retrieve capsules stored in NBT.
+     * @param nbt An NBTTagCompound to be read from NBT, typically a "capsule" compound.
      */
 	public void loadFromNBT(NBTTagCompound nbt);
 }

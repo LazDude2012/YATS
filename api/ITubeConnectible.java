@@ -7,7 +7,7 @@
  *
  * Documentation: Timmietimtim
  *
- * Documentation Updated: Mon 6/24/2013 19:58
+ * Documentation Updated: Tue 6/25/2013 14:14
  */
 package YATS.api;
 
@@ -24,7 +24,7 @@ import net.minecraftforge.common.ForgeDirection;
  * Tube colour influences which capsules a tube will accept. For instance, an orange tube will only accept capsules that
  * are orange, or have no colour. A colourless tube will accept any capsule.
  *
- * TODO Add an explanation of priority.
+ * Priority, in YATS, is the method by which tube routing picks routes through the tubes. See TubeRouting.java
  */
 public interface ITubeConnectible
 {
@@ -50,7 +50,7 @@ public interface ITubeConnectible
 	public boolean CanAccept(ICapsule capsule);
 
     /**
-     * Tests whether the tile can route a capsule. TODO Not sure if adequate explanation.
+     * Tests whether the tile can route a capsule.
      * @return True if the tile can be utilized for routing a capsule, otherwise false.
      */
 	public Boolean CanRoute();
@@ -80,7 +80,7 @@ public interface ITubeConnectible
 	public void SetColour(Colours colour);
 
     /**
-     * TODO Timmietimtim's not sure how priority works just yet.
+     * Adds additional priority to a tube route.
      * @return An integer representing the additional priority of the tile.
      */
 	public int GetAdditionalPriority();
