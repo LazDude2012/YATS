@@ -11,7 +11,7 @@ this License.
 
 The Conditions of this License are as follows:
   -You, the User, must have obtained all prerequisite software legitimately.
-  -You, the User, must not have contacted the Author to obtain permission to use, distribute,
+  -You, the User, must NOT have contacted the Author to obtain permission to use, distribute,
 modify, or distribute modified versions of this Software. Once a User contacts the Author to
 obtain permission to exercise any of the rights granted them by this License, those rights are
 revoked, in perpetuity, for that User.

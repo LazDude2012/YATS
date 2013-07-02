@@ -209,9 +209,10 @@ public class LazUtils
 		}
 		public static boolean ExtractFromInventory(IInventory inv, ItemStack stack, boolean commit)
 		{
-			for(int i = 0;i <= inv.getSizeInventory();i++)
+			for(int i = 0;i < inv.getSizeInventory();i++)
 			{
 				ItemStack invstack = inv.getStackInSlot(i);
+				if(invstack == null) continue;
 				if(invstack.getItem() == stack.getItem())
 				{
 					if(invstack.stackSize >= stack.stackSize)
@@ -226,7 +227,7 @@ public class LazUtils
 		}
 		public static ItemStack ExtractOneFromInventory(IInventory inv, boolean commit)
 		{
-			for(int i = 0; i <= inv.getSizeInventory();i++)
+			for(int i = 0; i < inv.getSizeInventory();i++)
 			{
 				ItemStack stack = inv.getStackInSlot(i);
 				if(stack != null)

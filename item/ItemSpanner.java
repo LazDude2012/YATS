@@ -1,6 +1,7 @@
 package YATS.item;
 
 import YATS.api.I6WayWrenchable;
+import YATS.common.YATS;
 import YATS.tile.TileTube;
 import YATS.util.Colours;
 import YATS.util.LazUtils;
@@ -23,7 +24,7 @@ public class ItemSpanner extends Item
 	{
 		super(id);
 		setUnlocalizedName("YATSItemSpanner");
-		setCreativeTab(CreativeTabs.tabMisc);
+		setCreativeTab(YATS.tabYATS);
 	}
 
 	@Override

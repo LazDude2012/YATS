@@ -1,12 +1,17 @@
 package YATS.block;
 
 import YATS.api.I6WayWrenchable;
+import YATS.common.YATS;
+import YATS.tile.TileAdvExtractor;
 import YATS.tile.TileExtractor;
+import YATS.util.LazUtils;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.EntityLiving;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
@@ -44,7 +49,7 @@ public class BlockExtractor extends Block implements ITileEntityProvider
 	public BlockExtractor(int id)
 	{
 		super(id, Material.rock);
-		setCreativeTab(CreativeTabs.tabMisc);
+		setCreativeTab(YATS.tabYATS);
 		setUnlocalizedName("YATSBlockExtractor");
 	}
 	public TileEntity createNewTileEntity(World world)
@@ -52,128 +57,135 @@ public class BlockExtractor extends Block implements ITileEntityProvider
 		return new TileExtractor();
 	}
 
+    @Override
+    public void onBlockPlacedBy(World world, int x, int y, int z, EntityLiving placer, ItemStack placedItemStack)
+    {
+        TileExtractor tile = (TileExtractor)world.getBlockTileEntity(x,y,z);
+        tile.RotateTo(LazUtils.GetFDFromEntity(placer, true));
+    }
+
 	public Icon getBlockTexture(IBlockAccess world,int x, int y, int z, int side)
+{
+	TileExtractor ext = (TileExtractor) world.getBlockTileEntity(x,y,z);
+	ForgeDirection blockface = ForgeDirection.getOrientation(side);
+	if(blockface == ext.GetCurrentFacing()) return lowmachine_invside;
+	if(blockface == ext.GetCurrentFacing().getOpposite()) return lowmachine_tubeside;
+	if(ext.isBusy)
 	{
-		TileExtractor ext = (TileExtractor) world.getBlockTileEntity(x,y,z);
-		ForgeDirection blockface = ForgeDirection.getOrientation(side);
-		if(blockface == ext.GetCurrentFacing()) return lowmachine_invside;
-		if(blockface == ext.GetCurrentFacing().getOpposite()) return lowmachine_tubeside;
-		if(ext.isBusy)
+		switch(ext.GetCurrentFacing())
 		{
-			switch(ext.GetCurrentFacing())
-			{
-				case UP:
-					return extractor_side_busy_up;
-				case DOWN:
-					return extractor_side_busy_down;
-				case WEST:
-					switch(blockface)
-					{
-						case NORTH:
-							return extractor_side_busy_right;
-						case SOUTH:
-							return extractor_side_busy_left;
-						case UP:
-							return extractor_side_busy_left;
-						case DOWN:
-							return extractor_side_busy_right;
-					}
-				case EAST:
-					switch(blockface)
-					{
-						case NORTH:
-							return extractor_side_busy_left;
-						case SOUTH:
-							return extractor_side_busy_right;
-						case UP:
-							return extractor_side_busy_right;
-						case DOWN:
-							return extractor_side_busy_left;
-					}
-				case NORTH:
-					switch(blockface)
-					{
-						case EAST:
-							return extractor_side_busy_right;
-						case WEST:
-							return extractor_side_busy_left;
-						case UP:
-							return extractor_side_busy_up;
-						case DOWN:
-							return extractor_side_busy_down;
-					}
-				case SOUTH:
-					switch(blockface)
-					{
-						case EAST:
-							return extractor_side_busy_left;
-						case WEST:
-							return extractor_side_busy_right;
-						case UP:
-							return extractor_side_busy_down;
-						case DOWN:
-							return extractor_side_busy_up;
-					}
-			}
+			case UP:
+				return extractor_side_busy_up;
+			case DOWN:
+				return extractor_side_busy_down;
+			case WEST:
+				switch(blockface)
+				{
+					case NORTH:
+						return extractor_side_busy_right;
+					case SOUTH:
+						return extractor_side_busy_left;
+					case UP:
+						return extractor_side_busy_left;
+					case DOWN:
+						return extractor_side_busy_right;
+				}
+			case EAST:
+				switch(blockface)
+				{
+					case NORTH:
+						return extractor_side_busy_left;
+					case SOUTH:
+						return extractor_side_busy_right;
+					case UP:
+						return extractor_side_busy_right;
+					case DOWN:
+						return extractor_side_busy_left;
+				}
+			case NORTH:
+				switch(blockface)
+				{
+					case EAST:
+						return extractor_side_busy_right;
+					case WEST:
+						return extractor_side_busy_left;
+					case UP:
+						return extractor_side_busy_up;
+					case DOWN:
+						return extractor_side_busy_down;
+				}
+			case SOUTH:
+				switch(blockface)
+				{
+					case EAST:
+						return extractor_side_busy_left;
+					case WEST:
+						return extractor_side_busy_right;
+					case UP:
+						return extractor_side_busy_down;
+					case DOWN:
+						return extractor_side_busy_up;
+				}
 		}
-		else
+	}
+	else
+	{
+		switch(ext.GetCurrentFacing())
 		{
-			switch(ext.GetCurrentFacing())
-			{
-				case UP:
-					return extractor_side_normal_up;
-				case DOWN:
-					return extractor_side_normal_down;
-				case WEST:
-					switch(blockface)
-					{
-						case NORTH:
-							return extractor_side_normal_right;
-						case SOUTH:
-							return extractor_side_normal_left;
-						case UP:
-							return extractor_side_normal_left;
-						case DOWN:
-							return extractor_side_normal_right;
-					}
-				case EAST:
-					switch(blockface)
-					{
-						case NORTH:
-							return extractor_side_normal_left;
-						case SOUTH:
-							return extractor_side_normal_right;
-						case UP:
-							return extractor_side_normal_right;
-						case DOWN:
-							return extractor_side_normal_left;
-					}
-				case NORTH:
-					switch(blockface)
-					{
-						case EAST:
-							return extractor_side_normal_right;
-						case WEST:
-							return extractor_side_normal_left;
-						case UP:
-							return extractor_side_normal_up;
-						case DOWN:
-							return extractor_side_normal_down;
-					}
-				case SOUTH:
-					switch(blockface)
-					{
-						case EAST:
-							return extractor_side_normal_left;
-						case WEST:
-							return extractor_side_normal_right;
-						case UP:
-							return extractor_side_normal_down;
-						case DOWN:
-							return extractor_side_normal_up;
-					}
-			}
+			case UP:
+				return extractor_side_normal_up;
+			case DOWN:
+				return extractor_side_normal_down;
+			case WEST:
+				switch(blockface)
+				{
+					case NORTH:
+						return extractor_side_normal_right;
+					case SOUTH:
+						return extractor_side_normal_left;
+					case UP:
+						return extractor_side_normal_left;
+					case DOWN:
+						return extractor_side_normal_right;
+				}
+			case EAST:
+				switch(blockface)
+				{
+					case NORTH:
+						return extractor_side_normal_left;
+					case SOUTH:
+						return extractor_side_normal_right;
+					case UP:
+						return extractor_side_normal_right;
+					case DOWN:
+						return extractor_side_normal_left;
+				}
+			case NORTH:
+				switch(blockface)
+				{
+					case EAST:
+						return extractor_side_normal_right;
+					case WEST:
+						return extractor_side_normal_left;
+					case UP:
+						return extractor_side_normal_up;
+					case DOWN:
+						return extractor_side_normal_down;
+				}
+			case SOUTH:
+				switch(blockface)
+				{
+					case EAST:
+						return extractor_side_normal_left;
+					case WEST:
+						return extractor_side_normal_right;
+					case UP:
+						return extractor_side_normal_down;
+					case DOWN:
+						return extractor_side_normal_up;
+				}
 		}
-		return lowmachine_tubeside;
+	}
+	return lowmachine_tubeside;
 	}
 }

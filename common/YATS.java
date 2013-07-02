@@ -2,20 +2,29 @@ package YATS.common;
 
 import YATS.api.YATSRegistry;
 import YATS.capsule.ItemCapsule;
+import YATS.client.ClientPacketHandler;
+import YATS.common.gui.TabYATS;
 import YATS.item.ItemSpanner;
 import YATS.tile.*;
 import YATS.util.ConfigHandler;
+import YATS.util.GuiHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import YATS.block.*;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
 @Mod(modid="YATS",name="Yet Another Tube System",version="1.0")
+@NetworkMod(clientSideRequired = true,serverSideRequired = true,
+clientPacketHandlerSpec = @NetworkMod.SidedPacketHandler(channels="YATS",packetHandler = ClientPacketHandler.class),
+serverPacketHandlerSpec = @NetworkMod.SidedPacketHandler(channels="YATS",packetHandler = ServerPacketHandler.class))
 public class YATS
 {
 	@Mod.Instance
@@ -26,6 +35,8 @@ public class YATS
 
 	public static boolean IS_DEBUG = true;
 
+    public final static int ADVEXTRACTOR_GUI = 1;
+
 	public static Block blockRemoteExtractor;
 	public static Block blockRoutingMarshaller;
 	public static Block blockExtractor;
@@ -34,10 +45,13 @@ public class YATS
 	public static Block blockItemBuffer;
 
 	public static Item itemSpanner;
+	public static CreativeTabs tabYATS = new TabYATS(CreativeTabs.getNextID(),"YATSTab");
+    public static GuiHandler guiHandler;
 
 	@Mod.PreInit
 	public void PreInitialise(FMLPreInitializationEvent e)
 	{
+        guiHandler = new GuiHandler();
 		ConfigHandler.Load(e);
 		blockTube = new BlockTube(ConfigHandler.blockTubeID);
 		blockExtractor=new BlockExtractor(ConfigHandler.blockExtractorID);
@@ -56,6 +70,7 @@ public class YATS
 		RegisterItems();
 		RegisterYATSCapsules();
 		proxy.RegisterRenderInformation();
+        NetworkRegistry.instance().registerGuiHandler(this,guiHandler);
 	}
 
 	private void RegisterYATSCapsules()

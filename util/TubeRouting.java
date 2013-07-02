@@ -41,7 +41,7 @@ public class TubeRouting
 				IInventory inv = (IInventory)world.getBlockTileEntity(coords.x,coords.y,coords.z);
 				if(capsule.GetContents() instanceof ItemStack && LazUtils.InventoryCore.CanAddToInventory(coords, (ItemStack) capsule.GetContents()))
 				{
-					TubeRoute route = new TubeRoute(coords,side.getOpposite(),direction,priority);
+					TubeRoute route = new TubeRoute(coords,side.getOpposite(),direction,priority - 1);
 					route.isComplete=true;
 					queue.add(route);
 					return;

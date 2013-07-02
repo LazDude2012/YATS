@@ -4,6 +4,7 @@ import YATS.api.ITubeConnectable;
 import YATS.tile.TileTube;
 import YATS.util.Colours;
 import YATS.util.LazUtils;
+import YATS.common.YATS;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
@@ -21,7 +22,8 @@ public class BlockTube extends Block implements ITileEntityProvider
 	public BlockTube(int id)
 	{
 		super(id, Material.rock);
-		setCreativeTab(CreativeTabs.tabMisc);
+		setCreativeTab(YATS.tabYATS);
+		setUnlocalizedName("YATSBlockTube");
 	}
 
 	@Override

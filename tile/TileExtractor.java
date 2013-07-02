@@ -3,14 +3,21 @@ package YATS.tile;
 import YATS.api.I6WayWrenchable;
 import YATS.api.ICapsule;
 import YATS.api.ITubeConnectable;
+import YATS.api.YATSRegistry;
+import YATS.block.BlockTube;
 import YATS.capsule.ItemCapsule;
 import YATS.common.YATS;
 import YATS.util.Colours;
 import YATS.util.LazUtils;
+import YATS.util.TubeRouting;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
+import net.minecraft.network.INetworkManager;
+import net.minecraft.network.packet.Packet;
+import net.minecraft.network.packet.Packet132TileEntityData;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.ForgeDirection;
 
@@ -21,9 +28,28 @@ public class TileExtractor extends TileEntity implements I6WayWrenchable,ITubeCo
 	private ForgeDirection currentfacing = ForgeDirection.WEST;
 	private boolean isContinuedSignal;
 	public boolean isBusy;
-	private ArrayList<ICapsule> contents;
+	private ArrayList<ICapsule> contents = new ArrayList<ICapsule>();
 	private boolean[] connections = new boolean[6];
 	private boolean deferUpdate = false;
+
+	@Override
+	public Packet getDescriptionPacket()
+	{
+		NBTTagCompound nbttagcompound = new NBTTagCompound();
+		this.writeToNBT(nbttagcompound);
+		Packet132TileEntityData packet = new Packet132TileEntityData(this.xCoord, this.yCoord, this.zCoord, 3, nbttagcompound);
+		packet.isChunkDataPacket=true;
+		return packet;
+	}
+
+	@Override
+	public void onDataPacket(INetworkManager manager, Packet132TileEntityData packet)
+	{
+		readFromNBT(packet.customParam1);
+		worldObj.markBlockForRenderUpdate(xCoord,yCoord,zCoord);
+	}
+
+	@Override
 	public void updateEntity()
 	{
 		if(deferUpdate) worldObj.markBlockForUpdate(xCoord,yCoord,zCoord);
@@ -40,6 +66,39 @@ public class TileExtractor extends TileEntity implements I6WayWrenchable,ITubeCo
 		{
 			isContinuedSignal=false;
 			isBusy=false;
+		}
+		if(!isContinuedSignal)
+		{
+			ArrayList<ICapsule> capsulesToRemove = new ArrayList<ICapsule>();
+			for (ICapsule capsule : contents)
+			{
+				if(YATS.IS_DEBUG)
+					LazUtils.logNormal("Discovery! We have a capsule, updating. %s, %s, %s", xCoord,yCoord,zCoord);
+				capsule.addProgress((float) 5 / 100);
+				if(YATS.IS_DEBUG)
+					LazUtils.logNormal("Ambition! Capsule moved forward successfully, capsule progress %s, pressure %s. %s, %s, %s",capsule.getProgress(),5,xCoord,yCoord,zCoord);
+				if(capsule.getProgress() >= 1)
+				{
+					LazUtils.XYZCoords coords = LazUtils.XYZCoords.FromTile(this);
+					coords.Next(capsule.GetHeading());
+					TileEntity tile = coords.ToTile();
+					if(tile instanceof IInventory && capsule.GetContents() instanceof ItemStack &&
+							LazUtils.InventoryCore.CanAddToInventory(coords, (ItemStack) capsule.GetContents()))
+					{
+						capsulesToRemove.add(capsule);
+						LazUtils.InventoryCore.AddToInventory((IInventory) tile, (ItemStack) capsule.GetContents());
+					}
+					else if(tile instanceof ITubeConnectable && ((ITubeConnectable)tile).CanAccept(capsule))
+					{
+						capsulesToRemove.add(capsule);
+						((ITubeConnectable)tile).AcceptCapsule(capsule);
+					}
+				}
+			}
+			for(ICapsule capsule : capsulesToRemove)
+			{
+				contents.remove(capsule);
+			}
 		}
 	}
 
@@ -85,13 +144,29 @@ public class TileExtractor extends TileEntity implements I6WayWrenchable,ITubeCo
 		super.writeToNBT(nbt);
 		nbt.setInteger("facing",currentfacing.ordinal());
 		nbt.setBoolean("busy",isBusy);
+		NBTTagList taglist = new NBTTagList();
+		for(ICapsule capsule : contents)
+		{
+			taglist.appendTag(YATSRegistry.getCapsuleNBT(capsule));
+		}
+		nbt.setTag("contents",taglist);
+		if(YATS.IS_DEBUG)
+			LazUtils.logNormal("Transparency! Contents of tube at %s,%s,%s are: %s",xCoord,yCoord,zCoord,contents.toString());
 	}
 
 	public void readFromNBT(NBTTagCompound nbt)
 	{
 		super.readFromNBT(nbt);
-		currentfacing = ForgeDirection.getOrientation(nbt.getInteger("facing"));
+		currentfacing = ForgeDirection.values()[nbt.getInteger("facing")];
 		isBusy=nbt.getBoolean("busy");
+		NBTTagList list = (NBTTagList)nbt.getTag("contents");
+		contents = new ArrayList<ICapsule>();
+		for(int i = 0; i < list.tagCount();i++)
+		{
+			contents.add(YATSRegistry.handleCapsuleNBT((NBTTagCompound)list.tagAt(i)));
+		}
+		if(YATS.IS_DEBUG)
+			LazUtils.logNormal("Literacy! Read tag list %s into tube at %s, %s, %s",list.toString(),xCoord,yCoord,zCoord);
 		deferUpdate = true;
 	}
 
@@ -146,7 +221,7 @@ public class TileExtractor extends TileEntity implements I6WayWrenchable,ITubeCo
 	@Override
 	public int GetAdditionalPriority()
 	{
-		return 2;
+		return 1;
 	}
 
 	@Override
