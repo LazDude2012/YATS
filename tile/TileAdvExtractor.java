@@ -50,7 +50,7 @@ public class TileAdvExtractor extends TileEntity implements ITubeConnectable, II
 		ItemStack retStack = inventory[i].splitStack(j);
 
 		if(inventory[i].stackSize == 0)
-			inventory = null;
+			inventory[i] = null;
 
 		return retStack;
 	}
@@ -175,18 +175,23 @@ public class TileAdvExtractor extends TileEntity implements ITubeConnectable, II
 		nbt.setTag("contents",taglist);
 		if(YATS.IS_DEBUG)
 			LazUtils.logNormal("Transparency! Contents of tube at %s,%s,%s are: %s", xCoord, yCoord, zCoord, contents.toString());
-		inventory = new ItemStack[nbt.getInteger("invsize")];
-		NBTTagList tagList = nbt.getTagList("Inventory");
 
-		for (int i = 0; i < tagList.tagCount(); i++) {
-			NBTTagCompound tag = (NBTTagCompound) tagList.tagAt(i);
+        NBTTagList itemList = new NBTTagList();
+        nbt.setInteger("invsize",this.getSizeInventory());
+        for (int i = 0; i < inventory.length; i++)
+        {
+            ItemStack stack = inventory[i];
 
-			byte slot = tag.getByte("Slot");
+            if (stack != null)
+            {
+                NBTTagCompound tag = new NBTTagCompound();
 
-			if (slot >= 0 && slot < inventory.length) {
-				inventory[slot] = ItemStack.loadItemStackFromNBT(tag);
-			}
-		}
+                tag.setByte("Slot", (byte) i);
+                stack.writeToNBT(tag);
+                itemList.appendTag(tag);
+            }
+        }
+        nbt.setTag("Inventory",itemList);
 	}
 	@Override
 	public void readFromNBT(NBTTagCompound nbt)
@@ -203,22 +208,18 @@ public class TileAdvExtractor extends TileEntity implements ITubeConnectable, II
 		}
 		if(YATS.IS_DEBUG)
 			LazUtils.logNormal("Literacy! Read tag list %s into tube at %s, %s, %s",list.toString(),xCoord,yCoord,zCoord);
-		NBTTagList itemList = new NBTTagList();
-		nbt.setInteger("invsize",this.getSizeInventory());
-		for (int i = 0; i < inventory.length; i++)
-		{
-			ItemStack stack = inventory[i];
+        inventory = new ItemStack[nbt.getInteger("invsize")];
+        NBTTagList tagList = nbt.getTagList("Inventory");
 
-			if (stack != null)
-			{
-				NBTTagCompound tag = new NBTTagCompound();
+        for (int i = 0; i < tagList.tagCount(); i++)
+        {
+            NBTTagCompound tag = (NBTTagCompound) tagList.tagAt(i);
 
-				tag.setByte("Slot", (byte) i);
-				stack.writeToNBT(tag);
-				itemList.appendTag(tag);
-			}
-		}
-		nbt.setTag("Inventory",itemList);
+            byte slot = tag.getByte("Slot");
+
+            if (slot >= 0 && slot < inventory.length)
+                inventory[slot] = ItemStack.loadItemStackFromNBT(tag);
+        }
 		deferUpdate = true;
 	}
 	@Override

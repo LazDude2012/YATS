@@ -19,6 +19,8 @@ public class GuiAdvExtractor extends GuiContainer
     {
         super(new ContainerAdvExtractor(inv,te));
         tile = te;
+        this.xSize = 176;
+        this.ySize = 181;
     }
     public void initGui()
     {
