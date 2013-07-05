@@ -2,6 +2,7 @@ package YATS.util;
 
 import YATS.api.ICapsule;
 import YATS.api.ITubeConnectable;
+import YATS.tile.TileTube;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -26,7 +27,7 @@ public class TubeRouting
 				ITubeConnectable tube = (ITubeConnectable)world.getBlockTileEntity(coords.x,coords.y,coords.z);
 				if(tube.CanRoute())
 				{
-					if(tube.CanAccept(capsule))
+					if(tube.CanAccept(capsule) && !(tube instanceof TileTube) && tube.AcceptsItemsOnSide(direction.getOpposite()))
 					{
 						TubeRoute route = new TubeRoute(coords, side, direction, priority+tube.GetAdditionalPriority());
 						route.isComplete=true;

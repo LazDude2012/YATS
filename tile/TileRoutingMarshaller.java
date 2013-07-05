@@ -84,7 +84,7 @@ public class TileRoutingMarshaller extends TileEntity implements IInventory, I6W
     public boolean isStackValidForSlot(int i, ItemStack itemstack){ return true; }
 
     @Override
-    public boolean AcceptsItemsOnSide(ForgeDirection side) { return (side == currentfacing || side == currentfacing.getOpposite()); }
+    public boolean AcceptsItemsOnSide(ForgeDirection side) { return (side == currentfacing); }
 
     @Override
     public boolean IsConnectedOnSide(ForgeDirection side) { return connections[side.ordinal()]; }

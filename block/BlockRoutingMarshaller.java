@@ -63,7 +63,7 @@ public class BlockRoutingMarshaller extends Block implements ITileEntityProvider
     @Override
     public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player,int side, float hitX, float hitY, float hitZ)
     {
-        if(player.getHeldItem().isItemEqual(new ItemStack(YATS.itemSpanner,1))) return false;
+        if(player.getHeldItem() != null && player.getHeldItem().isItemEqual(new ItemStack(YATS.itemSpanner,1))) return false;
         if(world.getBlockTileEntity(x,y,z) instanceof TileRoutingMarshaller)
             player.openGui(YATS.instance,YATS.ROUTINGMARSHALLER_GUI,world,x,y,z);
         return true;

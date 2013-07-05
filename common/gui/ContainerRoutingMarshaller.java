@@ -54,7 +54,7 @@ public class ContainerRoutingMarshaller extends Container
 
             if (slotnumber < 40)
             {
-                if (!mergeItemStack(itemstack1, 41, 77, true))
+                if (!mergeItemStack(itemstack1, 41, 76, true))
                 {
                     return null;
                 }
@@ -63,12 +63,12 @@ public class ContainerRoutingMarshaller extends Container
             }
             else if (slotnumber >= 40 && slotnumber < 68)
             {
-                if (!mergeItemStack(itemstack1, 68, 77, false))
+                if (!mergeItemStack(itemstack1, 68, 76, false))
                 {
                     return null;
                 }
             }
-            else if (slotnumber >= 68 && slotnumber < 77 && !mergeItemStack(itemstack1, 40, 68, false))
+            else if (slotnumber >= 68 && slotnumber < 76 && !mergeItemStack(itemstack1, 40, 68, false))
             {
                 return null;
             }
