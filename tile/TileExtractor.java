@@ -121,6 +121,7 @@ public class TileExtractor extends TileEntity implements I6WayWrenchable,ITubeCo
 				{
 					LazUtils.XYZCoords coords = LazUtils.XYZCoords.FromTile(this).Next(currentfacing.getOpposite());
 					EntityItem item = new EntityItem(worldObj,coords.x,coords.y,coords.z,stack);
+                    item.setVelocity(0,0,0);
 					worldObj.spawnEntityInWorld(item);
 				}
 			}
