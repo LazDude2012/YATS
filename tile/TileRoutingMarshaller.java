@@ -276,7 +276,7 @@ public class TileRoutingMarshaller extends TileEntity implements IInventory, I6W
         TileEntity tileFrom = LazUtils.XYZCoords.FromTile(this).Next(currentfacing).ToTile();
         if(!(tileFrom instanceof IInventory)) return;
         IInventory inv = (IInventory)tileFrom;
-        for(int i = 0; i < 40; i++)
+        for(int i = 0+activeRow * 8; i < activeRow*8+8; i++)
         {
             ItemStack stack = inventory[i];
             if(stack == null) continue;
@@ -288,14 +288,14 @@ public class TileRoutingMarshaller extends TileEntity implements IInventory, I6W
                 if(tileTo instanceof ITubeConnectable && ((ITubeConnectable)tileTo).CanAccept(capsule))
                 {
                     ((ITubeConnectable) tileTo).AcceptCapsule(capsule);
-                    return;
+                    continue;
                 }
                 else if(tileTo instanceof IInventory)
                 {
                     if(LazUtils.InventoryCore.CanAddToInventory((IInventory)tileTo,stack))
                     {
                         LazUtils.InventoryCore.AddToInventory((IInventory)tileTo,stack);
-                        return;
+                        continue;
                     }
                 }
                 else
@@ -306,5 +306,6 @@ public class TileRoutingMarshaller extends TileEntity implements IInventory, I6W
                 }
             }
         }
+        activeRow = (activeRow == 4 ? 0 : activeRow + 1); 
     }
 }
