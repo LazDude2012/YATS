@@ -109,7 +109,7 @@ public class YATS
 		GameRegistry.registerTileEntity(TileItemBuffer.class, "YATSTileItemBuffer");
 		LanguageRegistry.addName(blockItemBuffer,"Item Buffer");
 
-        	GameRegistry.registerBlock(blockTube, ItemBlockTube.class, "YATSBlockTube");
+        	GameRegistry.registerBlock(blockTube, "YATSBlockTube");
         	GameRegistry.registerTileEntity(TileTube.class, "YATSTileTube");
         	LanguageRegistry.addName(blockTube, "Transport Tube");
 
