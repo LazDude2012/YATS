@@ -23,6 +23,7 @@ public class TileTube extends TileEntity implements ITubeConnectable
 {
 	public int pressure = 5;
 	public ArrayList<ICapsule> contents;
+    public ArrayList<ICapsule> pending;
 	public boolean isConnectableOnSide[] = {true,true,true,true,true,true};
 	public boolean isConnectedOnSide[] = new boolean[6];
 	public Colours colour = Colours.NONE;
@@ -101,7 +102,7 @@ public class TileTube extends TileEntity implements ITubeConnectable
 	public void AcceptCapsule(ICapsule capsule)
 	{
 		capsule.resetProgress();
-		this.contents.add(capsule);
+		this.pending.add(capsule);
 		if(YATS.IS_DEBUG)
 		LazUtils.logNormal("Tolerance! Accepting capsule type %s at %s,%s,%s. Contents: %s", YATSRegistry.getIDFromCapsule(capsule),xCoord,yCoord,zCoord,contents.toString());
 	}
@@ -132,6 +133,9 @@ public class TileTube extends TileEntity implements ITubeConnectable
 	{
 		ArrayList<ICapsule> capsulesToRemove = new ArrayList<ICapsule>();
 		BlockTube.CheckTubeConnections(worldObj,xCoord,yCoord,zCoord);
+        for(ICapsule capsule : pending)
+            contents.add(capsule);
+        pending.clear();
 		for (ICapsule capsule : contents)
 		{
 			if(YATS.IS_DEBUG)

@@ -32,6 +32,7 @@ public class TileAdvExtractor extends TileEntity implements ITubeConnectable, II
 	private Colours filterColour = Colours.NONE;
 	private ForgeDirection facing = ForgeDirection.WEST;
 	private ArrayList<ICapsule> contents = new ArrayList<ICapsule>();
+    private ArrayList<ICapsule> pending = new ArrayList<ICapsule>();
 	private boolean[] connections = new boolean[6];
 	private boolean isContinuedSignal, deferUpdate;
 	public boolean isBusy;
@@ -124,7 +125,7 @@ public class TileAdvExtractor extends TileEntity implements ITubeConnectable, II
 	public void AcceptCapsule(ICapsule capsule)
 	{
 		capsule.resetProgress();
-		contents.add(capsule);
+		pending.add(capsule);
 	}
 
 	@Override
@@ -243,6 +244,9 @@ public class TileAdvExtractor extends TileEntity implements ITubeConnectable, II
 		if(!isContinuedSignal)
 		{
 			ArrayList<ICapsule> capsulesToRemove = new ArrayList<ICapsule>();
+            for(ICapsule capsule : pending)
+                contents.add(capsule);
+            pending.clear();
 			for (ICapsule capsule : contents)
 			{
 				if(YATS.IS_DEBUG)

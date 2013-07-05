@@ -228,6 +228,7 @@ public class TileRoutingMarshaller extends TileEntity implements IInventory, I6W
             ArrayList<ICapsule> capsulesToRemove = new ArrayList<ICapsule>();
             for(ICapsule capsule : pending)
                 contents.add(capsule);
+            pending.clear();
             for (ICapsule capsule : contents)
             {
                 if(YATS.IS_DEBUG)

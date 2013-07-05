@@ -29,6 +29,7 @@ public class TileExtractor extends TileEntity implements I6WayWrenchable,ITubeCo
 	private boolean isContinuedSignal;
 	public boolean isBusy;
 	private ArrayList<ICapsule> contents = new ArrayList<ICapsule>();
+    private ArrayList<ICapsule> pending = new ArrayList<ICapsule>();
 	private boolean[] connections = new boolean[6];
 	private boolean deferUpdate = false;
 
@@ -70,6 +71,9 @@ public class TileExtractor extends TileEntity implements I6WayWrenchable,ITubeCo
 		if(!isContinuedSignal)
 		{
 			ArrayList<ICapsule> capsulesToRemove = new ArrayList<ICapsule>();
+            for(ICapsule capsule : pending)
+                contents.add(capsule);
+            pending.clear();
 			for (ICapsule capsule : contents)
 			{
 				if(YATS.IS_DEBUG)
@@ -114,7 +118,7 @@ public class TileExtractor extends TileEntity implements I6WayWrenchable,ITubeCo
 				LazUtils.logNormal("Heartbreak! Extracting item at " + xCoord + ","+yCoord+","+zCoord+ ": ("+stack.toString()+")");
 				TileEntity tile2 = LazUtils.XYZCoords.FromTile(this).Next(currentfacing.getOpposite()).ToTile();
 				if(tile2 instanceof ITubeConnectable && ((ITubeConnectable) tile2).IsConnectedOnSide(currentfacing))
-					((ITubeConnectable) tile2).AcceptCapsule(new ItemCapsule(stack,Colours.ORANGE,currentfacing.getOpposite()));
+					((ITubeConnectable) tile2).AcceptCapsule(new ItemCapsule(stack,Colours.NONE,currentfacing.getOpposite()));
 				else if (tile2 instanceof IInventory && LazUtils.InventoryCore.CanAddToInventory((IInventory) tile2, stack))
 					LazUtils.InventoryCore.AddToInventory((IInventory) tile2, stack);
 				else
@@ -229,7 +233,7 @@ public class TileExtractor extends TileEntity implements I6WayWrenchable,ITubeCo
 	public void AcceptCapsule(ICapsule capsule)
 	{
 		capsule.resetProgress();
-		contents.add(capsule);
+		pending.add(capsule);
 	}
 
 	@Override
