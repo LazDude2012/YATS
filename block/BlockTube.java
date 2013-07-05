@@ -24,7 +24,6 @@ import java.util.List;
 
 public class BlockTube extends Block implements ITileEntityProvider
 {
-	public int renderID;
 	public BlockTube(int id)
 	{
 		super(id, Material.rock);
@@ -97,7 +96,7 @@ public class BlockTube extends Block implements ITileEntityProvider
 	@Override
 	public int getRenderType()
 	{
-		return renderID;
+		return -1;
 	}
 	
 	   @Override

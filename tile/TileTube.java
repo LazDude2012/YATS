@@ -23,7 +23,7 @@ public class TileTube extends TileEntity implements ITubeConnectable
 {
 	public int pressure = 5;
 	public ArrayList<ICapsule> contents;
-    public ArrayList<ICapsule> pending;
+    public ArrayList<ICapsule> pending = new ArrayList<ICapsule>();
 	public boolean isConnectableOnSide[] = {true,true,true,true,true,true};
 	public boolean isConnectedOnSide[] = new boolean[6];
 	public Colours colour = Colours.NONE;

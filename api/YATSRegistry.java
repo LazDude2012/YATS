@@ -35,7 +35,7 @@ public class YATSRegistry
 		try
 		{
 			int id = nbt.getInteger("capsuletype");
-			ICapsule capsule = getCapsuleTypeFromID(id).getDeclaredConstructor(null).newInstance();
+			ICapsule capsule = getCapsuleTypeFromID(id).getDeclaredConstructor().newInstance();
 			capsule.loadFromNBT(nbt.getCompoundTag("capsule"));
 			return capsule;
 		}

@@ -462,7 +462,7 @@ public class TubeRenderer extends TileEntitySpecialRenderer implements IItemRend
 		Colours colour = tube.GetColour();
 		if(colour == Colours.NONE) return;
 		byte[] rgb = Colours.toRGB(colour);
-		bindTextureByName("/mods/YATS/textures/blocks/yats-paintring.png");
+        Minecraft.getMinecraft().renderEngine.bindTexture("/mods/YATS/textures/blocks/yats-paintring.png");
 		glPushMatrix();
 		glTranslated(x,y,z);
 		glDisable(GL_CULL_FACE);
@@ -516,21 +516,21 @@ public class TubeRenderer extends TileEntitySpecialRenderer implements IItemRend
 		glEnable(GL_CULL_FACE);
 	}
         
-        @Override
-        public boolean handleRenderType(ItemStack item, ItemRenderType type)
-        {
-                return true;
-        }
+    @Override
+    public boolean handleRenderType(ItemStack item, ItemRenderType type)
+    {
+            return true;
+    }
 
-        @Override
-        public boolean shouldUseRenderHelper(ItemRenderType type, ItemStack item, ItemRendererHelper helper)
-        {
-                return false;
-        }
+    @Override
+    public boolean shouldUseRenderHelper(ItemRenderType type, ItemStack item, ItemRendererHelper helper)
+    {
+            return false;
+    }
 
-        @Override
-        public void renderItem(ItemRenderType type, ItemStack item, Object... data)
-        {
-                RenderTube(0.5, 0.5, 0.5, false, false, false, false, true, true);
-        }
+    @Override
+    public void renderItem(ItemRenderType type, ItemStack item, Object... data)
+    {
+            RenderTube(0.5, 0.5, 0.5, false, false, false, false, true, true);
+    }
 }
