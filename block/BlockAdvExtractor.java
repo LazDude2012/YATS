@@ -66,6 +66,28 @@ public class BlockAdvExtractor extends Block implements ITileEntityProvider
         return true;
     }
 
+    public Icon getIcon(int side, int meta)
+    {
+        //INVENTORY BLOCKS FACE SOUTH
+        ForgeDirection face = ForgeDirection.getOrientation(side);
+        switch(face)
+        {
+            case UP:
+                return advextractor_side_normal_down;
+            case WEST:
+                return advextractor_side_normal_right;
+            case EAST:
+                return advextractor_side_normal_left;
+            case DOWN:
+                return advextractor_side_normal_up;
+            case NORTH:
+                return BlockExtractor.lowmachine_tubeside;
+            case SOUTH:
+                return BlockExtractor.lowmachine_invside;
+        }
+        return BlockExtractor.lowmachine_invside;
+    }
+
 	public Icon getBlockTexture(IBlockAccess world,int x, int y, int z, int side)
 	{
 		TileAdvExtractor ext = (TileAdvExtractor) world.getBlockTileEntity(x,y,z);

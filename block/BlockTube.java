@@ -8,23 +8,32 @@ import YATS.common.YATS;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
 
 public class BlockTube extends Block implements ITileEntityProvider
 {
 	public int renderID;
+    protected Icon itemicon;
 	public BlockTube(int id)
 	{
 		super(id, Material.rock);
 		setCreativeTab(YATS.tabYATS);
 		setUnlocalizedName("YATSBlockTube");
 	}
+
+    @Override
+    public String getItemIconName()
+    {
+        return "YATS:blockTube";
+    }
 
 	@Override
 	public void onBlockPlacedBy(World world, int x, int y, int z, EntityLiving entity, ItemStack itemStack)
@@ -43,6 +52,12 @@ public class BlockTube extends Block implements ITileEntityProvider
 	{
 		CheckTubeConnections(world,x,y,z);
 	}
+
+    @Override
+    public void registerIcons(IconRegister register)
+    {
+        itemicon = register.registerIcon("YATS:blockTube");
+    }
 
 	public static void CheckTubeConnections(World world, int x, int y, int z)
 	{

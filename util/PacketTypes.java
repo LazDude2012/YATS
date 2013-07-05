@@ -2,5 +2,6 @@ package YATS.util;
 
 public enum PacketTypes
 {
-    ADVEXT_COLOUR
+    ADVEXT_COLOUR,
+    RM_UPDATE;
 }

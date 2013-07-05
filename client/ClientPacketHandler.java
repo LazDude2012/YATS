@@ -1,6 +1,7 @@
 package YATS.client;
 
 import YATS.tile.TileAdvExtractor;
+import YATS.tile.TileRoutingMarshaller;
 import YATS.util.LazUtils;
 import YATS.util.PacketTypes;
 import cpw.mods.fml.common.network.IPacketHandler;
@@ -39,6 +40,27 @@ public class ClientPacketHandler implements IPacketHandler
             stream.writeInt(tile.yCoord);
             stream.writeInt(tile.zCoord);
             stream.writeInt(tile.getFilterColour().ordinal());
+            Packet250CustomPayload pkt = new Packet250CustomPayload("YATS",bstream.toByteArray());
+            PacketDispatcher.sendPacketToServer(pkt);
+        }
+        catch (IOException e)
+        {
+            LazUtils.LogException(e.toString(),e);
+        }
+    }
+    public static void DispatchRMPkt(TileRoutingMarshaller tile)
+    {
+        try
+        {
+            ByteArrayOutputStream bstream = new ByteArrayOutputStream();
+            DataOutputStream stream = new DataOutputStream(bstream);
+            stream.writeInt(PacketTypes.RM_UPDATE.ordinal());
+            stream.writeInt(tile.worldObj.getWorldInfo().getDimension());
+            stream.writeInt(tile.xCoord);
+            stream.writeInt(tile.yCoord);
+            stream.writeInt(tile.zCoord);
+            for(int i = 0; i < 5; i++)
+                stream.writeInt(tile.rowColours[i].ordinal());
             Packet250CustomPayload pkt = new Packet250CustomPayload("YATS",bstream.toByteArray());
             PacketDispatcher.sendPacketToServer(pkt);
         }

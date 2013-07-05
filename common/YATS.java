@@ -36,6 +36,7 @@ public class YATS
 	public static boolean IS_DEBUG = true;
 
     public final static int ADVEXTRACTOR_GUI = 1;
+    public final static int ROUTINGMARSHALLER_GUI = 2;
 
 	public static Block blockRemoteExtractor;
 	public static Block blockRoutingMarshaller;

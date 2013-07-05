@@ -64,6 +64,28 @@ public class BlockExtractor extends Block implements ITileEntityProvider
         tile.RotateTo(LazUtils.GetFDFromEntity(placer, true));
     }
 
+    public Icon getIcon(int side, int meta)
+    {
+        //INVENTORY BLOCKS FACE SOUTH
+        ForgeDirection face = ForgeDirection.getOrientation(side);
+        switch(face)
+        {
+            case UP:
+                return extractor_side_normal_down;
+            case WEST:
+                return extractor_side_normal_right;
+            case EAST:
+                return extractor_side_normal_left;
+            case DOWN:
+                return extractor_side_normal_up;
+            case NORTH:
+                return lowmachine_tubeside;
+            case SOUTH:
+                return lowmachine_invside;
+        }
+        return lowmachine_invside;
+    }
+
 	public Icon getBlockTexture(IBlockAccess world,int x, int y, int z, int side)
 {
 	TileExtractor ext = (TileExtractor) world.getBlockTileEntity(x,y,z);
