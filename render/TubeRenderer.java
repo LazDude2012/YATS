@@ -20,37 +20,20 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
 
 import static org.lwjgl.opengl.GL11.*;
+import static net.minecraftforge.common.ForgeDirection.*;
 
 public class TubeRenderer extends TileEntitySpecialRenderer implements ISimpleBlockRenderingHandler
 {
-	int renderID;
-	protected RenderItem renderitem;
-
-	public TubeRenderer(int renderID)
-	{
-		this.renderID=renderID;
-	}
-
-	@Override
-	public void renderInventoryBlock(Block block, int metadata, int modelID, RenderBlocks renderer)
-	{
-    }
-
-	@Override
-	public boolean renderWorldBlock(IBlockAccess world, int x, int y, int z, Block block, int modelId, RenderBlocks renderer)
-	{
-		return true;
-	}
-
 	// TPW_RULES is the boss, he showed me what's up with OpenGL.
-	private void RenderTube(IBlockAccess world, TileTube tube, double x, double y, double z)
+	private void RenderTube(double x, double y, double z, boolean north, 
+                                boolean south, boolean west, boolean east, boolean up, boolean down)
 	{
 		this.bindTextureByName("/mods/YATS/textures/blocks/yats-tubecore.png");
 		glPushMatrix();
 		glTranslated(x, y, z);
 		glDisable(GL_CULL_FACE);
 
-		if(tube.IsConnectedOnSide(ForgeDirection.NORTH))
+		if(north)
 		{
 			//region NORTH ARM
 			//NORTH ARM FACE 1: WEST
@@ -115,7 +98,7 @@ public class TubeRenderer extends TileEntitySpecialRenderer implements ISimpleBl
 			glEnd();
 			//endregion FACE 1
 		}
-		if(tube.IsConnectedOnSide(ForgeDirection.SOUTH))
+		if(south)
 		{
 			//region SOUTH ARM
 
@@ -182,7 +165,7 @@ public class TubeRenderer extends TileEntitySpecialRenderer implements ISimpleBl
 			glEnd();
 			//endregion FACE 2
 		}
-		if(tube.IsConnectedOnSide(ForgeDirection.WEST))
+		if(west)
 		{
 			//region WEST ARM
 
@@ -249,7 +232,7 @@ public class TubeRenderer extends TileEntitySpecialRenderer implements ISimpleBl
             glEnd();
             //endregion FACE 3
 		}
-		if(tube.IsConnectedOnSide(ForgeDirection.EAST))
+		if(east)
 		{
 			//region EAST ARM
 
@@ -316,7 +299,7 @@ public class TubeRenderer extends TileEntitySpecialRenderer implements ISimpleBl
 			glEnd();
 			//endregion
 		}
-		if(tube.IsConnectedOnSide(ForgeDirection.UP))
+		if(up))
 		{
 			//region TOP ARM
 
@@ -383,7 +366,7 @@ public class TubeRenderer extends TileEntitySpecialRenderer implements ISimpleBl
 			glEnd();
 			//endregion FACE 5
 		}
-		if(tube.IsConnectedOnSide(ForgeDirection.DOWN))
+		if(down)
 		{
 			//region BOTTOM ARM
 
@@ -455,24 +438,18 @@ public class TubeRenderer extends TileEntitySpecialRenderer implements ISimpleBl
 	}
 
 	@Override
-	public boolean shouldRender3DInInventory()
-	{
-		return false;
-	}
-
-	@Override
-	public int getRenderId()
-	{
-		return renderID;
-	}
-
-	@Override
 	public void renderTileEntityAt(TileEntity tileentity, double x, double y, double z, float f)
 	{
 		glPushMatrix();
 		glDisable(GL_LIGHTING);
 		TileTube tube = (TileTube)tileentity;
-		RenderTube(tube.worldObj, tube, x,y,z);
+		RenderTube(x, y, z,
+                       	tube.IsConnectedOnSide(NORTH),
+                        tube.IsConnectedOnSide(SOUTH),
+                        tube.IsConnectedOnSide(WEST),
+                        tube.IsConnectedOnSide(EAST),
+                        tube.IsConnectedOnSide(UP),
+                        tube.IsConnectedOnSide(DOWN));
 		if(tube.GetColour() != Colours.NONE) RenderPaint(tube.worldObj,tube,x,y,z);
 		if(tube.contents.size() != 0 && YATS.IS_DEBUG)
 		LazUtils.logNormal("Curiosity! Tube contents size: %s",tube.contents.size());
@@ -544,4 +521,22 @@ public class TubeRenderer extends TileEntitySpecialRenderer implements ISimpleBl
 		glPopMatrix();
 		glEnable(GL_CULL_FACE);
 	}
+        
+        @Override
+        public boolean handleRenderType(ItemStack item, ItemRenderType type)
+        {
+                return true;
+        }
+
+        @Override
+        public boolean shouldUseRenderHelper(ItemRenderType type, ItemStack item, ItemRendererHelper helper)
+        {
+                return false;
+        }
+
+        @Override
+        public void renderItem(ItemRenderType type, ItemStack item, Object... data)
+        {
+                RenderTube(0, 0, 0, false, false, false, false, true, true);
+        }
 }
