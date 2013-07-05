@@ -1,9 +1,11 @@
 package YATS.common;
 
 import YATS.api.YATSRegistry;
+import YATS.block.*;
 import YATS.capsule.ItemCapsule;
 import YATS.client.ClientPacketHandler;
 import YATS.common.gui.TabYATS;
+import YATS.item.ItemBlockTube;
 import YATS.item.ItemSpanner;
 import YATS.tile.*;
 import YATS.util.ConfigHandler;
@@ -15,7 +17,6 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
-import YATS.block.*;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
@@ -108,9 +109,9 @@ public class YATS
 		GameRegistry.registerTileEntity(TileItemBuffer.class, "YATSTileItemBuffer");
 		LanguageRegistry.addName(blockItemBuffer,"Item Buffer");
 
-		GameRegistry.registerBlock(blockTube,"YATSBlockTube");
-		GameRegistry.registerTileEntity(TileTube.class, "YATSTileTube");
-		LanguageRegistry.addName(blockTube, "Transport Tube");
+        	GameRegistry.registerBlock(blockTube, "YATSBlockTube");
+        	GameRegistry.registerTileEntity(TileTube.class, "YATSTileTube");
+        	LanguageRegistry.addName(blockTube, "Transport Tube");
 
 		GameRegistry.registerBlock(blockRemoteExtractor, "YATSBlockRemoteExtractor");
 		GameRegistry.registerTileEntity(TileRemoteExtractor.class, "YATSTileRemoteExtractor");

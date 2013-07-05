@@ -13,11 +13,7 @@ public class ClientProxy extends CommonProxy
 	@Override
 	public void RegisterRenderInformation()
 	{
-
-		int tubeRenderID = RenderingRegistry.getNextAvailableRenderId();
-		TubeRenderer tubeRenderer = new TubeRenderer(tubeRenderID);
-		((BlockTube)YATS.blockTube).renderID = tubeRenderID;
-		ClientRegistry.bindTileEntitySpecialRenderer(TileTube.class,tubeRenderer);
-		RenderingRegistry.registerBlockHandler(tubeRenderer);
+		ClientRegistry.bindTileEntitySpecialRenderer(TileTube.class, new TubeRenderer());
+        	MinecraftForgeClient.registerItemRenderer(YATS.blockTube.blockID, new TubeRenderer());
 	}
 }
