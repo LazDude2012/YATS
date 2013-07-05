@@ -1,22 +1,24 @@
 package YATS.block;
 
 import YATS.api.ITubeConnectable;
+import YATS.common.YATS;
 import YATS.tile.TileTube;
 import YATS.util.Colours;
 import YATS.util.LazUtils;
-import YATS.common.YATS;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.Icon;
+import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
+
+import java.util.List;
 
 public class BlockTube extends Block implements ITileEntityProvider
 {
