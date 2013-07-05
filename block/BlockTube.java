@@ -95,4 +95,98 @@ public class BlockTube extends Block implements ITileEntityProvider
 	{
 		return renderID;
 	}
+	
+	   @Override
+    public void setBlockBoundsBasedOnState(IBlockAccess iba, int x, int y, int z)
+    {
+        TileEntity te = iba.getBlockTileEntity(x, y, z);
+        if (te != null && te instanceof ITubeConnectable) {
+            SetBlockBounds(GetAABBFromState((ITubeConnectable) te));
+        } else {
+            super.setBlockBoundsBasedOnState(iba, x, y, z);
+        }
+    }
+
+    @Override
+    public AxisAlignedBB getCollisionBoundingBoxFromPool(World wrd, int x, int y, int z)
+    {
+        TileEntity te = wrd.getBlockTileEntity(x, y, z);
+        if (te != null && te instanceof ITubeConnectable) {
+            return TranslateAABB(GetAABBFromState((ITubeConnectable) te), x, y, z);
+        } else {
+            return super.getCollisionBoundingBoxFromPool(wrd, x, y, z);
+        }
+    }
+
+    @Override
+    public AxisAlignedBB getSelectedBoundingBoxFromPool(World wrd, int x, int y, int z)
+    {
+        return getCollisionBoundingBoxFromPool(wrd, x, y, z);
+    }
+
+    @Override
+    public void addCollisionBoxesToList(World wrd, int x, int y, int z, AxisAlignedBB aabb, List lst, Entity ent)
+    {
+        setBlockBoundsBasedOnState(wrd, x, y, z);
+        super.addCollisionBoxesToList(wrd, x, y, z, aabb, lst, ent);
+    }
+
+    private AxisAlignedBB GetAABBFromState(ITubeConnectable te)
+    {
+        final float p = 1F / 16F;
+        AxisAlignedBB aabb = GetAABB(4, 4, 4, 12, 12, 12);
+        for (int i = 0; i < 6; i++) {
+            ForgeDirection side = ForgeDirection.values()[i];
+            if (te.IsConnectedOnSide(side)) {
+                switch (side) {
+                    case DOWN:
+                        aabb.setBounds(aabb.minX, 0, aabb.minZ, aabb.maxX, aabb.maxY, aabb.maxZ);
+                        break;
+                    case UP:
+                        aabb.setBounds(aabb.minX, aabb.minY, aabb.minZ, aabb.maxX, 1, aabb.maxZ);
+                        break;
+                    case NORTH:
+                        aabb.setBounds(aabb.minX, aabb.minY, 0, aabb.maxX, aabb.maxY, aabb.maxZ);
+                        break;
+                    case SOUTH:
+                        aabb.setBounds(aabb.minX, aabb.minY, aabb.minZ, aabb.maxX, aabb.maxY, 1);
+                        break;
+                    case WEST:
+                        aabb.setBounds(0, aabb.minY, aabb.minZ, aabb.maxX, aabb.maxY, aabb.maxZ);
+                        break;
+                    case EAST:
+                        aabb.setBounds(aabb.minX, aabb.minY, aabb.minZ, 1, aabb.maxY, aabb.maxZ);
+                        break;
+                }
+            }
+        }
+        return aabb;
+    }
+
+    private AxisAlignedBB TranslateAABB(AxisAlignedBB aabb, int x, int y, int z)
+    {
+        aabb.minX += x;
+        aabb.minY += y;
+        aabb.minZ += z;
+        aabb.maxX += x;
+        aabb.maxY += y;
+        aabb.maxZ += z;
+        return aabb;
+    }
+
+    private AxisAlignedBB GetAABB(int nX, int nY, int nZ, int mX, int mY, int mZ)
+    {
+        final double p = 1D / 16D;
+        return AxisAlignedBB.getAABBPool().getAABB(nX * p, nY * p, nZ * p, mX * p, mY * p, mZ * p);
+    }
+
+    private void SetBlockBounds(AxisAlignedBB aabb)
+    {
+        this.maxX = aabb.maxX;
+        this.maxY = aabb.maxY;
+        this.maxZ = aabb.maxZ;
+        this.minX = aabb.minX;
+        this.minY = aabb.minY;
+        this.minZ = aabb.minZ;
+    }
 }
