@@ -178,7 +178,7 @@ public class TileExtractor extends TileEntity implements I6WayWrenchable,ITubeCo
 	@Override
 	public boolean AcceptsItemsOnSide(ForgeDirection side)
 	{
-		return (side == currentfacing.getOpposite());
+		return (side == currentfacing);
 	}
 
 	@Override

@@ -84,7 +84,7 @@ public class TileAdvExtractor extends TileEntity implements ITubeConnectable, II
 	public boolean isStackValidForSlot(int i, ItemStack itemstack) { return true; }
 
 	@Override
-	public boolean AcceptsItemsOnSide(ForgeDirection side) { return (side == facing || side == facing.getOpposite()); }
+	public boolean AcceptsItemsOnSide(ForgeDirection side) { return (side == facing); }
 
 	@Override
 	public boolean IsConnectedOnSide(ForgeDirection side) { return connections[side.ordinal()]; }
