@@ -29,7 +29,7 @@ public class TileExtractor extends TileEntity implements I6WayWrenchable,ITubeCo
 	private boolean isContinuedSignal;
 	public boolean isBusy;
 	private ArrayList<ICapsule> contents = new ArrayList<ICapsule>();
-    private ArrayList<ICapsule> pending = new ArrayList<ICapsule>();
+	private ArrayList<ICapsule> pending = new ArrayList<ICapsule>();
 	private boolean[] connections = new boolean[6];
 	private boolean deferUpdate = false;
 
@@ -124,8 +124,7 @@ public class TileExtractor extends TileEntity implements I6WayWrenchable,ITubeCo
 				else
 				{
 					LazUtils.XYZCoords coords = LazUtils.XYZCoords.FromTile(this).Next(currentfacing.getOpposite());
-					EntityItem item = new EntityItem(worldObj,coords.x,coords.y,coords.z,stack);
-                    item.setVelocity(0,0,0);
+					EntityItem item = new EntityItem(worldObj,coords.x+0.5,coords.y+0.5,coords.z+0.5,stack);
 					worldObj.spawnEntityInWorld(item);
 				}
 			}
@@ -178,7 +177,7 @@ public class TileExtractor extends TileEntity implements I6WayWrenchable,ITubeCo
 	@Override
 	public boolean AcceptsItemsOnSide(ForgeDirection side)
 	{
-		return (side == currentfacing.getOpposite());
+		return (side == currentfacing);
 	}
 
 	@Override
