@@ -5,30 +5,24 @@ import YATS.common.YATS;
 import YATS.tile.TileTube;
 import YATS.util.Colours;
 import YATS.util.LazUtils;
-import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 import cpw.mods.fml.common.FMLLog;
-import net.minecraft.block.Block;
-import net.minecraft.client.renderer.RenderBlocks;
-import net.minecraft.client.renderer.entity.RenderItem;
-import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.common.ForgeDirection;
+import net.minecraftforge.client.IItemRenderer;
 
-import static org.lwjgl.opengl.GL11.*;
 import static net.minecraftforge.common.ForgeDirection.*;
+import static org.lwjgl.opengl.GL11.*;
 
-public class TubeRenderer extends TileEntitySpecialRenderer implements ISimpleBlockRenderingHandler
+public class TubeRenderer extends TileEntitySpecialRenderer implements IItemRenderer
 {
 	// TPW_RULES is the boss, he showed me what's up with OpenGL.
 	private void RenderTube(double x, double y, double z, boolean north, 
                                 boolean south, boolean west, boolean east, boolean up, boolean down)
 	{
-		this.bindTextureByName("/mods/YATS/textures/blocks/yats-tubecore.png");
+		Minecraft.getMinecraft().renderEngine.bindTexture("/mods/YATS/textures/blocks/yats-tubecore.png");
 		glPushMatrix();
 		glTranslated(x, y, z);
 		glDisable(GL_CULL_FACE);
@@ -537,6 +531,6 @@ public class TubeRenderer extends TileEntitySpecialRenderer implements ISimpleBl
         @Override
         public void renderItem(ItemRenderType type, ItemStack item, Object... data)
         {
-                RenderTube(0, 0, 0, false, false, false, false, true, true);
+                RenderTube(0.5, 0.5, 0.5, false, false, false, false, true, true);
         }
 }
