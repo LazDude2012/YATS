@@ -212,7 +212,7 @@ public class LazUtils
 			for(int i = 0;i < inv.getSizeInventory();i++)
 			{
 				ItemStack invstack = inv.getStackInSlot(i);
-				if(invstack == null) continue;
+				if(invstack == null || stack == null) continue;
 				if(invstack.getItem() == stack.getItem())
 				{
 					if(invstack.stackSize >= stack.stackSize)

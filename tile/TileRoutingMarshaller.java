@@ -27,6 +27,7 @@ public class TileRoutingMarshaller extends TileEntity implements IInventory, I6W
 {
     public ItemStack[] inventory = new ItemStack[40];
     public Colours[] rowColours = {NONE,NONE,NONE,NONE,NONE};
+    public int activeRow = 0;
     private ArrayList<ICapsule> contents = new ArrayList<ICapsule>();
     private ForgeDirection currentfacing = ForgeDirection.UNKNOWN;
     private boolean[] connections = new boolean[6];
