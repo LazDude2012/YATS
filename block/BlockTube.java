@@ -8,12 +8,14 @@ import YATS.util.LazUtils;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
@@ -189,5 +191,17 @@ public class BlockTube extends Block implements ITileEntityProvider
         this.minX = aabb.minX;
         this.minY = aabb.minY;
         this.minZ = aabb.minZ;
+    }
+    
+    @Override
+    public void registerIcons(IconRegister ir)
+    {
+        blockIcon = ir.registerIcon("YATS:yats-tubecore");
+    }
+
+    @Override
+    public Icon getIcon(int par1, int par2)
+    {
+        return blockIcon;
     }
 }
