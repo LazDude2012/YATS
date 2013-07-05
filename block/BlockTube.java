@@ -135,7 +135,6 @@ public class BlockTube extends Block implements ITileEntityProvider
 
     private AxisAlignedBB GetAABBFromState(ITubeConnectable te)
     {
-        final float p = 1F / 16F;
         AxisAlignedBB aabb = GetAABB(4, 4, 4, 12, 12, 12);
         for (int i = 0; i < 6; i++) {
             ForgeDirection side = ForgeDirection.values()[i];
