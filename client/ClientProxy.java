@@ -7,6 +7,7 @@ import YATS.render.TubeRenderer;
 import YATS.tile.TileTube;
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
+import net.minecraftforge.client.MinecraftForgeClient;
 
 public class ClientProxy extends CommonProxy
 {
@@ -14,6 +15,6 @@ public class ClientProxy extends CommonProxy
 	public void RegisterRenderInformation()
 	{
 		ClientRegistry.bindTileEntitySpecialRenderer(TileTube.class, new TubeRenderer());
-        	MinecraftForgeClient.registerItemRenderer(YATS.blockTube.blockID, new TubeRenderer());
+        MinecraftForgeClient.registerItemRenderer(YATS.blockTube.blockID, new TubeRenderer());
 	}
 }

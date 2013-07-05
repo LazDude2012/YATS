@@ -32,7 +32,7 @@ public class TileAdvExtractor extends TileEntity implements ITubeConnectable, II
 	private Colours filterColour = Colours.NONE;
 	private ForgeDirection facing = ForgeDirection.WEST;
 	private ArrayList<ICapsule> contents = new ArrayList<ICapsule>();
-    private ArrayList<ICapsule> pending = new ArrayList<ICapsule>();
+	private ArrayList<ICapsule> pending = new ArrayList<ICapsule>();
 	private boolean[] connections = new boolean[6];
 	private boolean isContinuedSignal, deferUpdate;
 	public boolean isBusy;
@@ -84,7 +84,7 @@ public class TileAdvExtractor extends TileEntity implements ITubeConnectable, II
 	public boolean isStackValidForSlot(int i, ItemStack itemstack) { return true; }
 
 	@Override
-	public boolean AcceptsItemsOnSide(ForgeDirection side) { return (side == facing); }
+	public boolean AcceptsItemsOnSide(ForgeDirection side) { return (side == facing);}
 
 	@Override
 	public boolean IsConnectedOnSide(ForgeDirection side) { return connections[side.ordinal()]; }
@@ -94,11 +94,11 @@ public class TileAdvExtractor extends TileEntity implements ITubeConnectable, II
 	{
 		if(capsule instanceof ItemCapsule)
 		{
+			if(capstack == null) return false; 
 			ItemStack capstack = (ItemStack) capsule.GetContents();
-            if(capstack == null) return false;
 			for(ItemStack stack : inventory)
 			{
-                if(stack == null) return false;
+				if(stack == null) return false; 
 				if(capstack.isItemEqual(stack)) return true;
 			}
 		}

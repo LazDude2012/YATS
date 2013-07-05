@@ -306,6 +306,6 @@ public class TileRoutingMarshaller extends TileEntity implements IInventory, I6W
                 }
             }
         }
-        activeRow = (activeRow == 4 ? 0 : activeRow + 1);
+        activeRow = (activeRow == 4 ? 0 : activeRow + 1); 
     }
 }
