@@ -95,8 +95,10 @@ public class TileAdvExtractor extends TileEntity implements ITubeConnectable, II
 		if(capsule instanceof ItemCapsule)
 		{
 			ItemStack capstack = (ItemStack) capsule.GetContents();
+            if(capstack == null) return false;
 			for(ItemStack stack : inventory)
 			{
+                if(stack == null) return false;
 				if(capstack.isItemEqual(stack)) return true;
 			}
 		}
