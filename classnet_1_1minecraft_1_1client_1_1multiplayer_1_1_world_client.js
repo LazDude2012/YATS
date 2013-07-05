@@ -1,0 +1,27 @@
+var classnet_1_1minecraft_1_1client_1_1multiplayer_1_1_world_client =
+[
+    [ "WorldClient", "classnet_1_1minecraft_1_1client_1_1multiplayer_1_1_world_client.html#af133f33919777ec6a2b980b3a61698f6", null ],
+    [ "addEntityToWorld", "classnet_1_1minecraft_1_1client_1_1multiplayer_1_1_world_client.html#abd1e8bcdf7eee6d47683e22d7f3ec288", null ],
+    [ "addWorldInfoToCrashReport", "classnet_1_1minecraft_1_1client_1_1multiplayer_1_1_world_client.html#a4c785db526460d6e25720978cdddfb08", null ],
+    [ "createChunkProvider", "classnet_1_1minecraft_1_1client_1_1multiplayer_1_1_world_client.html#af5fe97cb81dbcd243077bfc1e4334690", null ],
+    [ "doPreChunk", "classnet_1_1minecraft_1_1client_1_1multiplayer_1_1_world_client.html#a10241a4163cd784b2c2506e829ec725c", null ],
+    [ "doVoidFogParticles", "classnet_1_1minecraft_1_1client_1_1multiplayer_1_1_world_client.html#a11d8baaeb35bcc968f6e6f7750536b35", null ],
+    [ "func_82735_a", "classnet_1_1minecraft_1_1client_1_1multiplayer_1_1_world_client.html#ab5b1ee1cec2b8300b6a1d045390d5fed", null ],
+    [ "func_92088_a", "classnet_1_1minecraft_1_1client_1_1multiplayer_1_1_world_client.html#ac389e8eb166d7dc4f49c6148a9345b5f", null ],
+    [ "func_96443_a", "classnet_1_1minecraft_1_1client_1_1multiplayer_1_1_world_client.html#a2ddfc3552e6ba8e7dbf46af649a2f254", null ],
+    [ "getEntityByID", "classnet_1_1minecraft_1_1client_1_1multiplayer_1_1_world_client.html#a792349f0e5daba1c70cb2fb836afb4af", null ],
+    [ "invalidateBlockReceiveRegion", "classnet_1_1minecraft_1_1client_1_1multiplayer_1_1_world_client.html#aeb436264c3e3adeec5ff6175130ed7a9", null ],
+    [ "obtainEntitySkin", "classnet_1_1minecraft_1_1client_1_1multiplayer_1_1_world_client.html#ad49d934beabad076fc385b59999258e2", null ],
+    [ "playSound", "classnet_1_1minecraft_1_1client_1_1multiplayer_1_1_world_client.html#a310ea37f326ad6c2753ab37b751b3880", null ],
+    [ "releaseEntitySkin", "classnet_1_1minecraft_1_1client_1_1multiplayer_1_1_world_client.html#acc8ef0c4c2d076e88d39e0f165defc94", null ],
+    [ "removeAllEntities", "classnet_1_1minecraft_1_1client_1_1multiplayer_1_1_world_client.html#a0cf615babf88407c09e7bd821cae0e36", null ],
+    [ "removeEntity", "classnet_1_1minecraft_1_1client_1_1multiplayer_1_1_world_client.html#a7d471cf6ec3370b6ff9ec5acac9ea16c", null ],
+    [ "removeEntityFromWorld", "classnet_1_1minecraft_1_1client_1_1multiplayer_1_1_world_client.html#abb445cd2a75188510ab7a96710409580", null ],
+    [ "sendQuittingDisconnectingPacket", "classnet_1_1minecraft_1_1client_1_1multiplayer_1_1_world_client.html#af39f6bbec0db3e9d75166acb0ddba4e4", null ],
+    [ "setBlockAndMetadataAndInvalidate", "classnet_1_1minecraft_1_1client_1_1multiplayer_1_1_world_client.html#a2c96c398b78f1a9837e6be0658a58638", null ],
+    [ "spawnEntityInWorld", "classnet_1_1minecraft_1_1client_1_1multiplayer_1_1_world_client.html#a007ec332f2e56fc58b06fc3a53235d33", null ],
+    [ "tick", "classnet_1_1minecraft_1_1client_1_1multiplayer_1_1_world_client.html#a5302b673dc514d64cc947b57e0c9b565", null ],
+    [ "tickBlocksAndAmbiance", "classnet_1_1minecraft_1_1client_1_1multiplayer_1_1_world_client.html#a16b56677ff9042e93656990836b66bff", null ],
+    [ "updateWeather", "classnet_1_1minecraft_1_1client_1_1multiplayer_1_1_world_client.html#a1d1aa363cba9d2c06afdacd980eef8c0", null ],
+    [ "updateWeatherBody", "classnet_1_1minecraft_1_1client_1_1multiplayer_1_1_world_client.html#a0b1faf294ccdb25b085b6ebde8e4c5a8", null ]
+];

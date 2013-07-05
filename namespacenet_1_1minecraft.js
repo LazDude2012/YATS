@@ -1,0 +1,27 @@
+var namespacenet_1_1minecraft =
+[
+    [ "block", "namespacenet_1_1minecraft_1_1block.html", "namespacenet_1_1minecraft_1_1block" ],
+    [ "client", "namespacenet_1_1minecraft_1_1client.html", "namespacenet_1_1minecraft_1_1client" ],
+    [ "command", "namespacenet_1_1minecraft_1_1command.html", "namespacenet_1_1minecraft_1_1command" ],
+    [ "crash", "namespacenet_1_1minecraft_1_1crash.html", "namespacenet_1_1minecraft_1_1crash" ],
+    [ "creativetab", "namespacenet_1_1minecraft_1_1creativetab.html", "namespacenet_1_1minecraft_1_1creativetab" ],
+    [ "dispenser", "namespacenet_1_1minecraft_1_1dispenser.html", "namespacenet_1_1minecraft_1_1dispenser" ],
+    [ "enchantment", "namespacenet_1_1minecraft_1_1enchantment.html", "namespacenet_1_1minecraft_1_1enchantment" ],
+    [ "entity", "namespacenet_1_1minecraft_1_1entity.html", "namespacenet_1_1minecraft_1_1entity" ],
+    [ "inventory", "namespacenet_1_1minecraft_1_1inventory.html", "namespacenet_1_1minecraft_1_1inventory" ],
+    [ "item", "namespacenet_1_1minecraft_1_1item.html", "namespacenet_1_1minecraft_1_1item" ],
+    [ "logging", "namespacenet_1_1minecraft_1_1logging.html", "namespacenet_1_1minecraft_1_1logging" ],
+    [ "nbt", "namespacenet_1_1minecraft_1_1nbt.html", "namespacenet_1_1minecraft_1_1nbt" ],
+    [ "network", "namespacenet_1_1minecraft_1_1network.html", "namespacenet_1_1minecraft_1_1network" ],
+    [ "pathfinding", "namespacenet_1_1minecraft_1_1pathfinding.html", "namespacenet_1_1minecraft_1_1pathfinding" ],
+    [ "potion", "namespacenet_1_1minecraft_1_1potion.html", "namespacenet_1_1minecraft_1_1potion" ],
+    [ "profiler", "namespacenet_1_1minecraft_1_1profiler.html", "namespacenet_1_1minecraft_1_1profiler" ],
+    [ "scoreboard", "namespacenet_1_1minecraft_1_1scoreboard.html", "namespacenet_1_1minecraft_1_1scoreboard" ],
+    [ "server", "namespacenet_1_1minecraft_1_1server.html", "namespacenet_1_1minecraft_1_1server" ],
+    [ "src", "namespacenet_1_1minecraft_1_1src.html", "namespacenet_1_1minecraft_1_1src" ],
+    [ "stats", "namespacenet_1_1minecraft_1_1stats.html", "namespacenet_1_1minecraft_1_1stats" ],
+    [ "tileentity", "namespacenet_1_1minecraft_1_1tileentity.html", "namespacenet_1_1minecraft_1_1tileentity" ],
+    [ "util", "namespacenet_1_1minecraft_1_1util.html", "namespacenet_1_1minecraft_1_1util" ],
+    [ "village", "namespacenet_1_1minecraft_1_1village.html", "namespacenet_1_1minecraft_1_1village" ],
+    [ "world", "namespacenet_1_1minecraft_1_1world.html", "namespacenet_1_1minecraft_1_1world" ]
+];

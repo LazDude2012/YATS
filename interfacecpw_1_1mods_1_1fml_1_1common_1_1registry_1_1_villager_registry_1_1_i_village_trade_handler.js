@@ -1,0 +1,4 @@
+var interfacecpw_1_1mods_1_1fml_1_1common_1_1registry_1_1_villager_registry_1_1_i_village_trade_handler =
+[
+    [ "manipulateTradesForVillager", "interfacecpw_1_1mods_1_1fml_1_1common_1_1registry_1_1_villager_registry_1_1_i_village_trade_handler.html#ab2f0b6f4d9b819b9e054f05c4c0c15ec", null ]
+];

@@ -1,0 +1,26 @@
+var classnet_1_1minecraft_1_1entity_1_1passive_1_1_entity_pig =
+[
+    [ "EntityPig", "classnet_1_1minecraft_1_1entity_1_1passive_1_1_entity_pig.html#a6250e500dde4804695fcb9bbdac214d5", null ],
+    [ "canBeSteered", "classnet_1_1minecraft_1_1entity_1_1passive_1_1_entity_pig.html#a30abffca37b9d8791661a3d94e897c16", null ],
+    [ "createChild", "classnet_1_1minecraft_1_1entity_1_1passive_1_1_entity_pig.html#aaebdc9c5d900f7cf097c9e64a430550d", null ],
+    [ "dropFewItems", "classnet_1_1minecraft_1_1entity_1_1passive_1_1_entity_pig.html#a4f64b5f3bd62cd9b1a848e3e1cc3d0ba", null ],
+    [ "entityInit", "classnet_1_1minecraft_1_1entity_1_1passive_1_1_entity_pig.html#affa7d1bdd942f9a72cc41ec7eda2a7c7", null ],
+    [ "fall", "classnet_1_1minecraft_1_1entity_1_1passive_1_1_entity_pig.html#a1476bd005ade40da5985373e2be28129", null ],
+    [ "getAIControlledByPlayer", "classnet_1_1minecraft_1_1entity_1_1passive_1_1_entity_pig.html#a301d948c3b74174a378a26cb1830dbed", null ],
+    [ "getDeathSound", "classnet_1_1minecraft_1_1entity_1_1passive_1_1_entity_pig.html#a299d06f779854912c0387b2900432a34", null ],
+    [ "getDropItemId", "classnet_1_1minecraft_1_1entity_1_1passive_1_1_entity_pig.html#a0749de342142b2cc87aaa24861cc0200", null ],
+    [ "getHurtSound", "classnet_1_1minecraft_1_1entity_1_1passive_1_1_entity_pig.html#a4a26b2447b8f9e54e55606b15faf5ccd", null ],
+    [ "getLivingSound", "classnet_1_1minecraft_1_1entity_1_1passive_1_1_entity_pig.html#a62c98786c829fe5a4a0bd0d51f94cf00", null ],
+    [ "getMaxHealth", "classnet_1_1minecraft_1_1entity_1_1passive_1_1_entity_pig.html#ae13f2d4bbeff26d5bc70c5e29b8d8885", null ],
+    [ "getSaddled", "classnet_1_1minecraft_1_1entity_1_1passive_1_1_entity_pig.html#a8ee4f1ff096a32faecdce8debb46722f", null ],
+    [ "interact", "classnet_1_1minecraft_1_1entity_1_1passive_1_1_entity_pig.html#abcc3186342548236dd690a709ccf60f7", null ],
+    [ "isAIEnabled", "classnet_1_1minecraft_1_1entity_1_1passive_1_1_entity_pig.html#a527699da94a7957d9999911de5640908", null ],
+    [ "isBreedingItem", "classnet_1_1minecraft_1_1entity_1_1passive_1_1_entity_pig.html#a713b3971c3bb1a0375ce24616d665033", null ],
+    [ "onStruckByLightning", "classnet_1_1minecraft_1_1entity_1_1passive_1_1_entity_pig.html#ad03846362d60440ef7cac392f09d47a6", null ],
+    [ "playStepSound", "classnet_1_1minecraft_1_1entity_1_1passive_1_1_entity_pig.html#a3ce4910d1acfd3d27ceb3309d17d2071", null ],
+    [ "readEntityFromNBT", "classnet_1_1minecraft_1_1entity_1_1passive_1_1_entity_pig.html#a9cc4de7fb8a4f21b8b797f50a1e5f126", null ],
+    [ "setSaddled", "classnet_1_1minecraft_1_1entity_1_1passive_1_1_entity_pig.html#a70ef5be257378c61e8f6f249f7ac68bc", null ],
+    [ "spawnBabyAnimal", "classnet_1_1minecraft_1_1entity_1_1passive_1_1_entity_pig.html#a5974b5294b451e738782e0d24710b855", null ],
+    [ "updateAITasks", "classnet_1_1minecraft_1_1entity_1_1passive_1_1_entity_pig.html#a7fb5e4c1c4e683b5e2dd0d3346da0a33", null ],
+    [ "writeEntityToNBT", "classnet_1_1minecraft_1_1entity_1_1passive_1_1_entity_pig.html#aac088e63a8a4f78a25574191be2df635", null ]
+];

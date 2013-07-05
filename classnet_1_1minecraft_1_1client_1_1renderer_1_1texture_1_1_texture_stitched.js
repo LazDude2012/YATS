@@ -1,0 +1,28 @@
+var classnet_1_1minecraft_1_1client_1_1renderer_1_1texture_1_1_texture_stitched =
+[
+    [ "TextureStitched", "classnet_1_1minecraft_1_1client_1_1renderer_1_1texture_1_1_texture_stitched.html#a6e473666a2523cf5bfc51c4ffd01236c", null ],
+    [ "copyFrom", "classnet_1_1minecraft_1_1client_1_1renderer_1_1texture_1_1_texture_stitched.html#abaeaf757da35f971a5f8a2df42c570df", null ],
+    [ "createAndUploadTextures", "classnet_1_1minecraft_1_1client_1_1renderer_1_1texture_1_1_texture_stitched.html#a8fbb8a4db81017823c6dd01c397f2003", null ],
+    [ "getIconName", "classnet_1_1minecraft_1_1client_1_1renderer_1_1texture_1_1_texture_stitched.html#abb94aaf5302a485cc6dfc2053520c02f", null ],
+    [ "getInterpolatedU", "classnet_1_1minecraft_1_1client_1_1renderer_1_1texture_1_1_texture_stitched.html#a67144f166284019a1a73593cd04bbf42", null ],
+    [ "getInterpolatedV", "classnet_1_1minecraft_1_1client_1_1renderer_1_1texture_1_1_texture_stitched.html#a35d1168235fbfda1bc6a85ba9912a9de", null ],
+    [ "getMaxU", "classnet_1_1minecraft_1_1client_1_1renderer_1_1texture_1_1_texture_stitched.html#a03b519de6c914451716f7977731608c8", null ],
+    [ "getMaxV", "classnet_1_1minecraft_1_1client_1_1renderer_1_1texture_1_1_texture_stitched.html#a16762c2ddde9ab3b216cff76289fee78", null ],
+    [ "getMinU", "classnet_1_1minecraft_1_1client_1_1renderer_1_1texture_1_1_texture_stitched.html#abe490c434159a5cefaeb68f7afd4024c", null ],
+    [ "getMinV", "classnet_1_1minecraft_1_1client_1_1renderer_1_1texture_1_1_texture_stitched.html#a122eb6a4cb282efc960bb42951d80084", null ],
+    [ "getOriginX", "classnet_1_1minecraft_1_1client_1_1renderer_1_1texture_1_1_texture_stitched.html#a584c56b988523abe333ce3f44aff08d1", null ],
+    [ "getOriginY", "classnet_1_1minecraft_1_1client_1_1renderer_1_1texture_1_1_texture_stitched.html#af42b6e4a1463ecbf5440fa0554087dd6", null ],
+    [ "getSheetHeight", "classnet_1_1minecraft_1_1client_1_1renderer_1_1texture_1_1_texture_stitched.html#a8429232ed5203c2b564acd1b44aa9aef", null ],
+    [ "getSheetWidth", "classnet_1_1minecraft_1_1client_1_1renderer_1_1texture_1_1_texture_stitched.html#aa12f9377cff59be3941f8b63b1564c3b", null ],
+    [ "init", "classnet_1_1minecraft_1_1client_1_1renderer_1_1texture_1_1_texture_stitched.html#aa03ea33e2cfacdc6499c3447ed43b419", null ],
+    [ "loadTexture", "classnet_1_1minecraft_1_1client_1_1renderer_1_1texture_1_1_texture_stitched.html#a11abc537b87259d867c99392d8670851", null ],
+    [ "readAnimationInfo", "classnet_1_1minecraft_1_1client_1_1renderer_1_1texture_1_1_texture_stitched.html#a2a0e55e0a95e91c6542e61d44173cca9", null ],
+    [ "updateAnimation", "classnet_1_1minecraft_1_1client_1_1renderer_1_1texture_1_1_texture_stitched.html#a861007ab568e06c6f06ed4fc402ba101", null ],
+    [ "frameCounter", "classnet_1_1minecraft_1_1client_1_1renderer_1_1texture_1_1_texture_stitched.html#af34cd3d8811faddf508e9547828a1aab", null ],
+    [ "originX", "classnet_1_1minecraft_1_1client_1_1renderer_1_1texture_1_1_texture_stitched.html#a59389bcf848f0dde94149a78c5af9a07", null ],
+    [ "originY", "classnet_1_1minecraft_1_1client_1_1renderer_1_1texture_1_1_texture_stitched.html#a991463eda4515436db51ee5da404c80c", null ],
+    [ "rotated", "classnet_1_1minecraft_1_1client_1_1renderer_1_1texture_1_1_texture_stitched.html#adfa5e9c647ca8f76c22b32d293dafa51", null ],
+    [ "textureList", "classnet_1_1minecraft_1_1client_1_1renderer_1_1texture_1_1_texture_stitched.html#a82778056995b169b2a2524dc84c3d5d0", null ],
+    [ "textureSheet", "classnet_1_1minecraft_1_1client_1_1renderer_1_1texture_1_1_texture_stitched.html#a7e9a8b06fda58c8c204d65eb01857b2a", null ],
+    [ "tickCounter", "classnet_1_1minecraft_1_1client_1_1renderer_1_1texture_1_1_texture_stitched.html#abedd484fb6c8691f11a0ee639d2f9fe3", null ]
+];

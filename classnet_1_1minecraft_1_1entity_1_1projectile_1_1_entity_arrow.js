@@ -1,0 +1,26 @@
+var classnet_1_1minecraft_1_1entity_1_1projectile_1_1_entity_arrow =
+[
+    [ "EntityArrow", "classnet_1_1minecraft_1_1entity_1_1projectile_1_1_entity_arrow.html#a90d626327fe5598180b0b9f0396e910b", null ],
+    [ "EntityArrow", "classnet_1_1minecraft_1_1entity_1_1projectile_1_1_entity_arrow.html#a52924083e4e0cef8a6ada95871c8f477", null ],
+    [ "EntityArrow", "classnet_1_1minecraft_1_1entity_1_1projectile_1_1_entity_arrow.html#ae04be91285ea708da058fc4b49dd8dd6", null ],
+    [ "EntityArrow", "classnet_1_1minecraft_1_1entity_1_1projectile_1_1_entity_arrow.html#a467c44870a267f3131ac76b2d9e62245", null ],
+    [ "canAttackWithItem", "classnet_1_1minecraft_1_1entity_1_1projectile_1_1_entity_arrow.html#a92c7c36932aa0ec6051832d9bae480cd", null ],
+    [ "canTriggerWalking", "classnet_1_1minecraft_1_1entity_1_1projectile_1_1_entity_arrow.html#a4995dd04854f11856df33a49fdbe870e", null ],
+    [ "entityInit", "classnet_1_1minecraft_1_1entity_1_1projectile_1_1_entity_arrow.html#a8d1fcdd64e3a6d5b9068df2d210cffe1", null ],
+    [ "getDamage", "classnet_1_1minecraft_1_1entity_1_1projectile_1_1_entity_arrow.html#a18268f4c0610b0c7913b2d5957cf7df6", null ],
+    [ "getIsCritical", "classnet_1_1minecraft_1_1entity_1_1projectile_1_1_entity_arrow.html#a7e45ae38a7d1a3cd57511f4b2f84b699", null ],
+    [ "getShadowSize", "classnet_1_1minecraft_1_1entity_1_1projectile_1_1_entity_arrow.html#a0e8b55e5f575c4b721db7562f5d05a68", null ],
+    [ "onCollideWithPlayer", "classnet_1_1minecraft_1_1entity_1_1projectile_1_1_entity_arrow.html#aaf602467e67af61b6aff7b551f81bc62", null ],
+    [ "onUpdate", "classnet_1_1minecraft_1_1entity_1_1projectile_1_1_entity_arrow.html#af06bdf6fcb88bde59bdba14ddffcd598", null ],
+    [ "readEntityFromNBT", "classnet_1_1minecraft_1_1entity_1_1projectile_1_1_entity_arrow.html#a4816dd3c82e4fe6d5ba1ab4257aa0f3f", null ],
+    [ "setDamage", "classnet_1_1minecraft_1_1entity_1_1projectile_1_1_entity_arrow.html#a72b4945e5f3c8148a90950542c1f278e", null ],
+    [ "setIsCritical", "classnet_1_1minecraft_1_1entity_1_1projectile_1_1_entity_arrow.html#a519504ae21d691d603f9dd2a3f85f7e8", null ],
+    [ "setKnockbackStrength", "classnet_1_1minecraft_1_1entity_1_1projectile_1_1_entity_arrow.html#aa0cb00cd4bce9003dc3bab9a88a7d748", null ],
+    [ "setPositionAndRotation2", "classnet_1_1minecraft_1_1entity_1_1projectile_1_1_entity_arrow.html#aa54549e97ec61ca1c40a104d926f689b", null ],
+    [ "setThrowableHeading", "classnet_1_1minecraft_1_1entity_1_1projectile_1_1_entity_arrow.html#a1c49daf418a10a9c86e8c28fc4022526", null ],
+    [ "setVelocity", "classnet_1_1minecraft_1_1entity_1_1projectile_1_1_entity_arrow.html#adbc8c83fa04ff2947b7e96856570bf5b", null ],
+    [ "writeEntityToNBT", "classnet_1_1minecraft_1_1entity_1_1projectile_1_1_entity_arrow.html#a284f6d8305ba4783287890d1be1ae7a4", null ],
+    [ "arrowShake", "classnet_1_1minecraft_1_1entity_1_1projectile_1_1_entity_arrow.html#acc0d9c098fedda0c3a6724d6a566d179", null ],
+    [ "canBePickedUp", "classnet_1_1minecraft_1_1entity_1_1projectile_1_1_entity_arrow.html#ac1385fd4c59f02648fd9b5a28a2b1a4e", null ],
+    [ "shootingEntity", "classnet_1_1minecraft_1_1entity_1_1projectile_1_1_entity_arrow.html#a883801c45e89a694338f2b985d2c556d", null ]
+];

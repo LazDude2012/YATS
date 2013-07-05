@@ -1,0 +1,27 @@
+var classnet_1_1minecraft_1_1block_1_1_block_door =
+[
+    [ "BlockDoor", "classnet_1_1minecraft_1_1block_1_1_block_door.html#a5fc0d87eaefb852cdd12b8c80bc4a689", null ],
+    [ "canPlaceBlockAt", "classnet_1_1minecraft_1_1block_1_1_block_door.html#a06355a5f1b429530dee884b4050eac2e", null ],
+    [ "collisionRayTrace", "classnet_1_1minecraft_1_1block_1_1_block_door.html#a80f80638ee5dea14fbde9a834d367a3a", null ],
+    [ "getBlocksMovement", "classnet_1_1minecraft_1_1block_1_1_block_door.html#afbdf95fdc86b682924e94b79725358e9", null ],
+    [ "getBlockTexture", "classnet_1_1minecraft_1_1block_1_1_block_door.html#ac66eceec78dc44e8a220c867da9a83d4", null ],
+    [ "getCollisionBoundingBoxFromPool", "classnet_1_1minecraft_1_1block_1_1_block_door.html#a2355a62b4c157849f05b6813e75aab06", null ],
+    [ "getDoorOrientation", "classnet_1_1minecraft_1_1block_1_1_block_door.html#ab3ed3510a6bf0a80322a867b0ef2bf0a", null ],
+    [ "getFullMetadata", "classnet_1_1minecraft_1_1block_1_1_block_door.html#a115c4f5a025679c8f012ebefbe06b936", null ],
+    [ "getIcon", "classnet_1_1minecraft_1_1block_1_1_block_door.html#a937d166623383d798d2c7ac0be1dc4f8", null ],
+    [ "getMobilityFlag", "classnet_1_1minecraft_1_1block_1_1_block_door.html#a421219d3d6c0e4f0f758e69298990297", null ],
+    [ "getRenderType", "classnet_1_1minecraft_1_1block_1_1_block_door.html#a136bc9ae70c1129515e38380664b88c2", null ],
+    [ "getSelectedBoundingBoxFromPool", "classnet_1_1minecraft_1_1block_1_1_block_door.html#a2897a882d5fc4f6addebc2c359127f48", null ],
+    [ "idDropped", "classnet_1_1minecraft_1_1block_1_1_block_door.html#af8b09cb525bffd652499c6ff43201cec", null ],
+    [ "idPicked", "classnet_1_1minecraft_1_1block_1_1_block_door.html#a3a3aa050d38b027ad991473c9cf97dd5", null ],
+    [ "isDoorOpen", "classnet_1_1minecraft_1_1block_1_1_block_door.html#aa7bf804c78760610fa2e4026f3353c33", null ],
+    [ "isOpaqueCube", "classnet_1_1minecraft_1_1block_1_1_block_door.html#a31397d5141e179ed33271f1244892687", null ],
+    [ "onBlockActivated", "classnet_1_1minecraft_1_1block_1_1_block_door.html#a9a6b109d603723a2abafac2a989e155e", null ],
+    [ "onBlockClicked", "classnet_1_1minecraft_1_1block_1_1_block_door.html#ad02840036de5c4a7df53533da79ef428", null ],
+    [ "onBlockHarvested", "classnet_1_1minecraft_1_1block_1_1_block_door.html#a2804f50fd3173c1da5724098cebbb61f", null ],
+    [ "onNeighborBlockChange", "classnet_1_1minecraft_1_1block_1_1_block_door.html#ad695932d1eb35e3353fbbf551cf93297", null ],
+    [ "onPoweredBlockChange", "classnet_1_1minecraft_1_1block_1_1_block_door.html#a70c7ed9954c15f6ebc729d3ad1f54d32", null ],
+    [ "registerIcons", "classnet_1_1minecraft_1_1block_1_1_block_door.html#a966778a440cdea008132e825cc364e6e", null ],
+    [ "renderAsNormalBlock", "classnet_1_1minecraft_1_1block_1_1_block_door.html#a0a32ca6033c33e55fc84d64322df1bf4", null ],
+    [ "setBlockBoundsBasedOnState", "classnet_1_1minecraft_1_1block_1_1_block_door.html#af0a55634d54e43f61075351110191021", null ]
+];

@@ -1,0 +1,4 @@
+var namespacenet_1_1minecraftforge_1_1common_1_1network_1_1packet =
+[
+    [ "DimensionRegisterPacket", "classnet_1_1minecraftforge_1_1common_1_1network_1_1packet_1_1_dimension_register_packet.html", "classnet_1_1minecraftforge_1_1common_1_1network_1_1packet_1_1_dimension_register_packet" ]
+];

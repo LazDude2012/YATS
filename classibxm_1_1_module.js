@@ -1,0 +1,25 @@
+var classibxm_1_1_module =
+[
+    [ "Module", "classibxm_1_1_module.html#a7a7666c9254ec870a614c8ae33a7d6d0", null ],
+    [ "get_initial_panning", "classibxm_1_1_module.html#a8549d636572b1328fb4f08035a0838cd", null ],
+    [ "get_instrument", "classibxm_1_1_module.html#a5dd96e650831de23a4f1c7166e06ce10", null ],
+    [ "get_num_channels", "classibxm_1_1_module.html#aa02415f038f5a625f9a0be16641ceac7", null ],
+    [ "get_num_instruments", "classibxm_1_1_module.html#ab9d036056690ffc49a66910ca130e8c9", null ],
+    [ "get_num_patterns", "classibxm_1_1_module.html#a073a63689b9bbb31c2d03782350355d0", null ],
+    [ "get_pattern", "classibxm_1_1_module.html#a9749df13c2473d7255f12f997be67e80", null ],
+    [ "get_pattern_from_sequence", "classibxm_1_1_module.html#a062d255b1574284b884301014c899c06", null ],
+    [ "get_sequence_length", "classibxm_1_1_module.html#abcf53b8a1d9802b6f6e269faec55eec9", null ],
+    [ "set_initial_panning", "classibxm_1_1_module.html#a80ea0422d04363515370c40e304bd298", null ],
+    [ "set_instrument", "classibxm_1_1_module.html#a413fcf86f22288b687715d9c3f9fbe99", null ],
+    [ "set_num_channels", "classibxm_1_1_module.html#a2ee254886240461b4a2f330d391d6732", null ],
+    [ "set_num_instruments", "classibxm_1_1_module.html#a3ce08f77b14889f475dbf521ae23f252", null ],
+    [ "set_num_patterns", "classibxm_1_1_module.html#adc76d684dff0c7df845cdd3b49b47913", null ],
+    [ "set_pattern", "classibxm_1_1_module.html#a5f4988bd3bb0e93326e6d9041d14d72b", null ],
+    [ "set_sequence", "classibxm_1_1_module.html#a9ce49fa895cd5705ebbc9dc808424d37", null ],
+    [ "set_sequence_length", "classibxm_1_1_module.html#aff5348b019e81bb99d1a04c22aa3eaa7", null ],
+    [ "default_speed", "classibxm_1_1_module.html#a5a0074b0b974e4eb61b62719dedb3794", null ],
+    [ "global_volume", "classibxm_1_1_module.html#a7f2c0574d4c7aff4a911a22df2892e56", null ],
+    [ "linear_periods", "classibxm_1_1_module.html#af80f7fea85fc5a5e608debaefc6f39c2", null ],
+    [ "restart_sequence_index", "classibxm_1_1_module.html#aa5fa02a20fbc1cbb4dc0769e49db2b32", null ],
+    [ "song_title", "classibxm_1_1_module.html#a43f076f5ea93eafa62fc0e44fb20be40", null ]
+];

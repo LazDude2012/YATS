@@ -1,0 +1,28 @@
+var classnet_1_1minecraft_1_1inventory_1_1_slot =
+[
+    [ "Slot", "classnet_1_1minecraft_1_1inventory_1_1_slot.html#a55ac49cc00f16431ec2f0959ab497c72", null ],
+    [ "canTakeStack", "classnet_1_1minecraft_1_1inventory_1_1_slot.html#a2ff6fcaa94a07982d6d9247d73fd5064", null ],
+    [ "decrStackSize", "classnet_1_1minecraft_1_1inventory_1_1_slot.html#a846db921439114c41742dddf24ce1d7b", null ],
+    [ "getBackgroundIconIndex", "classnet_1_1minecraft_1_1inventory_1_1_slot.html#aab8173c954f4e9eb076cc8c8e15176d2", null ],
+    [ "getBackgroundIconTexture", "classnet_1_1minecraft_1_1inventory_1_1_slot.html#a2e19f25c3633ee64183b62e55774574e", null ],
+    [ "getHasStack", "classnet_1_1minecraft_1_1inventory_1_1_slot.html#ad2f7556eb2b1fa373c058a259fbbc40b", null ],
+    [ "getSlotIndex", "classnet_1_1minecraft_1_1inventory_1_1_slot.html#ab28433aaa6a3dfc72a26e3a827396e28", null ],
+    [ "getSlotStackLimit", "classnet_1_1minecraft_1_1inventory_1_1_slot.html#a79e3f09ce633f9d6318b6282b680afa0", null ],
+    [ "getStack", "classnet_1_1minecraft_1_1inventory_1_1_slot.html#a5b98eaeab12aae83ad712f219024cea7", null ],
+    [ "isItemValid", "classnet_1_1minecraft_1_1inventory_1_1_slot.html#aa0d30ea99598add57e08ac9b57ca3f3b", null ],
+    [ "isSlotInInventory", "classnet_1_1minecraft_1_1inventory_1_1_slot.html#a907ee8c5596e2f622ed1cf1a2c1c4134", null ],
+    [ "onCrafting", "classnet_1_1minecraft_1_1inventory_1_1_slot.html#a3c4f8ffe1b6bfcf94fec58007a56aba1", null ],
+    [ "onCrafting", "classnet_1_1minecraft_1_1inventory_1_1_slot.html#a8eac580b4748909531e2ee143bf8852e", null ],
+    [ "onPickupFromSlot", "classnet_1_1minecraft_1_1inventory_1_1_slot.html#a12f6be74cee298e5326f47e103cca533", null ],
+    [ "onSlotChange", "classnet_1_1minecraft_1_1inventory_1_1_slot.html#a1362778d03cb370eafc701dd07f5f276", null ],
+    [ "onSlotChanged", "classnet_1_1minecraft_1_1inventory_1_1_slot.html#acd07341c1688f60366dc8ac163d5a26e", null ],
+    [ "putStack", "classnet_1_1minecraft_1_1inventory_1_1_slot.html#a0d53bda92eaea5dc0a275e663a17b140", null ],
+    [ "setBackgroundIconIndex", "classnet_1_1minecraft_1_1inventory_1_1_slot.html#ae3dc8045d60a6c3ab01acfab335c7be0", null ],
+    [ "setBackgroundIconTexture", "classnet_1_1minecraft_1_1inventory_1_1_slot.html#a44d74b8b2678755e75daa796fa1ac378", null ],
+    [ "backgroundIcon", "classnet_1_1minecraft_1_1inventory_1_1_slot.html#a2121f58ea7bb7d8b12163675db410997", null ],
+    [ "inventory", "classnet_1_1minecraft_1_1inventory_1_1_slot.html#a2c0a3e8eb35169fae01a2dc82a8e4cde", null ],
+    [ "slotNumber", "classnet_1_1minecraft_1_1inventory_1_1_slot.html#a9af3364eb5e006e8a2b9bdcfb816be17", null ],
+    [ "texture", "classnet_1_1minecraft_1_1inventory_1_1_slot.html#ad69fbfa792a4fea0a48dc0ed8328ca1b", null ],
+    [ "xDisplayPosition", "classnet_1_1minecraft_1_1inventory_1_1_slot.html#af608d94572383249baa8868f18e8df3e", null ],
+    [ "yDisplayPosition", "classnet_1_1minecraft_1_1inventory_1_1_slot.html#a74840e7d689204d22f64a90dacf13008", null ]
+];

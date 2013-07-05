@@ -1,0 +1,26 @@
+var classnet_1_1minecraft_1_1scoreboard_1_1_server_command_scoreboard =
+[
+    [ "addObjective", "classnet_1_1minecraft_1_1scoreboard_1_1_server_command_scoreboard.html#a0d3ad730df233536a3e64fd4283c9dc1", null ],
+    [ "addTabCompletionOptions", "classnet_1_1minecraft_1_1scoreboard_1_1_server_command_scoreboard.html#a8443341310ab9a0526a8b09908615e9e", null ],
+    [ "addTeam", "classnet_1_1minecraft_1_1scoreboard_1_1_server_command_scoreboard.html#ad1a178a98bf98b9556d4c2b8cccd5573", null ],
+    [ "emptyTeam", "classnet_1_1minecraft_1_1scoreboard_1_1_server_command_scoreboard.html#a446f0da18513371e76fe1644368d82d6", null ],
+    [ "getCommandName", "classnet_1_1minecraft_1_1scoreboard_1_1_server_command_scoreboard.html#a93bede24e700cd75a4d18323bdc2a219", null ],
+    [ "getObjectivesList", "classnet_1_1minecraft_1_1scoreboard_1_1_server_command_scoreboard.html#aced9d1a2e2bbd6166811aa0cbf68ee3a", null ],
+    [ "getRequiredPermissionLevel", "classnet_1_1minecraft_1_1scoreboard_1_1_server_command_scoreboard.html#a7293532d8cfab3d257bd473d585d05d3", null ],
+    [ "getScoreboardFromWorldServer", "classnet_1_1minecraft_1_1scoreboard_1_1_server_command_scoreboard.html#abf85001ed3294f601e0a4233b44b382e", null ],
+    [ "getScoreObjective", "classnet_1_1minecraft_1_1scoreboard_1_1_server_command_scoreboard.html#ae51d26bdb1ad12314a82243e8b71bd1e", null ],
+    [ "getScoreObjectivesList", "classnet_1_1minecraft_1_1scoreboard_1_1_server_command_scoreboard.html#af1990b20c8d67b1a73e67a7fdcf5a403", null ],
+    [ "getTeam", "classnet_1_1minecraft_1_1scoreboard_1_1_server_command_scoreboard.html#acd25e7f68f2553f3af6d8cd36e47e326", null ],
+    [ "getTeamList", "classnet_1_1minecraft_1_1scoreboard_1_1_server_command_scoreboard.html#aaf9ab7b6c6bd7699954fc79d75734c01", null ],
+    [ "isUsernameIndex", "classnet_1_1minecraft_1_1scoreboard_1_1_server_command_scoreboard.html#aeb35eeb77963733ae30bac2bfd24a0ea", null ],
+    [ "joinTeam", "classnet_1_1minecraft_1_1scoreboard_1_1_server_command_scoreboard.html#acdcb7880da918466fce89580ee6a2156", null ],
+    [ "leaveTeam", "classnet_1_1minecraft_1_1scoreboard_1_1_server_command_scoreboard.html#a0d578af3e64571079e85b9f44a5b0586", null ],
+    [ "listPlayers", "classnet_1_1minecraft_1_1scoreboard_1_1_server_command_scoreboard.html#a7ede825e5b691b49a7ec71bcc170ee89", null ],
+    [ "processCommand", "classnet_1_1minecraft_1_1scoreboard_1_1_server_command_scoreboard.html#addff97b1fc99a8bd5c669e5de3783493", null ],
+    [ "removeObjective", "classnet_1_1minecraft_1_1scoreboard_1_1_server_command_scoreboard.html#ade8bf021e40e9e4f1f595db1dde18ba9", null ],
+    [ "removeTeam", "classnet_1_1minecraft_1_1scoreboard_1_1_server_command_scoreboard.html#ab83d011813dd8797c848de0d34ebb48d", null ],
+    [ "resetPlayerScore", "classnet_1_1minecraft_1_1scoreboard_1_1_server_command_scoreboard.html#a2aa8c09d7440c57f4b68d7ac12285dea", null ],
+    [ "setObjectivesDisplay", "classnet_1_1minecraft_1_1scoreboard_1_1_server_command_scoreboard.html#abe260d8492eff0cad093b817ed6906b6", null ],
+    [ "setPlayerScore", "classnet_1_1minecraft_1_1scoreboard_1_1_server_command_scoreboard.html#a27aa9fbe41e4bb9c894ca4e3c685798b", null ],
+    [ "setTeamOption", "classnet_1_1minecraft_1_1scoreboard_1_1_server_command_scoreboard.html#a267fe485c16acebac03d19370931c9c5", null ]
+];

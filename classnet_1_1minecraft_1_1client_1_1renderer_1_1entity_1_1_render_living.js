@@ -1,0 +1,26 @@
+var classnet_1_1minecraft_1_1client_1_1renderer_1_1entity_1_1_render_living =
+[
+    [ "RenderLiving", "classnet_1_1minecraft_1_1client_1_1renderer_1_1entity_1_1_render_living.html#a9d2abd5a83bfff2135cf0c6a979927a5", null ],
+    [ "doRender", "classnet_1_1minecraft_1_1client_1_1renderer_1_1entity_1_1_render_living.html#afa4ea3058a41754f88dfa45412c9f0d0", null ],
+    [ "doRenderLiving", "classnet_1_1minecraft_1_1client_1_1renderer_1_1entity_1_1_render_living.html#ad4e03b4c88e4e4b8305681e5440ff5aa", null ],
+    [ "func_82408_c", "classnet_1_1minecraft_1_1client_1_1renderer_1_1entity_1_1_render_living.html#a3cc2816f4a0ace69596a65d57534bd18", null ],
+    [ "func_96449_a", "classnet_1_1minecraft_1_1client_1_1renderer_1_1entity_1_1_render_living.html#a65b8d67b11f90249bdd6280c8f9fe8a8", null ],
+    [ "func_98190_a", "classnet_1_1minecraft_1_1client_1_1renderer_1_1entity_1_1_render_living.html#a426823ddfbd968575667a4dd9f3b41d0", null ],
+    [ "getColorMultiplier", "classnet_1_1minecraft_1_1client_1_1renderer_1_1entity_1_1_render_living.html#ad9f0d6814068a8daf30754d80a88425c", null ],
+    [ "getDeathMaxRotation", "classnet_1_1minecraft_1_1client_1_1renderer_1_1entity_1_1_render_living.html#a24b52c8b8965f6389a5736477b67cee6", null ],
+    [ "handleRotationFloat", "classnet_1_1minecraft_1_1client_1_1renderer_1_1entity_1_1_render_living.html#a50345fe9ef0545ac4b9360da0a662810", null ],
+    [ "inheritRenderPass", "classnet_1_1minecraft_1_1client_1_1renderer_1_1entity_1_1_render_living.html#aa80e8cd18c723592fef1ad851afec125", null ],
+    [ "passSpecialRender", "classnet_1_1minecraft_1_1client_1_1renderer_1_1entity_1_1_render_living.html#a94362e495f155cd021591fb3f0934d03", null ],
+    [ "preRenderCallback", "classnet_1_1minecraft_1_1client_1_1renderer_1_1entity_1_1_render_living.html#ad2489a6be63f562e47d5ceb81952a0b2", null ],
+    [ "renderArrowsStuckInEntity", "classnet_1_1minecraft_1_1client_1_1renderer_1_1entity_1_1_render_living.html#a202979c82d745f20ceaefde22ad3c7ab", null ],
+    [ "renderEquippedItems", "classnet_1_1minecraft_1_1client_1_1renderer_1_1entity_1_1_render_living.html#a5d81efe3165ae59200b0c253d1297101", null ],
+    [ "renderLivingAt", "classnet_1_1minecraft_1_1client_1_1renderer_1_1entity_1_1_render_living.html#ae59ab90029853bf544c985eb1d026c83", null ],
+    [ "renderLivingLabel", "classnet_1_1minecraft_1_1client_1_1renderer_1_1entity_1_1_render_living.html#a7f2e0591a6eccb6d6cc45e9b951ed01e", null ],
+    [ "renderModel", "classnet_1_1minecraft_1_1client_1_1renderer_1_1entity_1_1_render_living.html#a72170a74153b4ad5106a4f6e754d783b", null ],
+    [ "renderSwingProgress", "classnet_1_1minecraft_1_1client_1_1renderer_1_1entity_1_1_render_living.html#a7ce70b8c4dfdd53771945f0e2845ec2f", null ],
+    [ "rotateCorpse", "classnet_1_1minecraft_1_1client_1_1renderer_1_1entity_1_1_render_living.html#a036cd8951f92d3a4ec9ffbda34add853", null ],
+    [ "setRenderPassModel", "classnet_1_1minecraft_1_1client_1_1renderer_1_1entity_1_1_render_living.html#a68a433f4d56fc09ed2245607dc9f9e66", null ],
+    [ "shouldRenderPass", "classnet_1_1minecraft_1_1client_1_1renderer_1_1entity_1_1_render_living.html#abb666991f4d5a31029b7518bb691ab83", null ],
+    [ "mainModel", "classnet_1_1minecraft_1_1client_1_1renderer_1_1entity_1_1_render_living.html#a128da63231ff4749b949e717800c2779", null ],
+    [ "renderPassModel", "classnet_1_1minecraft_1_1client_1_1renderer_1_1entity_1_1_render_living.html#a3e089c5990072c06e9538390018982ac", null ]
+];

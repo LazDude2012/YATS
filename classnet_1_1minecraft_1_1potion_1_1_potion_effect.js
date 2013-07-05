@@ -1,0 +1,28 @@
+var classnet_1_1minecraft_1_1potion_1_1_potion_effect =
+[
+    [ "PotionEffect", "classnet_1_1minecraft_1_1potion_1_1_potion_effect.html#a5c427fe83e499894459fed71dd0d43f3", null ],
+    [ "PotionEffect", "classnet_1_1minecraft_1_1potion_1_1_potion_effect.html#a21347873c07e9afd20600d48446f7907", null ],
+    [ "PotionEffect", "classnet_1_1minecraft_1_1potion_1_1_potion_effect.html#a074c1582bda05926d19ba81a0f1a71d2", null ],
+    [ "PotionEffect", "classnet_1_1minecraft_1_1potion_1_1_potion_effect.html#ae9666402bb64a30c3362ff7d054b3c15", null ],
+    [ "addCurativeItem", "classnet_1_1minecraft_1_1potion_1_1_potion_effect.html#af45c8d1c1a9c99021d10103783e7bfe6", null ],
+    [ "combine", "classnet_1_1minecraft_1_1potion_1_1_potion_effect.html#a62e772a4b77397e76c79cd215660d217", null ],
+    [ "equals", "classnet_1_1minecraft_1_1potion_1_1_potion_effect.html#affecc89d5269f8edf9e78fc3267d6f24", null ],
+    [ "getAmplifier", "classnet_1_1minecraft_1_1potion_1_1_potion_effect.html#aaf78043807b732b2842ef1352a15cbd2", null ],
+    [ "getCurativeItems", "classnet_1_1minecraft_1_1potion_1_1_potion_effect.html#ad0138b5883d1df67315228601028c4dd", null ],
+    [ "getDuration", "classnet_1_1minecraft_1_1potion_1_1_potion_effect.html#a29d5f59afa2a03b72fce17172d434a81", null ],
+    [ "getEffectName", "classnet_1_1minecraft_1_1potion_1_1_potion_effect.html#ada1d07a68443daa5baf902ecf4772506", null ],
+    [ "getIsAmbient", "classnet_1_1minecraft_1_1potion_1_1_potion_effect.html#a1fec0baa4b1431ae283d053f4cb6ee3f", null ],
+    [ "getIsPotionDurationMax", "classnet_1_1minecraft_1_1potion_1_1_potion_effect.html#a49804bb1507744bfa571b73f2b9c44b6", null ],
+    [ "getPotionID", "classnet_1_1minecraft_1_1potion_1_1_potion_effect.html#ad82633a083fffab5010aaebcd358f141", null ],
+    [ "hashCode", "classnet_1_1minecraft_1_1potion_1_1_potion_effect.html#a64896b69c3457378234d970b541223f9", null ],
+    [ "isCurativeItem", "classnet_1_1minecraft_1_1potion_1_1_potion_effect.html#a606e54bdb75f3eb3a0f34d20e24b49ab", null ],
+    [ "isSplashPotionEffect", "classnet_1_1minecraft_1_1potion_1_1_potion_effect.html#a100d2702ae4cefe9f0160d0c043b0998", null ],
+    [ "onUpdate", "classnet_1_1minecraft_1_1potion_1_1_potion_effect.html#a1b190bdc892f79611dff1abdf62a9172", null ],
+    [ "performEffect", "classnet_1_1minecraft_1_1potion_1_1_potion_effect.html#a0c861a77075ccc1cfb14ff06f3fd2d5e", null ],
+    [ "setCurativeItems", "classnet_1_1minecraft_1_1potion_1_1_potion_effect.html#a197fdc5232132b2d3973c9660e9e8917", null ],
+    [ "setPotionDurationMax", "classnet_1_1minecraft_1_1potion_1_1_potion_effect.html#a774189964c1ddb3d53197a9ecb21665e", null ],
+    [ "setSplashPotion", "classnet_1_1minecraft_1_1potion_1_1_potion_effect.html#a4a068abd29c7230b212a880a000e8650", null ],
+    [ "toString", "classnet_1_1minecraft_1_1potion_1_1_potion_effect.html#a638e1267b4ac32b05c3e3e30b3fab5c1", null ],
+    [ "writeCustomPotionEffectToNBT", "classnet_1_1minecraft_1_1potion_1_1_potion_effect.html#af352021300e611f09294cac8af19d2f6", null ],
+    [ "duration", "classnet_1_1minecraft_1_1potion_1_1_potion_effect.html#afb96ea772030679e84d36a7109604ad5", null ]
+];

@@ -1,0 +1,26 @@
+var classnet_1_1minecraft_1_1util_1_1_axis_aligned_b_b =
+[
+    [ "AxisAlignedBB", "classnet_1_1minecraft_1_1util_1_1_axis_aligned_b_b.html#af30b936bc282d6af4452e11b7a9436ad", null ],
+    [ "addCoord", "classnet_1_1minecraft_1_1util_1_1_axis_aligned_b_b.html#a332118b78679154c7ec0a2a3d4202711", null ],
+    [ "calculateIntercept", "classnet_1_1minecraft_1_1util_1_1_axis_aligned_b_b.html#ac3b819b7c1ebc14f70ed312a7f32ec5d", null ],
+    [ "calculateXOffset", "classnet_1_1minecraft_1_1util_1_1_axis_aligned_b_b.html#ae1a3bd581bd461feb89f62a19f5bd36b", null ],
+    [ "calculateYOffset", "classnet_1_1minecraft_1_1util_1_1_axis_aligned_b_b.html#ad9b1c855f805aa7c63dee3c97c8b627b", null ],
+    [ "calculateZOffset", "classnet_1_1minecraft_1_1util_1_1_axis_aligned_b_b.html#acf7e0b59372fa6e05dec539a4d062d8f", null ],
+    [ "contract", "classnet_1_1minecraft_1_1util_1_1_axis_aligned_b_b.html#a05485a83bf59e1039a4a4ef323252af8", null ],
+    [ "copy", "classnet_1_1minecraft_1_1util_1_1_axis_aligned_b_b.html#aa68633aa339a1251485504bea414500f", null ],
+    [ "expand", "classnet_1_1minecraft_1_1util_1_1_axis_aligned_b_b.html#ac94e62340bd43221582549f28ea044a8", null ],
+    [ "getAverageEdgeLength", "classnet_1_1minecraft_1_1util_1_1_axis_aligned_b_b.html#af921a663fd8970fce651fec8f2e1da22", null ],
+    [ "getOffsetBoundingBox", "classnet_1_1minecraft_1_1util_1_1_axis_aligned_b_b.html#a1b387cc133c0b9e2eeb9dee068fe5a75", null ],
+    [ "intersectsWith", "classnet_1_1minecraft_1_1util_1_1_axis_aligned_b_b.html#ac159b0465f097517733c403a03141de6", null ],
+    [ "isVecInside", "classnet_1_1minecraft_1_1util_1_1_axis_aligned_b_b.html#ad799668fca1adbdb873965ad33741c82", null ],
+    [ "offset", "classnet_1_1minecraft_1_1util_1_1_axis_aligned_b_b.html#ad759fc29a9016079213da7f3203f348b", null ],
+    [ "setBB", "classnet_1_1minecraft_1_1util_1_1_axis_aligned_b_b.html#a5e990a7989c891de86c8797f908c28b2", null ],
+    [ "setBounds", "classnet_1_1minecraft_1_1util_1_1_axis_aligned_b_b.html#a74160259e3d5b0f806634b058786cfd5", null ],
+    [ "toString", "classnet_1_1minecraft_1_1util_1_1_axis_aligned_b_b.html#a21c5e97b4419f20de578ec236a01825e", null ],
+    [ "maxX", "classnet_1_1minecraft_1_1util_1_1_axis_aligned_b_b.html#a2437bdd2b037d6dd19af8d96ade74bd5", null ],
+    [ "maxY", "classnet_1_1minecraft_1_1util_1_1_axis_aligned_b_b.html#ad50c676f9721a655153ad525dbfc8a63", null ],
+    [ "maxZ", "classnet_1_1minecraft_1_1util_1_1_axis_aligned_b_b.html#a583ac1a0cbd3898c1cb8ec0c8b7121cb", null ],
+    [ "minX", "classnet_1_1minecraft_1_1util_1_1_axis_aligned_b_b.html#a9403f785fc64480d8715bf3e9404f749", null ],
+    [ "minY", "classnet_1_1minecraft_1_1util_1_1_axis_aligned_b_b.html#a6588142bac5496d89d7ac2da42235cec", null ],
+    [ "minZ", "classnet_1_1minecraft_1_1util_1_1_axis_aligned_b_b.html#ab8d6ec756b4925027dd5a7d4dc8c5c20", null ]
+];

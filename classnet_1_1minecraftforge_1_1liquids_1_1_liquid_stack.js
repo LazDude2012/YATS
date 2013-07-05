@@ -1,0 +1,26 @@
+var classnet_1_1minecraftforge_1_1liquids_1_1_liquid_stack =
+[
+    [ "LiquidStack", "classnet_1_1minecraftforge_1_1liquids_1_1_liquid_stack.html#a10f70d62ebfbe313ab5e627c658b8b15", null ],
+    [ "LiquidStack", "classnet_1_1minecraftforge_1_1liquids_1_1_liquid_stack.html#aacc326957a41b31440a62fc272097cfa", null ],
+    [ "LiquidStack", "classnet_1_1minecraftforge_1_1liquids_1_1_liquid_stack.html#a6a8ca0ad4c8c5b40c823c931cd3877e3", null ],
+    [ "LiquidStack", "classnet_1_1minecraftforge_1_1liquids_1_1_liquid_stack.html#af1aee3522352e3629a06b5fcb17d00d9", null ],
+    [ "LiquidStack", "classnet_1_1minecraftforge_1_1liquids_1_1_liquid_stack.html#aa45883ec20795179da1d3442f454c1fa", null ],
+    [ "asItemStack", "classnet_1_1minecraftforge_1_1liquids_1_1_liquid_stack.html#ac60eb3d89230fbee6ecf534db9bb7b06", null ],
+    [ "canonical", "classnet_1_1minecraftforge_1_1liquids_1_1_liquid_stack.html#a98515f23e5c15798f5c54de7f47ca3ac", null ],
+    [ "containsLiquid", "classnet_1_1minecraftforge_1_1liquids_1_1_liquid_stack.html#aa4e4b15631e816e1ff7addbcdfb7c553", null ],
+    [ "copy", "classnet_1_1minecraftforge_1_1liquids_1_1_liquid_stack.html#a05df03903fda971757e7ea17fbc74a9f", null ],
+    [ "equals", "classnet_1_1minecraftforge_1_1liquids_1_1_liquid_stack.html#a3b07fc470614e7c245e346e3f9461c33", null ],
+    [ "getRenderingIcon", "classnet_1_1minecraftforge_1_1liquids_1_1_liquid_stack.html#a45be843d21ee53cdd1d4ecf8678ccc0e", null ],
+    [ "getTextureSheet", "classnet_1_1minecraftforge_1_1liquids_1_1_liquid_stack.html#ad9f3f839fd2945323928557974a689e1", null ],
+    [ "hashCode", "classnet_1_1minecraftforge_1_1liquids_1_1_liquid_stack.html#a1d7355592a9d47f9e432d277c3e32e99", null ],
+    [ "isLiquidEqual", "classnet_1_1minecraftforge_1_1liquids_1_1_liquid_stack.html#a232357ff9358bf06aea05d9d127586e4", null ],
+    [ "isLiquidEqual", "classnet_1_1minecraftforge_1_1liquids_1_1_liquid_stack.html#a1bb5babe98bce6e3b788b4d078b34e46", null ],
+    [ "readFromNBT", "classnet_1_1minecraftforge_1_1liquids_1_1_liquid_stack.html#a11b9d11bc4aae71de01eb40f18c47311", null ],
+    [ "setRenderingIcon", "classnet_1_1minecraftforge_1_1liquids_1_1_liquid_stack.html#a2e5aa01642dc5e9a58236cedd5305c17", null ],
+    [ "setTextureSheet", "classnet_1_1minecraftforge_1_1liquids_1_1_liquid_stack.html#a3fd9f41d1efe93db5b185ad6fdae8605", null ],
+    [ "writeToNBT", "classnet_1_1minecraftforge_1_1liquids_1_1_liquid_stack.html#aea44e7049f8511e436989bf56ab7625b", null ],
+    [ "amount", "classnet_1_1minecraftforge_1_1liquids_1_1_liquid_stack.html#a2e78ae41bdf5df95d6c7f167eaf51249", null ],
+    [ "extra", "classnet_1_1minecraftforge_1_1liquids_1_1_liquid_stack.html#ae7c7fa1934c32f5c43e1ea844bb7b60a", null ],
+    [ "itemID", "classnet_1_1minecraftforge_1_1liquids_1_1_liquid_stack.html#a2952abe1ea30d286a5bcd1a3d805a2b0", null ],
+    [ "itemMeta", "classnet_1_1minecraftforge_1_1liquids_1_1_liquid_stack.html#ad83cab5c87c1af62c84b2a5016dbc9dc", null ]
+];

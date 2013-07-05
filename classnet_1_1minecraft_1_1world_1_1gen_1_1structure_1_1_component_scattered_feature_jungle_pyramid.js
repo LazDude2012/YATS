@@ -1,0 +1,5 @@
+var classnet_1_1minecraft_1_1world_1_1gen_1_1structure_1_1_component_scattered_feature_jungle_pyramid =
+[
+    [ "ComponentScatteredFeatureJunglePyramid", "classnet_1_1minecraft_1_1world_1_1gen_1_1structure_1_1_component_scattered_feature_jungle_pyramid.html#acebf07e8f3d19f3455f57563650fd615", null ],
+    [ "addComponentParts", "classnet_1_1minecraft_1_1world_1_1gen_1_1structure_1_1_component_scattered_feature_jungle_pyramid.html#a47d94e0418766b89a73bdd2802c5e454", null ]
+];

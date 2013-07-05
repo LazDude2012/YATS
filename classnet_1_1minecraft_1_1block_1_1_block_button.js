@@ -1,0 +1,25 @@
+var classnet_1_1minecraft_1_1block_1_1_block_button =
+[
+    [ "BlockButton", "classnet_1_1minecraft_1_1block_1_1_block_button.html#a23ee978d3ef8d3052700b092e5e871b9", null ],
+    [ "breakBlock", "classnet_1_1minecraft_1_1block_1_1_block_button.html#aa0add089d03728e2e4c61c56ba270b82", null ],
+    [ "canPlaceBlockAt", "classnet_1_1minecraft_1_1block_1_1_block_button.html#a9a8019ed024a6aa33bdabe14cb2a12be", null ],
+    [ "canPlaceBlockOnSide", "classnet_1_1minecraft_1_1block_1_1_block_button.html#a862eff7411df127b45cce6131e61121c", null ],
+    [ "canProvidePower", "classnet_1_1minecraft_1_1block_1_1_block_button.html#aa1e76fad2fd7353d9c42a1fccdbe25f7", null ],
+    [ "func_82535_o", "classnet_1_1minecraft_1_1block_1_1_block_button.html#a785c704d378e1e02210a67ca1c5a9b6a", null ],
+    [ "getCollisionBoundingBoxFromPool", "classnet_1_1minecraft_1_1block_1_1_block_button.html#a846d92cb34a7b1a9912eea5a2e4068f1", null ],
+    [ "isOpaqueCube", "classnet_1_1minecraft_1_1block_1_1_block_button.html#a8d3305c74cf98c46261c14ca0fdd1f4b", null ],
+    [ "isProvidingStrongPower", "classnet_1_1minecraft_1_1block_1_1_block_button.html#a5a8803271629a2ecbc58bdb0af42e077", null ],
+    [ "isProvidingWeakPower", "classnet_1_1minecraft_1_1block_1_1_block_button.html#a753a0299165060b9b0c5f60fcf5eb855", null ],
+    [ "onBlockActivated", "classnet_1_1minecraft_1_1block_1_1_block_button.html#a9b9c903b1a94265401c4e9a190ff2c38", null ],
+    [ "onBlockClicked", "classnet_1_1minecraft_1_1block_1_1_block_button.html#aba998e70f110ba38c39dfe5443a07a61", null ],
+    [ "onBlockPlaced", "classnet_1_1minecraft_1_1block_1_1_block_button.html#a1bbc948623e929ad07263418ecbed76c", null ],
+    [ "onEntityCollidedWithBlock", "classnet_1_1minecraft_1_1block_1_1_block_button.html#ae706207a560084f6dd95b5eeb8fa6ced", null ],
+    [ "onNeighborBlockChange", "classnet_1_1minecraft_1_1block_1_1_block_button.html#ab4ec4c5bd1132e9ae2a594d8ec97de8f", null ],
+    [ "registerIcons", "classnet_1_1minecraft_1_1block_1_1_block_button.html#a0f228dac6a5c46c1e0714cadbd83783c", null ],
+    [ "renderAsNormalBlock", "classnet_1_1minecraft_1_1block_1_1_block_button.html#a1d02c82690dd885f866bcc5ca79d6012", null ],
+    [ "setBlockBoundsBasedOnState", "classnet_1_1minecraft_1_1block_1_1_block_button.html#ad742556b56fb35c6a5b9170d3957576f", null ],
+    [ "setBlockBoundsForItemRender", "classnet_1_1minecraft_1_1block_1_1_block_button.html#a0c8d7046fd70a28c012fdc70d95d5672", null ],
+    [ "tickRate", "classnet_1_1minecraft_1_1block_1_1_block_button.html#a5c8b0c7329546dee37e1cc253abb3164", null ],
+    [ "updateTick", "classnet_1_1minecraft_1_1block_1_1_block_button.html#a2f7eacb5eafc980bdd93af05ddb4e59c", null ],
+    [ "sensible", "classnet_1_1minecraft_1_1block_1_1_block_button.html#a3df6db638a06fc4c8a492c728b7effd6", null ]
+];

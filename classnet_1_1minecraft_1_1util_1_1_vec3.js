@@ -1,0 +1,25 @@
+var classnet_1_1minecraft_1_1util_1_1_vec3 =
+[
+    [ "Vec3", "classnet_1_1minecraft_1_1util_1_1_vec3.html#a12e5a3cc4de9d6906bb19cf17489731b", null ],
+    [ "addVector", "classnet_1_1minecraft_1_1util_1_1_vec3.html#aaa4b9a6e666e9b9c8bb369c272ea72ed", null ],
+    [ "crossProduct", "classnet_1_1minecraft_1_1util_1_1_vec3.html#af665ea0284c00f782882228d6ea54871", null ],
+    [ "distanceTo", "classnet_1_1minecraft_1_1util_1_1_vec3.html#ae1beec961b8c2880a10e10134aabad19", null ],
+    [ "dotProduct", "classnet_1_1minecraft_1_1util_1_1_vec3.html#aaa99c6c5f0771e7cae0f26184fa22db9", null ],
+    [ "getIntermediateWithXValue", "classnet_1_1minecraft_1_1util_1_1_vec3.html#a18f973be3b5e71105b55768c3dbf0688", null ],
+    [ "getIntermediateWithYValue", "classnet_1_1minecraft_1_1util_1_1_vec3.html#a834396876bc83f6c173fb9496e4a99cd", null ],
+    [ "getIntermediateWithZValue", "classnet_1_1minecraft_1_1util_1_1_vec3.html#a765ae410fc4a1c5724a6f8a81026d063", null ],
+    [ "lengthVector", "classnet_1_1minecraft_1_1util_1_1_vec3.html#a14cc3c2851b8989a1e4a247cab0d0958", null ],
+    [ "normalize", "classnet_1_1minecraft_1_1util_1_1_vec3.html#ac7b9962f8b08802382aa568d5f92996d", null ],
+    [ "rotateAroundX", "classnet_1_1minecraft_1_1util_1_1_vec3.html#a6905d5b44d16d572abf118649fb4c205", null ],
+    [ "rotateAroundY", "classnet_1_1minecraft_1_1util_1_1_vec3.html#a04ecc7bfc24bde7a606270ac00a32934", null ],
+    [ "rotateAroundZ", "classnet_1_1minecraft_1_1util_1_1_vec3.html#a81188a388193db4b78d5a767da0f7231", null ],
+    [ "setComponents", "classnet_1_1minecraft_1_1util_1_1_vec3.html#ade5d403b0f0166ed0fffd16a27748d71", null ],
+    [ "squareDistanceTo", "classnet_1_1minecraft_1_1util_1_1_vec3.html#a8aacabf8592229596292a0fd83447bee", null ],
+    [ "squareDistanceTo", "classnet_1_1minecraft_1_1util_1_1_vec3.html#aecd2635ddec5824ba3dbf671293def5a", null ],
+    [ "subtract", "classnet_1_1minecraft_1_1util_1_1_vec3.html#a7bc1f52da18f87824634340f42c85a01", null ],
+    [ "toString", "classnet_1_1minecraft_1_1util_1_1_vec3.html#a695ab7c24fa1efac236d789d5d67d749", null ],
+    [ "myVec3LocalPool", "classnet_1_1minecraft_1_1util_1_1_vec3.html#aeb226c5892f3db6fabbca086fc6fc2a2", null ],
+    [ "xCoord", "classnet_1_1minecraft_1_1util_1_1_vec3.html#a622049ac78e73d001f5a555bb6fc3ab7", null ],
+    [ "yCoord", "classnet_1_1minecraft_1_1util_1_1_vec3.html#afd04a0ab7a3c39db6d5d4d2ac42c8f89", null ],
+    [ "zCoord", "classnet_1_1minecraft_1_1util_1_1_vec3.html#af8f78af09539d26a5fd5ffe92381fa42", null ]
+];

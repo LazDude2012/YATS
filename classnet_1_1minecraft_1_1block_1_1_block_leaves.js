@@ -1,0 +1,25 @@
+var classnet_1_1minecraft_1_1block_1_1_block_leaves =
+[
+    [ "BlockLeaves", "classnet_1_1minecraft_1_1block_1_1_block_leaves.html#ada98f2627298cecd40afdbefbe97e6a6", null ],
+    [ "beginLeavesDecay", "classnet_1_1minecraft_1_1block_1_1_block_leaves.html#a81b22b829886f7594abea720c373ca82", null ],
+    [ "breakBlock", "classnet_1_1minecraft_1_1block_1_1_block_leaves.html#a54d0911b8f3d6db11dce0318fa94c71e", null ],
+    [ "colorMultiplier", "classnet_1_1minecraft_1_1block_1_1_block_leaves.html#a77bb67b1266984c09bc1f172aed2f794", null ],
+    [ "createStackedBlock", "classnet_1_1minecraft_1_1block_1_1_block_leaves.html#a7213cbc4ed008e07e78f794be7a031e1", null ],
+    [ "damageDropped", "classnet_1_1minecraft_1_1block_1_1_block_leaves.html#a68e907fd32ed8a01571817daaf191fab", null ],
+    [ "dropBlockAsItemWithChance", "classnet_1_1minecraft_1_1block_1_1_block_leaves.html#ac5695bd5fc3d2984a2c640609c2e76d1", null ],
+    [ "getBlockColor", "classnet_1_1minecraft_1_1block_1_1_block_leaves.html#a182e4e7b18b5342c930fef919dd60a8c", null ],
+    [ "getIcon", "classnet_1_1minecraft_1_1block_1_1_block_leaves.html#a4e1dbe244af8e157fba6d0460e447b46", null ],
+    [ "getRenderColor", "classnet_1_1minecraft_1_1block_1_1_block_leaves.html#ac5f72a2b72885e8151bbb75aa989f43d", null ],
+    [ "getSubBlocks", "classnet_1_1minecraft_1_1block_1_1_block_leaves.html#a17c945924e68c9ed65c5fabbd57b4a46", null ],
+    [ "harvestBlock", "classnet_1_1minecraft_1_1block_1_1_block_leaves.html#af1b9973a7d317d1bd5f8d80d53f85230", null ],
+    [ "idDropped", "classnet_1_1minecraft_1_1block_1_1_block_leaves.html#a4eae376d709c55ce7a61ae5c1e5019d3", null ],
+    [ "isLeaves", "classnet_1_1minecraft_1_1block_1_1_block_leaves.html#a0de8dfe33a912b81fc46e6e7cbbaf1d7", null ],
+    [ "isOpaqueCube", "classnet_1_1minecraft_1_1block_1_1_block_leaves.html#aa31336bfaa6c9c6ecc3de3e0fcf262e1", null ],
+    [ "isShearable", "classnet_1_1minecraft_1_1block_1_1_block_leaves.html#a191f4866a35eef560207142226930829", null ],
+    [ "onSheared", "classnet_1_1minecraft_1_1block_1_1_block_leaves.html#ae726f6dbdead0809ad6bc712d9c89b1c", null ],
+    [ "quantityDropped", "classnet_1_1minecraft_1_1block_1_1_block_leaves.html#a2ae98295f729beefc08031b526c81348", null ],
+    [ "randomDisplayTick", "classnet_1_1minecraft_1_1block_1_1_block_leaves.html#a2c6f198dd963bb088ae98f2e50943c07", null ],
+    [ "registerIcons", "classnet_1_1minecraft_1_1block_1_1_block_leaves.html#ad6c61cf99c203accd8624c63666d8e94", null ],
+    [ "setGraphicsLevel", "classnet_1_1minecraft_1_1block_1_1_block_leaves.html#ae6805768e75891a24b1123427b26cc34", null ],
+    [ "updateTick", "classnet_1_1minecraft_1_1block_1_1_block_leaves.html#ac922480cb8d2e67668b943a693d1d2c5", null ]
+];

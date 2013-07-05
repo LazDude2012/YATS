@@ -1,0 +1,27 @@
+var classnet_1_1minecraft_1_1world_1_1_world_type =
+[
+    [ "WorldType", "classnet_1_1minecraft_1_1world_1_1_world_type.html#a92cadb46111b1304d2ac53f5f50c9446", null ],
+    [ "WorldType", "classnet_1_1minecraft_1_1world_1_1_world_type.html#a590135e45ab0d6c7d5aef20a2196d90e", null ],
+    [ "addNewBiome", "classnet_1_1minecraft_1_1world_1_1_world_type.html#a967a1bf2f55349218cd5ac5864c8ad23", null ],
+    [ "getBiomesForWorldType", "classnet_1_1minecraft_1_1world_1_1_world_type.html#ae430c4bfa8116dd4b99bf4be8e5d085f", null ],
+    [ "getCanBeCreated", "classnet_1_1minecraft_1_1world_1_1_world_type.html#a0e01be88867cbc324b51076a19f23a95", null ],
+    [ "getChunkGenerator", "classnet_1_1minecraft_1_1world_1_1_world_type.html#aed6359d3a057cf1a2c353511828f931e", null ],
+    [ "getChunkManager", "classnet_1_1minecraft_1_1world_1_1_world_type.html#ad2cc7b5131a60baa5880fb138761ea31", null ],
+    [ "getGeneratorVersion", "classnet_1_1minecraft_1_1world_1_1_world_type.html#a985061d2025fa05739301ecf99994f0d", null ],
+    [ "getHorizon", "classnet_1_1minecraft_1_1world_1_1_world_type.html#afc65a71b72a5b4e9d6c20f825c309655", null ],
+    [ "getMinimumSpawnHeight", "classnet_1_1minecraft_1_1world_1_1_world_type.html#adf13d1ac7b9955d6dda92fa32b60e470", null ],
+    [ "getSpawnFuzz", "classnet_1_1minecraft_1_1world_1_1_world_type.html#ae44becf0fd3b6fc03b4e9f9b101553a5", null ],
+    [ "getTranslateName", "classnet_1_1minecraft_1_1world_1_1_world_type.html#aadd7edd86279fff4aa04caf7a12d545b", null ],
+    [ "getWorldTypeForGeneratorVersion", "classnet_1_1minecraft_1_1world_1_1_world_type.html#ac3b27b93b56626399fb645d9a030251d", null ],
+    [ "getWorldTypeID", "classnet_1_1minecraft_1_1world_1_1_world_type.html#a54aab8d94a1481afa58dbcd313e8ee7c", null ],
+    [ "getWorldTypeName", "classnet_1_1minecraft_1_1world_1_1_world_type.html#a893aafd03b4a69e9e5b6c8e2b091b818", null ],
+    [ "handleSlimeSpawnReduction", "classnet_1_1minecraft_1_1world_1_1_world_type.html#ab84156d8dfd9c483f911df0ee4500076", null ],
+    [ "hasVoidParticles", "classnet_1_1minecraft_1_1world_1_1_world_type.html#af133367b76db21d05e6d2ea72fdae7ec", null ],
+    [ "isCustomizable", "classnet_1_1minecraft_1_1world_1_1_world_type.html#a0d06d03fda8c78f4b73279878114b08f", null ],
+    [ "isVersioned", "classnet_1_1minecraft_1_1world_1_1_world_type.html#a4c314e28e69ec463bde91d76200be531", null ],
+    [ "onCustomizeButton", "classnet_1_1minecraft_1_1world_1_1_world_type.html#a5190731daa72f37884f21fa40c6f758c", null ],
+    [ "onGUICreateWorldPress", "classnet_1_1minecraft_1_1world_1_1_world_type.html#ad8177d7926d43f47887f14d03d5721de", null ],
+    [ "removeBiome", "classnet_1_1minecraft_1_1world_1_1_world_type.html#a357a2e8e01509d0d175406de5c745cd4", null ],
+    [ "voidFadeMagnitude", "classnet_1_1minecraft_1_1world_1_1_world_type.html#a92439477040c432a1cc3e7a2a3923129", null ],
+    [ "biomesForWorldType", "classnet_1_1minecraft_1_1world_1_1_world_type.html#ab86ccb0a0101055f736e6c3a13f624eb", null ]
+];

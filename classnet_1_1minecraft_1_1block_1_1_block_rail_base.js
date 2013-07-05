@@ -1,0 +1,26 @@
+var classnet_1_1minecraft_1_1block_1_1_block_rail_base =
+[
+    [ "BlockRailBase", "classnet_1_1minecraft_1_1block_1_1_block_rail_base.html#a32e07145d067955b0d36cb619c03afe8", null ],
+    [ "breakBlock", "classnet_1_1minecraft_1_1block_1_1_block_rail_base.html#a24d9d9ad64c4aa7f13dd9cf6f97dfa12", null ],
+    [ "canMakeSlopes", "classnet_1_1minecraft_1_1block_1_1_block_rail_base.html#a5b3659323bf08bbe43a711bace8d2825", null ],
+    [ "canPlaceBlockAt", "classnet_1_1minecraft_1_1block_1_1_block_rail_base.html#ad015792209d4b0a653d0060c921f517b", null ],
+    [ "collisionRayTrace", "classnet_1_1minecraft_1_1block_1_1_block_rail_base.html#a4c6d537c1c90f3cd4b3c28c8ed88944c", null ],
+    [ "func_94358_a", "classnet_1_1minecraft_1_1block_1_1_block_rail_base.html#a3a6d3948020a22a32be03cd880c8c294", null ],
+    [ "getBasicRailMetadata", "classnet_1_1minecraft_1_1block_1_1_block_rail_base.html#a9be0643cb8c6dd3e13fb4a4021e8468b", null ],
+    [ "getCollisionBoundingBoxFromPool", "classnet_1_1minecraft_1_1block_1_1_block_rail_base.html#ac708654d7dab491ade8eedc0a3cd0560", null ],
+    [ "getMobilityFlag", "classnet_1_1minecraft_1_1block_1_1_block_rail_base.html#a62ba9687615d2447315869c860866d80", null ],
+    [ "getRailMaxSpeed", "classnet_1_1minecraft_1_1block_1_1_block_rail_base.html#a7d2cbcf0d9cdb6b7be87c93d93f3d6c8", null ],
+    [ "getRenderType", "classnet_1_1minecraft_1_1block_1_1_block_rail_base.html#a781e03c3eb5818877d42aa6e410ad7bc", null ],
+    [ "isFlexibleRail", "classnet_1_1minecraft_1_1block_1_1_block_rail_base.html#a2b733ce318d5ca2c7c9657f262f33b60", null ],
+    [ "isOpaqueCube", "classnet_1_1minecraft_1_1block_1_1_block_rail_base.html#aaf05ff6d56f4333d20babf4f663cc0e3", null ],
+    [ "isPowered", "classnet_1_1minecraft_1_1block_1_1_block_rail_base.html#abbbb686c8248853bba7147e4ba5f40c0", null ],
+    [ "onBlockAdded", "classnet_1_1minecraft_1_1block_1_1_block_rail_base.html#a0b6d244e11c4476ca909073749515285", null ],
+    [ "onMinecartPass", "classnet_1_1minecraft_1_1block_1_1_block_rail_base.html#ad4f10b89fe97e0eda7dfbaeff904f491", null ],
+    [ "onNeighborBlockChange", "classnet_1_1minecraft_1_1block_1_1_block_rail_base.html#a59596c7a5caad83f2e00b16e1a9a6fbe", null ],
+    [ "quantityDropped", "classnet_1_1minecraft_1_1block_1_1_block_rail_base.html#a647db4f3843fb1e403e6e7cd7d7fc1b6", null ],
+    [ "refreshTrackShape", "classnet_1_1minecraft_1_1block_1_1_block_rail_base.html#ae31e60da060bc753e92541423c32e09e", null ],
+    [ "renderAsNormalBlock", "classnet_1_1minecraft_1_1block_1_1_block_rail_base.html#a95e960fabafa16889db43d7a84a8fc35", null ],
+    [ "setBlockBoundsBasedOnState", "classnet_1_1minecraft_1_1block_1_1_block_rail_base.html#a62a4612f46ac05fa2045efb8fb8abb7d", null ],
+    [ "setRenderType", "classnet_1_1minecraft_1_1block_1_1_block_rail_base.html#aaa505e2f201ad26dff52d2271ee2820f", null ],
+    [ "isPowered", "classnet_1_1minecraft_1_1block_1_1_block_rail_base.html#adef4bee281522c9262fc0bed6a7c229b", null ]
+];

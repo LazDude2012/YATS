@@ -1,0 +1,4 @@
+var classnet_1_1minecraft_1_1world_1_1gen_1_1structure_1_1_structure_scattered_feature_start =
+[
+    [ "StructureScatteredFeatureStart", "classnet_1_1minecraft_1_1world_1_1gen_1_1structure_1_1_structure_scattered_feature_start.html#a9df68a8554f9146e755017a8b0dcbc73", null ]
+];

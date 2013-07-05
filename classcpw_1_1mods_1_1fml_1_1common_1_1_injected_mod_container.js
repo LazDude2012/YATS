@@ -1,0 +1,27 @@
+var classcpw_1_1mods_1_1fml_1_1common_1_1_injected_mod_container =
+[
+    [ "InjectedModContainer", "classcpw_1_1mods_1_1fml_1_1common_1_1_injected_mod_container.html#a9d655bfb1f957a4cec70760231bcf93f", null ],
+    [ "acceptableMinecraftVersionRange", "classcpw_1_1mods_1_1fml_1_1common_1_1_injected_mod_container.html#a06b47a826f5ff02db10db26b6d58d118", null ],
+    [ "bindMetadata", "classcpw_1_1mods_1_1fml_1_1common_1_1_injected_mod_container.html#a1351c83eb426e6fa7926a443a8de196e", null ],
+    [ "getDependants", "classcpw_1_1mods_1_1fml_1_1common_1_1_injected_mod_container.html#afbc5c1679ccae93619ba589d1d16ce5a", null ],
+    [ "getDependencies", "classcpw_1_1mods_1_1fml_1_1common_1_1_injected_mod_container.html#a2b445db954e74fef5e5d8fa702c00a95", null ],
+    [ "getDisplayVersion", "classcpw_1_1mods_1_1fml_1_1common_1_1_injected_mod_container.html#abecd676f34f6f6ab337586da14082a10", null ],
+    [ "getMetadata", "classcpw_1_1mods_1_1fml_1_1common_1_1_injected_mod_container.html#a8df660d9f07c6bc5224faeebc2bd1f81", null ],
+    [ "getMod", "classcpw_1_1mods_1_1fml_1_1common_1_1_injected_mod_container.html#a5469310bc27e43f2adeb17b7506ff880", null ],
+    [ "getModId", "classcpw_1_1mods_1_1fml_1_1common_1_1_injected_mod_container.html#a86514d957bba4e6633670d4d727a035b", null ],
+    [ "getName", "classcpw_1_1mods_1_1fml_1_1common_1_1_injected_mod_container.html#ae208a7ae9fa0a44b34ed2e5098ee1ab6", null ],
+    [ "getProcessedVersion", "classcpw_1_1mods_1_1fml_1_1common_1_1_injected_mod_container.html#a201b6938b392f0d9ff74962ba81bd874", null ],
+    [ "getRequirements", "classcpw_1_1mods_1_1fml_1_1common_1_1_injected_mod_container.html#a1e8c6e4d2fcf4228682c3d1df17c37f8", null ],
+    [ "getSigningCertificate", "classcpw_1_1mods_1_1fml_1_1common_1_1_injected_mod_container.html#a08c77dc6a28ebe169a4e5e17bb8fa70c", null ],
+    [ "getSortingRules", "classcpw_1_1mods_1_1fml_1_1common_1_1_injected_mod_container.html#ad0692aef78a3f68a5304f798b944f5b0", null ],
+    [ "getSource", "classcpw_1_1mods_1_1fml_1_1common_1_1_injected_mod_container.html#a776f212ebed7364eb89ab75a4d7b3f45", null ],
+    [ "getVersion", "classcpw_1_1mods_1_1fml_1_1common_1_1_injected_mod_container.html#a389583bcdebbe7fd15fac8c21472917b", null ],
+    [ "getWrappedWorldAccessContainer", "classcpw_1_1mods_1_1fml_1_1common_1_1_injected_mod_container.html#a95deee87e78ae11c20ce9d76b52dff0e", null ],
+    [ "isImmutable", "classcpw_1_1mods_1_1fml_1_1common_1_1_injected_mod_container.html#a226f3861b11533b6467c12f7e8a31797", null ],
+    [ "isNetworkMod", "classcpw_1_1mods_1_1fml_1_1common_1_1_injected_mod_container.html#a98d150b3583f2158315ef6b18a6b67b9", null ],
+    [ "matches", "classcpw_1_1mods_1_1fml_1_1common_1_1_injected_mod_container.html#a77b240758df6bf9f819ae10cdf25a480", null ],
+    [ "registerBus", "classcpw_1_1mods_1_1fml_1_1common_1_1_injected_mod_container.html#a084e5c9e51664aea8de332d75f46401e", null ],
+    [ "setEnabledState", "classcpw_1_1mods_1_1fml_1_1common_1_1_injected_mod_container.html#ab8e3bb39aee7204d39f87717cc15b7f6", null ],
+    [ "toString", "classcpw_1_1mods_1_1fml_1_1common_1_1_injected_mod_container.html#a414c9ebcaee90f332e1059855e880600", null ],
+    [ "wrappedContainer", "classcpw_1_1mods_1_1fml_1_1common_1_1_injected_mod_container.html#aa9df9b466c312ebfddb92c76d3a0c316", null ]
+];

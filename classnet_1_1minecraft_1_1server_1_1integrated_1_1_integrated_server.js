@@ -1,0 +1,26 @@
+var classnet_1_1minecraft_1_1server_1_1integrated_1_1_integrated_server =
+[
+    [ "IntegratedServer", "classnet_1_1minecraft_1_1server_1_1integrated_1_1_integrated_server.html#a4488a264923b71fa1f6a05c95c6f2ed9", null ],
+    [ "addServerInfoToCrashReport", "classnet_1_1minecraft_1_1server_1_1integrated_1_1_integrated_server.html#a211b095ca11e40d8069100dcde12143e", null ],
+    [ "addServerStatsToSnooper", "classnet_1_1minecraft_1_1server_1_1integrated_1_1_integrated_server.html#a5d013e7e42ea937aeee29025ab3fca6d", null ],
+    [ "canStructuresSpawn", "classnet_1_1minecraft_1_1server_1_1integrated_1_1_integrated_server.html#af77158795d0801fc4fc4d82e95d00574", null ],
+    [ "finalTick", "classnet_1_1minecraft_1_1server_1_1integrated_1_1_integrated_server.html#a85390b024f60f45cfd9d2022c7532cf1", null ],
+    [ "getDataDirectory", "classnet_1_1minecraft_1_1server_1_1integrated_1_1_integrated_server.html#a978bf27a9fac8c21cdf23d6b8d31d064", null ],
+    [ "getDifficulty", "classnet_1_1minecraft_1_1server_1_1integrated_1_1_integrated_server.html#a7cb190dd740584eeaa51f97a483236c9", null ],
+    [ "getGameType", "classnet_1_1minecraft_1_1server_1_1integrated_1_1_integrated_server.html#a20a6a9e3adf01aaf095e08cb3a4d4ed0", null ],
+    [ "getLogAgent", "classnet_1_1minecraft_1_1server_1_1integrated_1_1_integrated_server.html#a0562529091650941a679a2857ec767c0", null ],
+    [ "getNetworkThread", "classnet_1_1minecraft_1_1server_1_1integrated_1_1_integrated_server.html#aa4d87a5be1e4f33d0cc6ef79ec2c62cb", null ],
+    [ "getPublic", "classnet_1_1minecraft_1_1server_1_1integrated_1_1_integrated_server.html#a3c37ae21f906a89b155a7ad15a0bf401", null ],
+    [ "getServerListeningThread", "classnet_1_1minecraft_1_1server_1_1integrated_1_1_integrated_server.html#af6efb83a44be438c43a58f7b32a0a219", null ],
+    [ "initiateShutdown", "classnet_1_1minecraft_1_1server_1_1integrated_1_1_integrated_server.html#acb9bffd6ccc1052210bf1426c461a838", null ],
+    [ "isCommandBlockEnabled", "classnet_1_1minecraft_1_1server_1_1integrated_1_1_integrated_server.html#a8e49cc2e0491da035488b39593f2c190", null ],
+    [ "isDedicatedServer", "classnet_1_1minecraft_1_1server_1_1integrated_1_1_integrated_server.html#ab35edd13b10525fbb42f520bef0b1dbf", null ],
+    [ "isHardcore", "classnet_1_1minecraft_1_1server_1_1integrated_1_1_integrated_server.html#a17fbbf2cd753df1f32a4e57c7076ecc4", null ],
+    [ "isSnooperEnabled", "classnet_1_1minecraft_1_1server_1_1integrated_1_1_integrated_server.html#a795f37d719c00c4ba2205838ff1e93f2", null ],
+    [ "loadAllWorlds", "classnet_1_1minecraft_1_1server_1_1integrated_1_1_integrated_server.html#a73f112e3f36b2dbfcd7c41d6521f1ced", null ],
+    [ "setGameType", "classnet_1_1minecraft_1_1server_1_1integrated_1_1_integrated_server.html#ae750eadea7591ea0ceafa9c0c87b3dbe", null ],
+    [ "shareToLAN", "classnet_1_1minecraft_1_1server_1_1integrated_1_1_integrated_server.html#a526a9c331da134242e61572d1af617f6", null ],
+    [ "startServer", "classnet_1_1minecraft_1_1server_1_1integrated_1_1_integrated_server.html#a1bc82abd8b2ca0ede9ee174ebe68c17a", null ],
+    [ "stopServer", "classnet_1_1minecraft_1_1server_1_1integrated_1_1_integrated_server.html#a1411e648fe4cc9373120575314c19031", null ],
+    [ "tick", "classnet_1_1minecraft_1_1server_1_1integrated_1_1_integrated_server.html#ad70b85a960518b1712c46469495882ff", null ]
+];

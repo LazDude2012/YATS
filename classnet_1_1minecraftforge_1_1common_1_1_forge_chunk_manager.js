@@ -1,0 +1,7 @@
+var classnet_1_1minecraftforge_1_1common_1_1_forge_chunk_manager =
+[
+    [ "LoadingCallback", "interfacenet_1_1minecraftforge_1_1common_1_1_forge_chunk_manager_1_1_loading_callback.html", "interfacenet_1_1minecraftforge_1_1common_1_1_forge_chunk_manager_1_1_loading_callback" ],
+    [ "OrderedLoadingCallback", "interfacenet_1_1minecraftforge_1_1common_1_1_forge_chunk_manager_1_1_ordered_loading_callback.html", "interfacenet_1_1minecraftforge_1_1common_1_1_forge_chunk_manager_1_1_ordered_loading_callback" ],
+    [ "PlayerOrderedLoadingCallback", "interfacenet_1_1minecraftforge_1_1common_1_1_forge_chunk_manager_1_1_player_ordered_loading_callback.html", "interfacenet_1_1minecraftforge_1_1common_1_1_forge_chunk_manager_1_1_player_ordered_loading_callback" ],
+    [ "Type", "enumnet_1_1minecraftforge_1_1common_1_1_forge_chunk_manager_1_1_type.html", "enumnet_1_1minecraftforge_1_1common_1_1_forge_chunk_manager_1_1_type" ]
+];

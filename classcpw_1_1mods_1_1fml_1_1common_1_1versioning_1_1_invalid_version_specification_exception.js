@@ -1,0 +1,4 @@
+var classcpw_1_1mods_1_1fml_1_1common_1_1versioning_1_1_invalid_version_specification_exception =
+[
+    [ "InvalidVersionSpecificationException", "classcpw_1_1mods_1_1fml_1_1common_1_1versioning_1_1_invalid_version_specification_exception.html#ade35e22599f952a6d6e2f1ce56ad6b36", null ]
+];

@@ -1,0 +1,25 @@
+var classnet_1_1minecraft_1_1world_1_1_chunk_cache =
+[
+    [ "ChunkCache", "classnet_1_1minecraft_1_1world_1_1_chunk_cache.html#ab524dcbcdf627ae1f04a19e391a9fa87", null ],
+    [ "doesBlockHaveSolidTopSurface", "classnet_1_1minecraft_1_1world_1_1_chunk_cache.html#a079c58ce72996fe14e9eb508fbaddf84", null ],
+    [ "extendedLevelsInChunkCache", "classnet_1_1minecraft_1_1world_1_1_chunk_cache.html#a2b1c7aa3dc3b1c73b881a76f57101093", null ],
+    [ "getBiomeGenForCoords", "classnet_1_1minecraft_1_1world_1_1_chunk_cache.html#aaf6702c57faf2c8c7a45ac32021be8ff", null ],
+    [ "getBlockId", "classnet_1_1minecraft_1_1world_1_1_chunk_cache.html#a2362114aa8fa4c4f4071fd0ca850cd47", null ],
+    [ "getBlockMaterial", "classnet_1_1minecraft_1_1world_1_1_chunk_cache.html#ad491b2865215b81c3e8d2deb505a05e0", null ],
+    [ "getBlockMetadata", "classnet_1_1minecraft_1_1world_1_1_chunk_cache.html#aabdce21663e708313f533f3f211e6ad7", null ],
+    [ "getBlockTileEntity", "classnet_1_1minecraft_1_1world_1_1_chunk_cache.html#ad194f9f5debe49734c46b8d5ce1fb0ca", null ],
+    [ "getBrightness", "classnet_1_1minecraft_1_1world_1_1_chunk_cache.html#a6a89d31c736cca747862b10972d06358", null ],
+    [ "getHeight", "classnet_1_1minecraft_1_1world_1_1_chunk_cache.html#a5140e4e7f8998ae1bdd67adf7dff739a", null ],
+    [ "getLightBrightness", "classnet_1_1minecraft_1_1world_1_1_chunk_cache.html#ae291530b9d5fb546eee73f041eac80b0", null ],
+    [ "getLightBrightnessForSkyBlocks", "classnet_1_1minecraft_1_1world_1_1_chunk_cache.html#a6d96fd34d3807e92908c6752138b4602", null ],
+    [ "getLightValue", "classnet_1_1minecraft_1_1world_1_1_chunk_cache.html#ad39904fbca872c8ab66a8bea8847e04b", null ],
+    [ "getLightValueExt", "classnet_1_1minecraft_1_1world_1_1_chunk_cache.html#ab92896d5f286e221dea7a7d255d2ec06", null ],
+    [ "getSkyBlockTypeBrightness", "classnet_1_1minecraft_1_1world_1_1_chunk_cache.html#a82aa9e16de035e4215cd3bfc38dfcf50", null ],
+    [ "getSpecialBlockBrightness", "classnet_1_1minecraft_1_1world_1_1_chunk_cache.html#aef101e11fad597c1f6e6ec6f6d12e591", null ],
+    [ "getWorldVec3Pool", "classnet_1_1minecraft_1_1world_1_1_chunk_cache.html#a6019c5d2f2eae12659b1ac60e56274db", null ],
+    [ "isAirBlock", "classnet_1_1minecraft_1_1world_1_1_chunk_cache.html#af63e68c791a6b5758860075e303671ae", null ],
+    [ "isBlockNormalCube", "classnet_1_1minecraft_1_1world_1_1_chunk_cache.html#a61f253281bf35ef942a94de7e8f67cd1", null ],
+    [ "isBlockOpaqueCube", "classnet_1_1minecraft_1_1world_1_1_chunk_cache.html#a9bdcfe1c8d0e68000680918becfa97f4", null ],
+    [ "isBlockProvidingPowerTo", "classnet_1_1minecraft_1_1world_1_1_chunk_cache.html#aa09220e3358d6dd79a85aa64ba40dbdf", null ],
+    [ "isBlockSolidOnSide", "classnet_1_1minecraft_1_1world_1_1_chunk_cache.html#a15515f3fb3f03d2e3c2de5e84696299c", null ]
+];

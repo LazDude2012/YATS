@@ -1,0 +1,5 @@
+var classnet_1_1minecraft_1_1world_1_1gen_1_1structure_1_1_component_scattered_feature_desert_pyramid =
+[
+    [ "ComponentScatteredFeatureDesertPyramid", "classnet_1_1minecraft_1_1world_1_1gen_1_1structure_1_1_component_scattered_feature_desert_pyramid.html#aff8e3f21589897efe2dfa629704564be", null ],
+    [ "addComponentParts", "classnet_1_1minecraft_1_1world_1_1gen_1_1structure_1_1_component_scattered_feature_desert_pyramid.html#adc0d683e9fcf7a10150a55b243185abf", null ]
+];

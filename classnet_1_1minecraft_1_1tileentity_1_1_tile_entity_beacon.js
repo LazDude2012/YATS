@@ -1,0 +1,28 @@
+var classnet_1_1minecraft_1_1tileentity_1_1_tile_entity_beacon =
+[
+    [ "closeChest", "classnet_1_1minecraft_1_1tileentity_1_1_tile_entity_beacon.html#a130bb773a36edc39b2d09dce08ad273f", null ],
+    [ "decrStackSize", "classnet_1_1minecraft_1_1tileentity_1_1_tile_entity_beacon.html#a610cb784909daecc2ca74b80a2b5c13e", null ],
+    [ "func_82125_v_", "classnet_1_1minecraft_1_1tileentity_1_1_tile_entity_beacon.html#a6e446fac95eed1d5351d578f1c3fb9c8", null ],
+    [ "func_94047_a", "classnet_1_1minecraft_1_1tileentity_1_1_tile_entity_beacon.html#aa88436f6fd717e284a3f3c2661ed4c8e", null ],
+    [ "getDescriptionPacket", "classnet_1_1minecraft_1_1tileentity_1_1_tile_entity_beacon.html#acaae4c3edb4198c846eefe18002b2017", null ],
+    [ "getInventoryStackLimit", "classnet_1_1minecraft_1_1tileentity_1_1_tile_entity_beacon.html#a65ee43807f43bbaf4c64eb683a30277a", null ],
+    [ "getInvName", "classnet_1_1minecraft_1_1tileentity_1_1_tile_entity_beacon.html#a835cbf33e068059b08edc8805168d1af", null ],
+    [ "getLevels", "classnet_1_1minecraft_1_1tileentity_1_1_tile_entity_beacon.html#a698c69ed53eaa834f342aa69bf0324f3", null ],
+    [ "getMaxRenderDistanceSquared", "classnet_1_1minecraft_1_1tileentity_1_1_tile_entity_beacon.html#a98c2e70e18ccb5d21898606afa9703b0", null ],
+    [ "getPrimaryEffect", "classnet_1_1minecraft_1_1tileentity_1_1_tile_entity_beacon.html#a4dbefd6659ed23d341b2684fcea6707d", null ],
+    [ "getSecondaryEffect", "classnet_1_1minecraft_1_1tileentity_1_1_tile_entity_beacon.html#a3c19cf9fa3a4086979563b972ee6272e", null ],
+    [ "getSizeInventory", "classnet_1_1minecraft_1_1tileentity_1_1_tile_entity_beacon.html#a6c3d3ca8dc0625b6337b039cd29286a7", null ],
+    [ "getStackInSlot", "classnet_1_1minecraft_1_1tileentity_1_1_tile_entity_beacon.html#a172a2d522f9875ada54b2ac1c544361c", null ],
+    [ "getStackInSlotOnClosing", "classnet_1_1minecraft_1_1tileentity_1_1_tile_entity_beacon.html#a51a6e5249ae449b9d90d376dd31b1bb4", null ],
+    [ "isInvNameLocalized", "classnet_1_1minecraft_1_1tileentity_1_1_tile_entity_beacon.html#ae271078fef7bbc621d6af21763f9d10f", null ],
+    [ "isStackValidForSlot", "classnet_1_1minecraft_1_1tileentity_1_1_tile_entity_beacon.html#a1d8a397354dedab18acc946980b6746e", null ],
+    [ "isUseableByPlayer", "classnet_1_1minecraft_1_1tileentity_1_1_tile_entity_beacon.html#abf58b44bcf1f6e5bbdfe0cc2962cf322", null ],
+    [ "openChest", "classnet_1_1minecraft_1_1tileentity_1_1_tile_entity_beacon.html#a838310a79589fb74efdcd0fadb7ccdca", null ],
+    [ "readFromNBT", "classnet_1_1minecraft_1_1tileentity_1_1_tile_entity_beacon.html#aa6ade05e82f29b50f13340a4cf0280e9", null ],
+    [ "setInventorySlotContents", "classnet_1_1minecraft_1_1tileentity_1_1_tile_entity_beacon.html#a21c973a90ac0ab2d7780ee3fd4b880c7", null ],
+    [ "setLevels", "classnet_1_1minecraft_1_1tileentity_1_1_tile_entity_beacon.html#aa751e647e11df2ed5d4fd3e3e46af66e", null ],
+    [ "setPrimaryEffect", "classnet_1_1minecraft_1_1tileentity_1_1_tile_entity_beacon.html#a226e916017d080c1981d9ed2ef489ea9", null ],
+    [ "setSecondaryEffect", "classnet_1_1minecraft_1_1tileentity_1_1_tile_entity_beacon.html#ac866d5c8cd82d91e9fd82f6ea05b88e3", null ],
+    [ "updateEntity", "classnet_1_1minecraft_1_1tileentity_1_1_tile_entity_beacon.html#a768db7aa29f338a40c726ca7700e706b", null ],
+    [ "writeToNBT", "classnet_1_1minecraft_1_1tileentity_1_1_tile_entity_beacon.html#acc0bf4424175d1946495580d97adf75d", null ]
+];

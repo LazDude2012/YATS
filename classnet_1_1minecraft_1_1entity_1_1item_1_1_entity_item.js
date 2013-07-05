@@ -1,0 +1,26 @@
+var classnet_1_1minecraft_1_1entity_1_1item_1_1_entity_item =
+[
+    [ "EntityItem", "classnet_1_1minecraft_1_1entity_1_1item_1_1_entity_item.html#a396a30711e3f132eb0a3c444c29f6903", null ],
+    [ "EntityItem", "classnet_1_1minecraft_1_1entity_1_1item_1_1_entity_item.html#a577659b2a42c5a9530666d636d9774eb", null ],
+    [ "EntityItem", "classnet_1_1minecraft_1_1entity_1_1item_1_1_entity_item.html#a8124dd689b042c0e99e3c1675bda7630", null ],
+    [ "attackEntityFrom", "classnet_1_1minecraft_1_1entity_1_1item_1_1_entity_item.html#ac3cbea7aa6831e045cccdee46f9d01b9", null ],
+    [ "canAttackWithItem", "classnet_1_1minecraft_1_1entity_1_1item_1_1_entity_item.html#acc533ea161298029d251c532677abe0b", null ],
+    [ "canTriggerWalking", "classnet_1_1minecraft_1_1entity_1_1item_1_1_entity_item.html#a7e78bb4c6f96cf35537309eaf677ed00", null ],
+    [ "combineItems", "classnet_1_1minecraft_1_1entity_1_1item_1_1_entity_item.html#aa4ee942b3109606936ff2abd033c3004", null ],
+    [ "dealFireDamage", "classnet_1_1minecraft_1_1entity_1_1item_1_1_entity_item.html#a98a89dcdc01d4e28084ce59bf7a396e6", null ],
+    [ "entityInit", "classnet_1_1minecraft_1_1entity_1_1item_1_1_entity_item.html#ad1603d9c6acc52c7c821660a5e0a919b", null ],
+    [ "getEntityItem", "classnet_1_1minecraft_1_1entity_1_1item_1_1_entity_item.html#a762ff6574ea30dd44ab844d5e899fd0e", null ],
+    [ "getEntityName", "classnet_1_1minecraft_1_1entity_1_1item_1_1_entity_item.html#a3d306a11cedaf12bfb155fccfe87f588", null ],
+    [ "handleWaterMovement", "classnet_1_1minecraft_1_1entity_1_1item_1_1_entity_item.html#a0cca73b4a4ec58e32bb43ee38fe70e41", null ],
+    [ "onCollideWithPlayer", "classnet_1_1minecraft_1_1entity_1_1item_1_1_entity_item.html#adfa2773fd3fffc7dab291ae18a508ebb", null ],
+    [ "onUpdate", "classnet_1_1minecraft_1_1entity_1_1item_1_1_entity_item.html#af008fcc3005f79f2dbcf0915419bcec3", null ],
+    [ "readEntityFromNBT", "classnet_1_1minecraft_1_1entity_1_1item_1_1_entity_item.html#a7da432a8ba458e5f249f41f1f7d74e1c", null ],
+    [ "setAgeToCreativeDespawnTime", "classnet_1_1minecraft_1_1entity_1_1item_1_1_entity_item.html#a884f3fa771e1f97a3558c7d24af93205", null ],
+    [ "setEntityItemStack", "classnet_1_1minecraft_1_1entity_1_1item_1_1_entity_item.html#a97eab291a9e0f304de66c67135d1454f", null ],
+    [ "travelToDimension", "classnet_1_1minecraft_1_1entity_1_1item_1_1_entity_item.html#afb0a7dea6ffe6e04809aa13475a4cd60", null ],
+    [ "writeEntityToNBT", "classnet_1_1minecraft_1_1entity_1_1item_1_1_entity_item.html#a387fcc0506ffc61faa76424ca509b5ba", null ],
+    [ "age", "classnet_1_1minecraft_1_1entity_1_1item_1_1_entity_item.html#a5dce55dd350522739792f55b6dc14c36", null ],
+    [ "delayBeforeCanPickup", "classnet_1_1minecraft_1_1entity_1_1item_1_1_entity_item.html#acb6fedd977715829513b631828011baf", null ],
+    [ "hoverStart", "classnet_1_1minecraft_1_1entity_1_1item_1_1_entity_item.html#a1073f709108d063726a09782784eebde", null ],
+    [ "lifespan", "classnet_1_1minecraft_1_1entity_1_1item_1_1_entity_item.html#aa605babae08eb2d972ba8c177476cd91", null ]
+];
