@@ -5,7 +5,6 @@ import YATS.block.*;
 import YATS.capsule.ItemCapsule;
 import YATS.client.ClientPacketHandler;
 import YATS.common.gui.TabYATS;
-import YATS.item.ItemBlockTube;
 import YATS.item.ItemSpanner;
 import YATS.tile.*;
 import YATS.util.ConfigHandler;
@@ -34,7 +33,7 @@ public class YATS
 	@SidedProxy(clientSide = "YATS.client.ClientProxy",serverSide="YATS.common.CommonProxy")
 	public static CommonProxy proxy;
 
-	public static boolean IS_DEBUG = true;
+	public static boolean IS_DEBUG = false;
 
     public final static int ADVEXTRACTOR_GUI = 1;
     public final static int ROUTINGMARSHALLER_GUI = 2;
@@ -109,9 +108,9 @@ public class YATS
 		GameRegistry.registerTileEntity(TileItemBuffer.class, "YATSTileItemBuffer");
 		LanguageRegistry.addName(blockItemBuffer,"Item Buffer");
 
-        	GameRegistry.registerBlock(blockTube, "YATSBlockTube");
-        	GameRegistry.registerTileEntity(TileTube.class, "YATSTileTube");
-        	LanguageRegistry.addName(blockTube, "Transport Tube");
+        GameRegistry.registerBlock(blockTube, "YATSBlockTube");
+        GameRegistry.registerTileEntity(TileTube.class, "YATSTileTube");
+        LanguageRegistry.addName(blockTube, "Transport Tube");
 
 		GameRegistry.registerBlock(blockRemoteExtractor, "YATSBlockRemoteExtractor");
 		GameRegistry.registerTileEntity(TileRemoteExtractor.class, "YATSTileRemoteExtractor");
