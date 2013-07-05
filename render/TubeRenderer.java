@@ -426,6 +426,34 @@ public class TubeRenderer extends TileEntitySpecialRenderer implements IItemRend
         }
         //endregion
 
+        // render top/bottom coverings
+        if (isItem) {
+            {
+                glBegin(GL_QUADS);
+                glTexCoord2f(0.25f, 0.25f);
+                glVertex3f(0.25f, 1f, 0.25f);
+                glTexCoord2f(0.25f, 0.75f);
+                glVertex3f(0.25f, 1f, 0.75f);
+                glTexCoord2f(0.75f, 0.75f);
+                glVertex3f(0.75f, 1f, 0.75f);
+                glTexCoord2f(0.75f, 0.25f);
+                glVertex3f(0.75f, 1f, 0.25f);
+                glEnd();
+            }
+            {
+                glBegin(GL_QUADS);
+                glTexCoord2f(0.25f, 0.25f);
+                glVertex3f(0.25f, 0f, 0.25f);
+                glTexCoord2f(0.25f, 0.75f);
+                glVertex3f(0.25f, 0f, 0.75f);
+                glTexCoord2f(0.75f, 0.75f);
+                glVertex3f(0.75f, 0f, 0.75f);
+                glTexCoord2f(0.75f, 0.25f);
+                glVertex3f(0.75f, 0f, 0.25f);
+                glEnd();
+            }
+        }
+
         glEnable(GL_CULL_FACE);
         if (isItem) glEnable(GL_LIGHTING);
         glPopMatrix();
@@ -541,7 +569,7 @@ public class TubeRenderer extends TileEntitySpecialRenderer implements IItemRend
                 RenderItem(-0.25, -0.33, -0.2, 1.5);
                 break;
             case INVENTORY:
-                RenderItem(-0.25, -0.3075, -0.2, 1.23);
+                RenderItem(-0.25, -0.3075, -0.2, 1.1);
                 break;
         }
     }
