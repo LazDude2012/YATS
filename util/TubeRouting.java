@@ -35,6 +35,7 @@ public class TubeRouting
 						return;
 					}
 					queue.add(new TubeRoute(coords, side, direction, priority+tube.GetAdditionalPriority()));
+					return;
 				}
 			}
 			else if (world.getBlockTileEntity(coords.x,coords.y,coords.z) instanceof IInventory)
