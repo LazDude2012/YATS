@@ -29,6 +29,7 @@ public class TileRoutingMarshaller extends TileEntity implements IInventory, I6W
     public Colours[] rowColours = {NONE,NONE,NONE,NONE,NONE};
     public int activeRow = 0;
     private ArrayList<ICapsule> contents = new ArrayList<ICapsule>();
+    private ArrayList<ICapsule> pending = new ArrayList<ICapsule>();
     private ForgeDirection currentfacing = ForgeDirection.UNKNOWN;
     private boolean[] connections = new boolean[6];
     public boolean isBusy;
@@ -112,7 +113,7 @@ public class TileRoutingMarshaller extends TileEntity implements IInventory, I6W
     public int GetAdditionalPriority() { return 0; }
 
     @Override
-    public void AcceptCapsule(ICapsule capsule) { contents.add(capsule); }
+    public void AcceptCapsule(ICapsule capsule) { pending.add(capsule); }
 
     @Override
     public void SetConnectionOnSide(ForgeDirection side, boolean connected) { connections[side.ordinal()] = connected; }
@@ -225,6 +226,8 @@ public class TileRoutingMarshaller extends TileEntity implements IInventory, I6W
         if(!isContinuedSignal)
         {
             ArrayList<ICapsule> capsulesToRemove = new ArrayList<ICapsule>();
+            for(ICapsule capsule : pending)
+                contents.add(capsule);
             for (ICapsule capsule : contents)
             {
                 if(YATS.IS_DEBUG)

@@ -283,6 +283,7 @@ public class TileAdvExtractor extends TileEntity implements ITubeConnectable, II
 		IInventory inv = (IInventory)tileFrom;
 		for(ItemStack stack : inventory)
 		{
+            if(stack == null) continue;
 			if(LazUtils.InventoryCore.ExtractFromInventory(inv, stack, false))
 			{
 				LazUtils.InventoryCore.ExtractFromInventory(inv,stack,true);

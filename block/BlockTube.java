@@ -21,7 +21,6 @@ import net.minecraftforge.common.ForgeDirection;
 public class BlockTube extends Block implements ITileEntityProvider
 {
 	public int renderID;
-    protected Icon itemicon;
 	public BlockTube(int id)
 	{
 		super(id, Material.rock);
@@ -52,12 +51,6 @@ public class BlockTube extends Block implements ITileEntityProvider
 	{
 		CheckTubeConnections(world,x,y,z);
 	}
-
-    @Override
-    public void registerIcons(IconRegister register)
-    {
-        itemicon = register.registerIcon("YATS:blockTube");
-    }
 
 	public static void CheckTubeConnections(World world, int x, int y, int z)
 	{
