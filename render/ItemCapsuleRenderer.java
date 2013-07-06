@@ -77,11 +77,11 @@ public class ItemCapsuleRenderer implements ICapsuleRenderer
 		renderitem.doRenderItem(dummy, 0, 0, 0, 0, 0);
 		if (colour != Colours.NONE)
 		{
-			byte[] rgb = Colours.toRGB(colour);
+			float[] rgb = Colours.toRGB(colour);
 			Minecraft.getMinecraft().renderEngine.bindTexture("/mods/YATS/textures/blocks/yats-paintring.png");
 			glPushMatrix();
 			glDisable(GL_CULL_FACE);
-			glColor3ub(rgb[0],rgb[1],rgb[2]);
+			glColor3f(rgb[0],rgb[1],rgb[2]);
 			glTranslated(-0.5,-0.5,-0.5);
 			//region PAINT RING: OUTSIDE FACES
 

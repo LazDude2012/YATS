@@ -488,12 +488,12 @@ public class TubeRenderer extends TileEntitySpecialRenderer implements IItemRend
     {
         Colours colour = tube.GetColour();
         if (colour == Colours.NONE) return;
-        byte[] rgb = Colours.toRGB(colour);
+        float[] rgb = Colours.toRGB(colour);
         Minecraft.getMinecraft().renderEngine.bindTexture("/mods/YATS/textures/blocks/yats-paintring.png");
         glPushMatrix();
         glTranslated(x, y, z);
         glDisable(GL_CULL_FACE);
-        glColor3ub(rgb[0], rgb[1], rgb[2]);
+        glColor3f(rgb[0], rgb[1], rgb[2]);
 
         //region PAINT RING: OUTSIDE FACES
 

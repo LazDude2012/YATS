@@ -98,7 +98,7 @@ public class BlockTube extends Block implements ITileEntityProvider
 	{
 		return -1;
 	}
-	
+
 	   @Override
     public void setBlockBoundsBasedOnState(IBlockAccess iba, int x, int y, int z)
     {
@@ -136,7 +136,7 @@ public class BlockTube extends Block implements ITileEntityProvider
 
     private AxisAlignedBB GetAABBFromState(ITubeConnectable te)
     {
-        AxisAlignedBB aabb = GetAABB(4, 4, 4, 12, 12, 12);
+        AxisAlignedBB aabb = AxisAlignedBB.getAABBPool().getAABB(0.25, 0.25, 0.25, 0.75, 0.75, 0.75);
         for (int i = 0; i < 6; i++) {
             ForgeDirection side = ForgeDirection.values()[i];
             if (te.IsConnectedOnSide(side)) {
@@ -176,12 +176,6 @@ public class BlockTube extends Block implements ITileEntityProvider
         return aabb;
     }
 
-    private AxisAlignedBB GetAABB(int nX, int nY, int nZ, int mX, int mY, int mZ)
-    {
-        final double p = 1D / 16D;
-        return AxisAlignedBB.getAABBPool().getAABB(nX * p, nY * p, nZ * p, mX * p, mY * p, mZ * p);
-    }
-
     private void SetBlockBounds(AxisAlignedBB aabb)
     {
         this.maxX = aabb.maxX;
@@ -191,7 +185,7 @@ public class BlockTube extends Block implements ITileEntityProvider
         this.minY = aabb.minY;
         this.minZ = aabb.minZ;
     }
-    
+
     @Override
     public void registerIcons(IconRegister ir)
     {
