@@ -14,6 +14,7 @@ import net.minecraft.entity.EntityLiving;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.AABBPool;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
@@ -24,12 +25,12 @@ import java.util.List;
 
 public class BlockTube extends Block implements ITileEntityProvider
 {
-	public BlockTube(int id)
-	{
-		super(id, Material.rock);
-		setCreativeTab(YATS.tabYATS);
-		setUnlocalizedName("YATSBlockTube");
-	}
+    public BlockTube(int id)
+    {
+        super(id, Material.rock);
+        setCreativeTab(YATS.tabYATS);
+        setUnlocalizedName("YATSBlockTube");
+    }
 
     @Override
     public String getItemIconName()
@@ -37,69 +38,70 @@ public class BlockTube extends Block implements ITileEntityProvider
         return "YATS:blockTube";
     }
 
-	@Override
-	public void onBlockPlacedBy(World world, int x, int y, int z, EntityLiving entity, ItemStack itemStack)
-	{
-		CheckTubeConnections(world,x,y,z);
-	}
+    @Override
+    public void onBlockPlacedBy(World world, int x, int y, int z, EntityLiving entity, ItemStack itemStack)
+    {
+        CheckTubeConnections(world, x, y, z);
+    }
 
-	@Override
-	public boolean renderAsNormalBlock() { return false; }
+    @Override
+    public boolean renderAsNormalBlock()
+    {
+        return false;
+    }
 
-	@Override
-	public boolean isOpaqueCube() { return false; }
+    @Override
+    public boolean isOpaqueCube()
+    {
+        return false;
+    }
 
-	@Override
-	public void onNeighborBlockChange(World world, int x, int y, int z, int neighborID)
-	{
-		CheckTubeConnections(world,x,y,z);
-	}
+    @Override
+    public void onNeighborBlockChange(World world, int x, int y, int z, int neighborID)
+    {
+        CheckTubeConnections(world, x, y, z);
+    }
 
-	public static void CheckTubeConnections(World world, int x, int y, int z)
-	{
-		TileTube originator = (TileTube)world.getBlockTileEntity(x,y,z);
-		for(ForgeDirection side : ForgeDirection.VALID_DIRECTIONS)
-		{
-			TileEntity tile = LazUtils.XYZCoords.FromTile(originator).Next(side).ToTile();
-			if(tile instanceof ITubeConnectable)
-			{
-				ITubeConnectable tube = (ITubeConnectable) tile;
-				if(tube.IsConnectableOnSide(side.getOpposite()) && (tube.GetColour() == originator.GetColour() || tube.GetColour() == Colours.NONE
-				|| originator.GetColour() == Colours.NONE))
-				{
-					tube.SetConnectionOnSide(side.getOpposite(),true);
-					originator.SetConnectionOnSide(side,true);
-				}
-				else
-				{
-					tube.SetConnectionOnSide(side.getOpposite(),false);
-					originator.SetConnectionOnSide(side,false);
-				}
-			}
-			else if(tile instanceof IInventory)
-			{
-				originator.SetConnectionOnSide(side,true);
-			}
-			else originator.SetConnectionOnSide(side,false);
-		}
-	}
+    public static void CheckTubeConnections(World world, int x, int y, int z)
+    {
+        TileTube originator = (TileTube) world.getBlockTileEntity(x, y, z);
+        for (ForgeDirection side : ForgeDirection.VALID_DIRECTIONS) {
+            TileEntity tile = LazUtils.XYZCoords.FromTile(originator).Next(side).ToTile();
+            if (tile instanceof ITubeConnectable) {
+                ITubeConnectable tube = (ITubeConnectable) tile;
+                if (tube.IsConnectableOnSide(side.getOpposite()) && (tube.GetColour() == originator.GetColour() || tube.GetColour() == Colours.NONE
+                        || originator.GetColour() == Colours.NONE)) {
+                    tube.SetConnectionOnSide(side.getOpposite(), true);
+                    originator.SetConnectionOnSide(side, true);
+                } else {
+                    tube.SetConnectionOnSide(side.getOpposite(), false);
+                    originator.SetConnectionOnSide(side, false);
+                }
+            } else if (tile instanceof IInventory) {
+                originator.SetConnectionOnSide(side, true);
+            } else originator.SetConnectionOnSide(side, false);
+        }
+    }
 
-	@Override
-	public int getLightOpacity(World world, int x, int y, int z) { return 0; }
+    @Override
+    public int getLightOpacity(World world, int x, int y, int z)
+    {
+        return 0;
+    }
 
-	@Override
-	public TileEntity createNewTileEntity(World world)
-	{
-		return new TileTube();
-	}
+    @Override
+    public TileEntity createNewTileEntity(World world)
+    {
+        return new TileTube();
+    }
 
-	@Override
-	public int getRenderType()
-	{
-		return -1;
-	}
+    @Override
+    public int getRenderType()
+    {
+        return -1;
+    }
 
-	   @Override
+    @Override
     public void setBlockBoundsBasedOnState(IBlockAccess iba, int x, int y, int z)
     {
         TileEntity te = iba.getBlockTileEntity(x, y, z);
@@ -125,13 +127,6 @@ public class BlockTube extends Block implements ITileEntityProvider
     public AxisAlignedBB getSelectedBoundingBoxFromPool(World wrd, int x, int y, int z)
     {
         return getCollisionBoundingBoxFromPool(wrd, x, y, z);
-    }
-
-    @Override
-    public void addCollisionBoxesToList(World wrd, int x, int y, int z, AxisAlignedBB aabb, List lst, Entity ent)
-    {
-        setBlockBoundsBasedOnState(wrd, x, y, z);
-        super.addCollisionBoxesToList(wrd, x, y, z, aabb, lst, ent);
     }
 
     private AxisAlignedBB GetAABBFromState(ITubeConnectable te)
