@@ -9,7 +9,6 @@ import YATS.capsule.ItemCapsule;
 import YATS.common.YATS;
 import YATS.util.Colours;
 import YATS.util.LazUtils;
-import YATS.util.TubeRouting;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
