@@ -12,6 +12,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -42,16 +43,16 @@ public class BlockRoutingMarshaller extends Block implements ITileEntityProvider
 
     public void registerIcons(IconRegister register)
     {
-        rm_side_busy_up=register.registerIcon("YATS:rm_busy_up");
-        rm_side_normal_up=register.registerIcon("YATS:rm_normal_up");
-        rm_side_busy_down=register.registerIcon("YATS:rm_busy_down");
-        rm_side_normal_down=register.registerIcon("YATS:rm_normal_down");
-        rm_side_busy_left=register.registerIcon("YATS:rm_busy_left");
-        rm_side_normal_left=register.registerIcon("YATS:rm_normal_left");
-        rm_side_busy_right=register.registerIcon("YATS:rm_busy_right");
-        rm_side_normal_right=register.registerIcon("YATS:rm_normal_right");
-        rm_tubeside = register.registerIcon("YATS:rm_tubeside");
-        rm_invside = register.registerIcon("YATS:rm_invside");
+        rm_side_busy_up=register.registerIcon("lazdude_yats:rm_busy_up");
+        rm_side_normal_up=register.registerIcon("lazdude_yats:rm_normal_up");
+        rm_side_busy_down=register.registerIcon("lazdude_yats:rm_busy_down");
+        rm_side_normal_down=register.registerIcon("lazdude_yats:rm_normal_down");
+        rm_side_busy_left=register.registerIcon("lazdude_yats:rm_busy_left");
+        rm_side_normal_left=register.registerIcon("lazdude_yats:rm_normal_left");
+        rm_side_busy_right=register.registerIcon("lazdude_yats:rm_busy_right");
+        rm_side_normal_right=register.registerIcon("lazdude_yats:rm_normal_right");
+        rm_tubeside = register.registerIcon("lazdude_yats:rm_tubeside");
+        rm_invside = register.registerIcon("lazdude_yats:rm_invside");
     }
 
 @Override
@@ -70,7 +71,7 @@ public class BlockRoutingMarshaller extends Block implements ITileEntityProvider
     }
 
     @Override
-    public void onBlockPlacedBy(World world, int x, int y, int z, EntityLiving placer, ItemStack placedItemStack)
+    public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase placer, ItemStack placedItemStack)
     {
         TileRoutingMarshaller tile = (TileRoutingMarshaller)world.getBlockTileEntity(x,y,z);
         tile.RotateTo(LazUtils.GetFDFromEntity(placer, true));

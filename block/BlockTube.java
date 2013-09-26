@@ -11,6 +11,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -35,11 +36,11 @@ public class BlockTube extends Block implements ITileEntityProvider
     @Override
     public String getItemIconName()
     {
-        return "YATS:blockTube";
+        return "lazdude_yats:blockTube";
     }
 
     @Override
-    public void onBlockPlacedBy(World world, int x, int y, int z, EntityLiving entity, ItemStack itemStack)
+    public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase entity, ItemStack itemStack)
     {
         CheckTubeConnections(world, x, y, z);
     }
@@ -184,7 +185,7 @@ public class BlockTube extends Block implements ITileEntityProvider
     @Override
     public void registerIcons(IconRegister ir)
     {
-        blockIcon = ir.registerIcon("YATS:yats-tubecore");
+        blockIcon = ir.registerIcon("lazdude_yats:yats-tubecore");
     }
 
     @Override

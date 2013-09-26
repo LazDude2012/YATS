@@ -4,6 +4,7 @@ import YATS.api.ICapsule;
 import YATS.api.ICapsuleRenderer;
 import YATS.tile.TileTube;
 import YATS.util.Colours;
+import YATS.util.LazResource;
 import cpw.mods.fml.common.FMLLog;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.RenderItem;
@@ -78,7 +79,7 @@ public class ItemCapsuleRenderer implements ICapsuleRenderer
 		if (colour != Colours.NONE)
 		{
 			float[] rgb = Colours.toRGB(colour);
-			Minecraft.getMinecraft().renderEngine.bindTexture("/mods/YATS/textures/blocks/yats-paintring.png");
+			Minecraft.getMinecraft().renderEngine.bindTexture(LazResource.YATSPAINTRING());
 			glPushMatrix();
 			glDisable(GL_CULL_FACE);
 			glColor3f(rgb[0],rgb[1],rgb[2]);

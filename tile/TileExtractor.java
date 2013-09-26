@@ -45,7 +45,7 @@ public class TileExtractor extends TileEntity implements I6WayWrenchable,ITubeCo
 	@Override
 	public void onDataPacket(INetworkManager manager, Packet132TileEntityData packet)
 	{
-		readFromNBT(packet.customParam1);
+		readFromNBT(packet.data);
 		worldObj.markBlockForRenderUpdate(xCoord,yCoord,zCoord);
 	}
 

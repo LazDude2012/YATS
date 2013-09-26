@@ -11,6 +11,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Icon;
@@ -34,16 +35,16 @@ public class BlockExtractor extends Block implements ITileEntityProvider
 
 	public void registerIcons(IconRegister register)
 	{
-		lowmachine_invside = register.registerIcon("YATS:lowmachine_invside");
-		lowmachine_tubeside = register.registerIcon("YATS:lowmachine_tubeside");
-		extractor_side_busy_up=register.registerIcon("YATS:extractor_side_busy_up");
-		extractor_side_normal_up=register.registerIcon("YATS:extractor_side_normal_up");
-		extractor_side_busy_down=register.registerIcon("YATS:extractor_side_busy_down");
-		extractor_side_normal_down=register.registerIcon("YATS:extractor_side_normal_down");
-		extractor_side_busy_left=register.registerIcon("YATS:extractor_side_busy_left");
-		extractor_side_normal_left=register.registerIcon("YATS:extractor_side_normal_left");
-		extractor_side_busy_right=register.registerIcon("YATS:extractor_side_busy_right");
-		extractor_side_normal_right=register.registerIcon("YATS:extractor_side_normal_right");
+		lowmachine_invside = register.registerIcon("lazdude_yats:lowmachine_invside");
+		lowmachine_tubeside = register.registerIcon("lazdude_yats:lowmachine_tubeside");
+		extractor_side_busy_up=register.registerIcon("lazdude_yats:extractor_side_busy_up");
+		extractor_side_normal_up=register.registerIcon("lazdude_yats:extractor_side_normal_up");
+		extractor_side_busy_down=register.registerIcon("lazdude_yats:extractor_side_busy_down");
+		extractor_side_normal_down=register.registerIcon("lazdude_yats:extractor_side_normal_down");
+		extractor_side_busy_left=register.registerIcon("lazdude_yats:extractor_side_busy_left");
+		extractor_side_normal_left=register.registerIcon("lazdude_yats:extractor_side_normal_left");
+		extractor_side_busy_right=register.registerIcon("lazdude_yats:extractor_side_busy_right");
+		extractor_side_normal_right=register.registerIcon("lazdude_yats:extractor_side_normal_right");
 	}
 
 	public BlockExtractor(int id)
@@ -58,7 +59,7 @@ public class BlockExtractor extends Block implements ITileEntityProvider
 	}
 
     @Override
-    public void onBlockPlacedBy(World world, int x, int y, int z, EntityLiving placer, ItemStack placedItemStack)
+    public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase placer, ItemStack placedItemStack)
     {
         TileExtractor tile = (TileExtractor)world.getBlockTileEntity(x,y,z);
         tile.RotateTo(LazUtils.GetFDFromEntity(placer, true));

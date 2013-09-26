@@ -4,6 +4,7 @@ import YATS.client.ClientPacketHandler;
 import YATS.common.gui.ContainerAdvExtractor;
 import YATS.tile.TileAdvExtractor;
 import YATS.util.Colours;
+import YATS.util.LazResource;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -33,7 +34,7 @@ public class GuiAdvExtractor extends GuiContainer
     protected void drawGuiContainerBackgroundLayer(float f, int i, int j)
     {
         GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
-        this.mc.renderEngine.bindTexture("/mods/YATS/textures/gui/guiAdvExtractor.png");
+        this.mc.renderEngine.bindTexture(LazResource.GUIADVEXTRACTOR());
         // This is the x value of the picture, it will be used later
         int x = (width - xSize) / 2;
         // This is the y value of the picture, it will be used later

@@ -35,7 +35,7 @@ public class ClientPacketHandler implements IPacketHandler
             ByteArrayOutputStream bstream = new ByteArrayOutputStream();
             DataOutputStream stream = new DataOutputStream(bstream);
             stream.writeInt(PacketTypes.ADVEXT_COLOUR.ordinal());
-            stream.writeInt(tile.worldObj.getWorldInfo().getDimension());
+            stream.writeInt(tile.worldObj.getWorldInfo().getVanillaDimension());
             stream.writeInt(tile.xCoord);
             stream.writeInt(tile.yCoord);
             stream.writeInt(tile.zCoord);
@@ -55,7 +55,7 @@ public class ClientPacketHandler implements IPacketHandler
             ByteArrayOutputStream bstream = new ByteArrayOutputStream();
             DataOutputStream stream = new DataOutputStream(bstream);
             stream.writeInt(PacketTypes.RM_UPDATE.ordinal());
-            stream.writeInt(tile.worldObj.getWorldInfo().getDimension());
+            stream.writeInt(tile.worldObj.getWorldInfo().getVanillaDimension());
             stream.writeInt(tile.xCoord);
             stream.writeInt(tile.yCoord);
             stream.writeInt(tile.zCoord);

@@ -30,7 +30,7 @@ public class ItemSpanner extends Item
 	@Override
 	public void registerIcons(IconRegister register)
 	{
-		this.itemIcon = register.registerIcon("YATS:itemSpanner");
+		this.itemIcon = register.registerIcon("lazdude_yats:itemSpanner");
 	}
 
 	@Override

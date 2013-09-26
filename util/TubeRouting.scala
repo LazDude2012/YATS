@@ -8,20 +8,22 @@ import YATS.util.LazUtils.XYZCoords
 import net.minecraft.inventory.IInventory
 import YATS.capsule.ItemCapsule
 import net.minecraft.item.ItemStack
+import scala.collection.JavaConversions._
+import net.minecraft.tileentity.TileEntity
 
 class TubeRouting (var world : World)
 {
   var processqueue = new PriorityQueue[TubeRoute]()
   def ScanBlock (block : XYZCoords, initialdir : ForgeDirection, heading : ForgeDirection,
-                 distance : Int, capsule : ICapsule)
+                 distance : Int, capsule : ICapsule) =
   {
     if(!(world.blockHasTileEntity(block.x,block.y,block.z))) null
     else
     {
-      val tile = world.getBlockTileEntity(block.x,block.y, block.z)
-      if (tile isInstanceOf ITubeConnectable)
-        processqueue.add(new TubeRoute(block, heading, initialdir, distance + (tile asInstanceOf ITubeConnectable).GetAdditionalPriority))
-      else if (tile isInstanceOf IInventory && capsule isInstanceOf ItemCapsule && LazUtils.InventoryCore.CanAddToInventory(block, (capsule.GetContents()) asInstanceOf ItemStack))
+      val tile : TileEntity = world.getBlockTileEntity(block.x,block.y, block.z)
+      if (tile.isInstanceOf[ITubeConnectable])
+        processqueue.add(new TubeRoute(block, heading, initialdir, distance + (tile.asInstanceOf[ITubeConnectable]).GetAdditionalPriority))
+      else if (tile.isInstanceOf[IInventory] && capsule.isInstanceOf[ItemCapsule] && LazUtils.InventoryCore.CanAddToInventory(block, (capsule.GetContents()).asInstanceOf[ItemStack]))
       {
         val route = new TubeRoute(block,heading,initialdir,distance)
         route.completed = true
@@ -45,8 +47,8 @@ class TubeRouting (var world : World)
 
       for(side <- ForgeDirection.VALID_DIRECTIONS)
       {
-        val newCoords = route.destination.next(side)
-        ScanBlock(newCoords,initial,side,route.priority+1,capsule)
+        val newCoords = route.destination.Next(side)
+        ScanBlock(newCoords,initial,side,route.distance+1,capsule)
       }
     }
     ForgeDirection.UNKNOWN

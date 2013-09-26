@@ -3,6 +3,7 @@ package YATS.client.gui;
 import YATS.common.gui.ContainerRoutingMarshaller;
 import YATS.tile.TileRoutingMarshaller;
 import YATS.util.Colours;
+import YATS.util.LazResource;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -38,7 +39,7 @@ public class GuiRoutingMarshaller extends GuiContainer
     protected void drawGuiContainerBackgroundLayer(float f, int i, int j)
     {
         GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
-        this.mc.renderEngine.bindTexture("/mods/YATS/textures/gui/guiRoutingMarshaller.png");
+        this.mc.renderEngine.bindTexture(LazResource.GUIROUTINGMARSHALLER());
         // This is the x value of the picture, it will be used later
         int x = (width - xSize) / 2;
         // This is the y value of the picture, it will be used later

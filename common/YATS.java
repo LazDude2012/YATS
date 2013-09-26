@@ -21,7 +21,7 @@ import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
-@Mod(modid="YATS",name="Yet Another Tube System",version="1.0")
+@Mod(modid="lazdude_yats",name="Yet Another Tube System",version="1.0")
 @NetworkMod(clientSideRequired = true,serverSideRequired = true,
 clientPacketHandlerSpec = @NetworkMod.SidedPacketHandler(channels="YATS",packetHandler = ClientPacketHandler.class),
 serverPacketHandlerSpec = @NetworkMod.SidedPacketHandler(channels="YATS",packetHandler = ServerPacketHandler.class))

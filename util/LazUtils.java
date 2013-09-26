@@ -2,6 +2,7 @@ package YATS.util;
 
 import cpw.mods.fml.common.FMLLog;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -19,7 +20,7 @@ public class LazUtils
 	 * @param inverted Whether to get the direction the entity is facing (useful for in-world GUIs) or the opposite direction. (useful for block placement)
 	 * @return The ForgeDirection the entity is facing (or the opposite if needed).
 	 */
-	public static ForgeDirection GetFDFromEntity(EntityLiving entity, Boolean inverted)
+	public static ForgeDirection GetFDFromEntity(EntityLivingBase entity, Boolean inverted)
 	{
 		if(inverted)
 		{

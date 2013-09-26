@@ -122,7 +122,7 @@ public class TileTube extends TileEntity implements ITubeConnectable
 	@Override
 	public void onDataPacket(INetworkManager manager, Packet132TileEntityData packet)
 	{
-		readFromNBT(packet.customParam1);
+		readFromNBT(packet.data);
 	}
 
 	@Override
@@ -169,7 +169,7 @@ public class TileTube extends TileEntity implements ITubeConnectable
 			contents.remove(capsule);
 		}
 		worldObj.markBlockForUpdate(xCoord,yCoord,zCoord);
-		PacketDispatcher.sendPacketToAllAround(xCoord,yCoord,zCoord,20,worldObj.getWorldInfo().getDimension(),getDescriptionPacket());
+		PacketDispatcher.sendPacketToAllAround(xCoord,yCoord,zCoord,20,worldObj.getWorldInfo().getVanillaDimension(),getDescriptionPacket());
 	}
 
 	public void writeToNBT(NBTTagCompound nbt)

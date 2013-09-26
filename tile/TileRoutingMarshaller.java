@@ -83,7 +83,7 @@ public class TileRoutingMarshaller extends TileEntity implements IInventory, I6W
     public void closeChest() {}
 
     @Override
-    public boolean isStackValidForSlot(int i, ItemStack itemstack){ return true; }
+    public boolean isItemValidForSlot(int i, ItemStack itemstack){ return true; }
 
     @Override
     public boolean AcceptsItemsOnSide(ForgeDirection side) { return (side == currentfacing); }
@@ -134,7 +134,7 @@ public class TileRoutingMarshaller extends TileEntity implements IInventory, I6W
     @Override
     public void onDataPacket(INetworkManager net, Packet132TileEntityData pkt)
     {
-        readFromNBT(pkt.customParam1);
+        readFromNBT(pkt.data);
         worldObj.markBlockForRenderUpdate(xCoord,yCoord,zCoord);
     }
 

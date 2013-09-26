@@ -4,6 +4,7 @@ import YATS.api.ICapsule;
 import YATS.common.YATS;
 import YATS.tile.TileTube;
 import YATS.util.Colours;
+import YATS.util.LazResource;
 import YATS.util.LazUtils;
 import cpw.mods.fml.common.FMLLog;
 import net.minecraft.client.Minecraft;
@@ -22,7 +23,7 @@ public class TubeRenderer extends TileEntitySpecialRenderer implements IItemRend
     private void RenderTube(double x, double y, double z, double scale, boolean north,
                             boolean south, boolean west, boolean east, boolean up, boolean down, boolean isItem)
     {
-        Minecraft.getMinecraft().renderEngine.bindTexture("/mods/YATS/textures/blocks/yats-tubecore.png");
+        Minecraft.getMinecraft().renderEngine.bindTexture(LazResource.YATSTUBECORE());
         glPushMatrix();
         glTranslated(x, y, z);
         glScaled(scale, scale, scale);
@@ -504,7 +505,7 @@ public class TubeRenderer extends TileEntitySpecialRenderer implements IItemRend
         Colours colour = tube.GetColour();
         if (colour == Colours.NONE) return;
         float[] rgb = Colours.toRGB(colour);
-        Minecraft.getMinecraft().renderEngine.bindTexture("/mods/YATS/textures/blocks/yats-paintring.png");
+        Minecraft.getMinecraft().renderEngine.bindTexture(LazResource.YATSPAINTRING());
         glPushMatrix();
         glTranslated(x, y, z);
         glDisable(GL_CULL_FACE);

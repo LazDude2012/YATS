@@ -81,7 +81,7 @@ public class TileAdvExtractor extends TileEntity implements ITubeConnectable, II
 	public void closeChest() {}
 
 	@Override
-	public boolean isStackValidForSlot(int i, ItemStack itemstack) { return true; }
+	public boolean isItemValidForSlot(int i, ItemStack itemstack) { return true; }
 
 	@Override
 	public boolean AcceptsItemsOnSide(ForgeDirection side) { return (side == facing);}
@@ -160,7 +160,7 @@ public class TileAdvExtractor extends TileEntity implements ITubeConnectable, II
 	@Override
 	public void onDataPacket(INetworkManager manager, Packet132TileEntityData packet)
 	{
-		readFromNBT(packet.customParam1);
+		readFromNBT(packet.data);
 	}
 
 	@Override
