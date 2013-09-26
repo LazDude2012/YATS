@@ -33,7 +33,7 @@ public class YATS
 	@SidedProxy(clientSide = "YATS.client.ClientProxy",serverSide="YATS.common.CommonProxy")
 	public static CommonProxy proxy;
 
-	public static boolean IS_DEBUG = false;
+	public static boolean IS_DEBUG = true;
 
     public final static int ADVEXTRACTOR_GUI = 1;
     public final static int ROUTINGMARSHALLER_GUI = 2;

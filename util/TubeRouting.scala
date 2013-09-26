@@ -10,25 +10,43 @@ import YATS.capsule.ItemCapsule
 import net.minecraft.item.ItemStack
 import scala.collection.JavaConversions._
 import net.minecraft.tileentity.TileEntity
+import scala.collection.mutable.HashMap
+import scala.collection.mutable
 
 class TubeRouting (var world : World)
 {
-  var processqueue = new PriorityQueue[TubeRoute]()
+  var processqueue = new PriorityQueue[TubeRoute]
+  var hashmap = new mutable.HashSet[TubeRoute]
   def ScanBlock (block : XYZCoords, initialdir : ForgeDirection, heading : ForgeDirection,
                  distance : Int, capsule : ICapsule) =
   {
-    if(!(world.blockHasTileEntity(block.x,block.y,block.z))) null
+    if(!world.blockHasTileEntity(block.x,block.y,block.z)) null
     else
     {
-      val tile : TileEntity = world.getBlockTileEntity(block.x,block.y, block.z)
-      if (tile.isInstanceOf[ITubeConnectable])
-        processqueue.add(new TubeRoute(block, heading, initialdir, distance + (tile.asInstanceOf[ITubeConnectable]).GetAdditionalPriority))
-      else if (tile.isInstanceOf[IInventory] && capsule.isInstanceOf[ItemCapsule] && LazUtils.InventoryCore.CanAddToInventory(block, (capsule.GetContents()).asInstanceOf[ItemStack]))
+      val tile = world.getBlockTileEntity(block.x,block.y, block.z)
+      tile match
       {
-        val route = new TubeRoute(block,heading,initialdir,distance)
-        route.completed = true
-        processqueue add route
+        case itc : ITubeConnectable =>
+          val route = new TubeRoute(block, heading, initialdir, distance + (tile.asInstanceOf[ITubeConnectable]).GetAdditionalPriority)
+          if(!hashmap.contains(route))
+          {
+            processqueue.add(route)
+            hashmap.add(route)
+          }
+        case ii : IInventory =>
+          if(capsule.isInstanceOf[ItemCapsule] && LazUtils.InventoryCore.CanAddToInventory(block,capsule.GetContents().asInstanceOf[ItemStack]))
+          {
+            val route = new TubeRoute(block,heading,initialdir,distance)
+            route.completed=true
+            if(!hashmap.contains(route))
+            {
+              processqueue.add(route)
+              hashmap.add(route)
+            }
+          }
+        case _ =>
       }
+
     }
   }
   def FindRoute (block : XYZCoords, initial : ForgeDirection, sides : java.util.List[ForgeDirection],
