@@ -27,14 +27,14 @@ class TubeRouting (var world : World)
       tile match
       {
         case itc : ITubeConnectable =>
-          val route = new TubeRoute(block, heading, initialdir, distance + (tile.asInstanceOf[ITubeConnectable]).GetAdditionalPriority)
+          val route = new TubeRoute(block, heading, initialdir, distance + itc.GetAdditionalPriority)
           if(!hashmap.contains(route))
           {
             processqueue.add(route)
             hashmap.add(route)
           }
         case ii : IInventory =>
-          if(capsule.isInstanceOf[ItemCapsule] && LazUtils.InventoryCore.CanAddToInventory(block,capsule.GetContents().asInstanceOf[ItemStack]))
+          if(capsule.isInstanceOf[ItemCapsule] && LazUtils.InventoryCore.CanAddToInventory(block,capsule.GetContents.asInstanceOf[ItemStack]))
           {
             val route = new TubeRoute(block,heading,initialdir,distance)
             route.completed=true
@@ -55,7 +55,7 @@ class TubeRouting (var world : World)
     for(side <- sides)
     {
       val newblock = block.Next(side)
-      ScanBlock(newblock,initial,initial,(if(side == initial) 0 else 1),capsule)
+      ScanBlock(newblock,initial,initial,if(side == initial) 0 else 1,capsule)
     }
 
     while(processqueue.size() > 0)

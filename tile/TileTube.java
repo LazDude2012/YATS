@@ -63,7 +63,7 @@ public class TileTube extends TileEntity implements ITubeConnectable
 	}
 
 	@Override
-	public Boolean CanRoute()
+	public boolean CanRoute()
 	{
 		return true;
 	}

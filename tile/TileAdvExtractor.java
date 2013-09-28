@@ -106,7 +106,7 @@ public class TileAdvExtractor extends TileEntity implements ITubeConnectable, II
 	}
 
 	@Override
-	public Boolean CanRoute() { return true; }
+	public boolean CanRoute() { return true; }
 
 	@Override
 	public int GetPressure() { return 5; }

@@ -93,7 +93,7 @@ public class BlockExtractor extends Block implements ITileEntityProvider
 	ForgeDirection blockface = ForgeDirection.getOrientation(side);
 	if(blockface == ext.GetCurrentFacing()) return lowmachine_invside;
 	if(blockface == ext.GetCurrentFacing().getOpposite()) return lowmachine_tubeside;
-	if(ext.isBusy)
+	if(ext.isBusy())
 	{
 		switch(ext.GetCurrentFacing())
 		{

@@ -53,7 +53,7 @@ public interface ITubeConnectable
      * Tests whether the tile can route a capsule.
      * @return True if the tile can be utilized for routing a capsule, otherwise false.
      */
-	public Boolean CanRoute();
+	public boolean CanRoute();
 
     /**
      * This is the get accessor for the pressure within the tile.

@@ -95,7 +95,7 @@ public class TileRoutingMarshaller extends TileEntity implements IInventory, I6W
     public boolean CanAccept(ICapsule capsule) { return true; }
 
     @Override
-    public Boolean CanRoute() { return true; }
+    public boolean CanRoute() { return true; }
 
     @Override
     public int GetPressure() { return 5; }

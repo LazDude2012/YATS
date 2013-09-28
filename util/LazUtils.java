@@ -11,6 +11,8 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.common.ForgeDirection;
 
 import java.util.logging.Level;
+import java.lang.Integer;
+import java.lang.Float;
 
 public class LazUtils
 {

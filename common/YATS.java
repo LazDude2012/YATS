@@ -49,7 +49,7 @@ public class YATS
 	public static CreativeTabs tabYATS = new TabYATS(CreativeTabs.getNextID(),"YATSTab");
     public static GuiHandler guiHandler;
 
-	@Mod.PreInit
+	@Mod.EventHandler
 	public void PreInitialise(FMLPreInitializationEvent e)
 	{
         guiHandler = new GuiHandler();
@@ -63,7 +63,7 @@ public class YATS
 		itemSpanner = new ItemSpanner(ConfigHandler.itemSpannerID);
 	}
 
-	@Mod.Init
+	@Mod.EventHandler
 	public void Initialise(FMLInitializationEvent e)
 	{
 		RegisterBlocksAndTiles();
